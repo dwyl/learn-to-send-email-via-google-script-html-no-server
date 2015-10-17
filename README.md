@@ -7,6 +7,14 @@ An Example of using an HTML to send an Email without a Backend Server using a Go
 We needed a way of sending an email from from a "*static*" HTML page
 when you don't (*want* to) *have* a *server*.
 
+### *Key Advantages*
+
++ No "*Backend*" to Deploy/Maintain/Pay for
++ ***Fully Customisabe*** - every aspect is customisable!
++ Email *sent via* ***Google Mail*** which is ***Whitelisted Everywhere*** (*high deliverability success*)
++ **Collect/Store** any **form data** in a ***Spreadsheet*** for easy viewing  
+(*perfect if you need to share it with non-technical people*)
+
 ## What?
 
 Instead of using a server to send your email,
@@ -14,8 +22,13 @@ which is *easy* but requires *maintenance*,
 use Google to send mail on your behalf
 and use Google Spreadsheets to keep track of the data!
 
+> You *could* use a "*free*" service like http://formspree.io/ to process your form submissions   
+if you don't care where you are sending your data and have to manage the data submitted  
+in your email inbox (*messy ... yuck*!)  
+*Or*... you can *invest* a few minutes and keep data private/manageable.
+*Take your pick*.
 
-## How?
+## *How*?
 
 ### 1. Make a Copy of the Sample Spreadsheet
 
@@ -104,6 +117,27 @@ Open the inbox for the email address you set in **Step 3** (*above*)
 
 
 > ***Done***. That's it. You just created an HTML form that sends email!
+
+# *Part Two - Make It Look Good* ...
+
+We are going to keep this ***Super Lean*** by using [**PURE CSS**](http://purecss.io/start/)
+for our Style (*fix the "ugly" HTML Form in step 8*).   
+And `submit` the form using [**JQuery** "***AJAX***"](http://api.jquery.com/jquery.ajax/) to keep the person
+on your page/site (*avoid "ugly" response page*)
+
+### 10. Submit the Form using **JQuery** "***AJAX***"
+
+To *prevent* the page from changing to the `JSON` response/result
+we need to submit the form using ***AJAX***.
+
+
+
+
+# *Part Three - Store the Data in a Spreadsheet*
+
+Sending the form data directly to your email inbox is a *good*
+first step, but we can do better.
+
 
 
 
