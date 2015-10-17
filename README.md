@@ -38,16 +38,72 @@ Open the **Script editor...** by clicking "**Tools**" > "**Script editor...**"
 
 ![2 script-editor](https://cloud.githubusercontent.com/assets/194400/10559732/8db2b9f6-74ef-11e5-8bf2-de286f079929.png)
 
-You should expect to see:
+### 3. Set the `TO_ADDRESS` in the Script
+
+In the editor window you should expect to see:
 
 ![3-script-editor-showing-script](https://cloud.githubusercontent.com/assets/194400/10560379/9efa5b3a-7501-11e5-96ba-a9e3b2d77ee4.png)
-
-### 3. Set the `TO_ADDRESS` in the Script
 
 Change the value of the `TO_ADDRESS` to which ever email you want to receive
 the contact form message.
 
+### 4. Save a *New Version* of your Script
 
+It's not immediately *obvious* but you have to *click* on "*Manage Versions...*"
+
+![19 google-script-no-save-new-version](https://cloud.githubusercontent.com/assets/194400/10558249/527f3c98-74c1-11e5-8290-5af7fa7f5f75.png)
+
+Then *create* your new version:
+
+![20 google-script-save-new-version](https://cloud.githubusercontent.com/assets/194400/10558250/53d21d5e-74c1-11e5-88c5-7bc2d8ce6228.png)
+
+### 5. Publish the *Updated* Script as a Web App
+
+![20 a-publish](https://cloud.githubusercontent.com/assets/194400/10558288/50980aa8-74c2-11e5-8576-72084a564779.png)
+
+Select the *latest* project version to deploy:
+
+![21 deploy-new-version](https://cloud.githubusercontent.com/assets/194400/10558251/570a5428-74c1-11e5-8ced-5dd26d3de3c4.png)
+
+### 6. Authorize the Script to Send Emails
+
+![5 auth-required](https://cloud.githubusercontent.com/assets/194400/10560412/89d3fb0c-7502-11e5-81ce-fb239bf545b2.png)
+
+![5-allow-sending-emails](https://cloud.githubusercontent.com/assets/194400/10560416/a86a26ae-7502-11e5-9add-d5081d409af4.png)
+
+Copy the web app URL to your clip board / note pad.
+Then Click "OK".
+
+![22 1-deploy-as-web-app](https://cloud.githubusercontent.com/assets/194400/10558255/6eec31e2-74c1-11e5-9c07-cea6209526df.png)
+
+
+### 7. Create your *basic* HTML Form
+
+Using the template in `index.html` in this repo,
+create your own html file with the basic form. (*save the file*)
+
+> Remember to change the Form `action` URL to the one you copied in
+the previous step:
+
+![7-html-form](https://cloud.githubusercontent.com/assets/194400/10560470/e2d7fcb6-7503-11e5-9d9a-3771423e51fa.png)
+
+### 8. Open the HTML Form (*page*) in your Browser
+
+Fill in some sample data in the HTML Form:
+
+![html form](https://cloud.githubusercontent.com/assets/194400/10560494/674b64c4-7504-11e5-801a-b537d276f671.png)
+
+Submit the form. You should see a confirmation that it was sent:
+![form sent](https://cloud.githubusercontent.com/assets/194400/10560501/8f605dd4-7504-11e5-8cd7-06d768beba4d.png)
+
+### 9. Check the email inbox for the address you set
+
+Open the inbox for the email address you set in **Step 3** (*above*)
+
+![email received](https://cloud.githubusercontent.com/assets/194400/10560512/f87f1652-7504-11e5-8b0f-c342c395a193.png)
+
+
+> ***Done***. That's it. You just created an HTML form that sends email!
 
 
 
