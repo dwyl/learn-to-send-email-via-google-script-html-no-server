@@ -130,7 +130,26 @@ on your page/site (*avoid "ugly" response page*)
 To *prevent* the page from changing to the `JSON` response/result
 we need to submit the form using ***AJAX***.
 
+Update your `index.html` to include the **JQuery** library and `jquery-ajax-form-handler.js` at the *end* of your file
+(*before the closing `</body>` tag)
 
+```js
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script data-cfasync="false" type="text/javascript"
+src="https://cdn.rawgit.com/nelsonic/html-form-send-email-via-google-script-without-server/master/jquery-ajax-form-handler.js"></script>
+```
+
+This will now display a "Thank You" *message* when the form is submitted:
+
+![thankyou message](https://cloud.githubusercontent.com/assets/194400/10561147/4086a89a-7517-11e5-840d-7f490353e225.png)
+
+Keeps the person on the same page. No refresh.
+
+### 11. Customise the  Message Shown when Form Submitted
+
+Taylor your message by editing the `thankyou_message` div:
+
+![10-customise-the-thankyou-message](https://cloud.githubusercontent.com/assets/194400/10561213/9e6d3342-7518-11e5-9860-43a268102de2.png)
 
 
 # *Part Three - Store the Data in a Spreadsheet*

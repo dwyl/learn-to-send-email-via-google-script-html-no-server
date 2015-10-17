@@ -36,8 +36,7 @@ jQuery( document ).ready(function( $ ) {
         // callback handler that will be called on success
         request.done(function (response, textStatus, jqXHR) {
           console.log(response, textStatus, jqXHR);
-          $('#gform').html('<h2>Thanks! We will contact you soon!</h2>');
-          $('.browse-all').show();
+          $('#thankyou_message').show();
         });
         // callback handler that will be called on failure
         request.fail(function (jqXHR, textStatus, errorThrown){
