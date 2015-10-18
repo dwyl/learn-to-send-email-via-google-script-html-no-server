@@ -27,7 +27,8 @@ jQuery( document ).ready(function( $ ) {
         var serializedData = $form.serialize();
         // disable the inputs for the duration of the ajax request
         $inputs.prop("disabled", true);
-        $('#gform').text('Sending data...');
+        // $('#gform').text('Sending data...');
+        $('button').attr("disabled", "disabled");
         request = $.ajax({ // send the data to Google Apps
           url: event.target.action, // defined in the form action!
           type: "post",
@@ -37,6 +38,7 @@ jQuery( document ).ready(function( $ ) {
         request.done(function (response, textStatus, jqXHR) {
           console.log(response, textStatus, jqXHR);
           $('#thankyou_message').show('slow');
+          $('#gform').hide();
         });
         // callback handler that will be called on failure
         request.fail(function (jqXHR, textStatus, errorThrown){

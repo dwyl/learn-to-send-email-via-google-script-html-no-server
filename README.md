@@ -162,7 +162,10 @@ and *solves* our current "*problem*": Making it Look Good.
 
 ![PureCSS-module-sizes](https://github-cloud.s3.amazonaws.com/assets/194400/10565844/8f4885a0-75d2-11e5-9490-e3fc42c32616.png)
 
+Without spending *too much* time on this, we can make the form *look*
+***a lot*** nicer:
 
+![contact form with pure css](https://github-cloud.s3.amazonaws.com/assets/194400/10566392/f38bc454-75dd-11e5-85dd-6819494a98f2.png)
 
 
 # *Part Three - Store the Data in a Spreadsheet*
