@@ -23,7 +23,7 @@ use Google to send mail on your behalf
 and use Google Spreadsheets to keep track of the data!
 
 > You *could* use a "*free*" service like http://formspree.io/ to process your form submissions   
-if you don't care where you are sending your data and have to manage the data submitted  
+if you don't care where you are sending your data and want to manage the data submitted  
 in your email inbox (*messy ... yuck*!)  
 *Or*... you can *invest* a few minutes and keep data private/manageable.
 *Take your pick*.
@@ -168,11 +168,21 @@ Without spending *too much* time on this, we can make the form *look*
 ![contact form with pure css](https://github-cloud.s3.amazonaws.com/assets/194400/10566392/f38bc454-75dd-11e5-85dd-6819494a98f2.png)
 
 
-# *Part Three - Store the Data in a Spreadsheet*
+# *Part Three - Store Submitted Contact Form Data in a Spreadsheet*
 
 Sending the form data directly to your email inbox is a *good*
 first step, but we can do better.
 
+### 13. Add the `record_data` to your Google Apps Script
+
+
+
+### 7. Run the Setup Script
+
+The Setup Script gets the Name of your associated Google Spreadsheet
+so it knows where to put the data...
+
+![12 7-run-setup-function](https://cloud.githubusercontent.com/assets/194400/10540765/e5da721a-7402-11e5-822a-0589c713cb47.png)
 
 
 
