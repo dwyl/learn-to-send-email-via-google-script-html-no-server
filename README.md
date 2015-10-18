@@ -152,6 +152,19 @@ Taylor your message by editing the `thankyou_message` div:
 ![10-customise-the-thankyou-message](https://cloud.githubusercontent.com/assets/194400/10561213/9e6d3342-7518-11e5-9860-43a268102de2.png)
 
 
+### 12. Use CSS to Make the Form *Look Good*
+
+For `this` *example* we are using ***Pure CSS***: http://purecss.io/start/
+because its ***light weight*** (***4.0KB minified and gzipped***)
+and *solves* our current "*problem*": Making it Look Good.
+
+![PureCSS-Logo-Intro](https://github-cloud.s3.amazonaws.com/assets/194400/10565838/72d6d52a-75d2-11e5-9b92-ca02b1124920.png)
+
+![PureCSS-module-sizes](https://github-cloud.s3.amazonaws.com/assets/194400/10565844/8f4885a0-75d2-11e5-9490-e3fc42c32616.png)
+
+
+
+
 # *Part Three - Store the Data in a Spreadsheet*
 
 Sending the form data directly to your email inbox is a *good*

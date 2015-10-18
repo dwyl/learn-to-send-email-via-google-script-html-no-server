@@ -36,7 +36,7 @@ jQuery( document ).ready(function( $ ) {
         // callback handler that will be called on success
         request.done(function (response, textStatus, jqXHR) {
           console.log(response, textStatus, jqXHR);
-          $('#thankyou_message').show();
+          $('#thankyou_message').show('slow');
         });
         // callback handler that will be called on failure
         request.fail(function (jqXHR, textStatus, errorThrown){
