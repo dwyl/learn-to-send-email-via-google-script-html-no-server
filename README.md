@@ -1,6 +1,6 @@
-# Send Email from HTML Form the *Easy* Way!
+# Send Email from a *Static* HTML Form using Google Apps Mail!
 
-An Example of using an HTML to send an Email without a Backend Server using a Google Script - No PHP, Python, Ruby, Java, Node.js etc.
+An Step-by-Step Example of using an HTML to send an Email without a Backend Server using a Google Script - No PHP, Python, Ruby, Java, Node.js etc.
 
 ## Why?
 
@@ -191,3 +191,5 @@ so it knows where to put the data...
 + Google Apps Scripts Basics: https://developers.google.com/apps-script/articles
 + Logger (like console.log):
 https://developers.google.com/apps-script/reference/base/logger
++ Original Tutorial: AJAX post to google spreadsheet: http://stackoverflow.com/questions/10000020/ajax-post-to-google-spreadsheet which points to:
+  + https://mashe.hawksey.info/2011/10/google-spreadsheets-as-a-database-insert-with-apps-script-form-postget-submit-method/
