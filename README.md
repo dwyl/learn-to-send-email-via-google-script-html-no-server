@@ -51,6 +51,8 @@ Open the **Script editor...** by clicking "**Tools**" > "**Script editor...**"
 
 ![2 script-editor](https://cloud.githubusercontent.com/assets/194400/10559732/8db2b9f6-74ef-11e5-8bf2-de286f079929.png)
 
+Here's a *snapshot* of the script you need (*at this point in the exercise*): [google-script-just-email.js](https://raw.githubusercontent.com/nelsonic/html-form-send-email-via-google-script-without-server/1d1c6727f69dec64a6b7f6bd6ff0dd72d0374210/google-script-just-email.js)
+
 ### 3. Set the `TO_ADDRESS` in the Script
 
 In the editor window you should expect to see:
@@ -173,11 +175,15 @@ Without spending *too much* time on this, we can make the form *look*
 Sending the form data directly to your email inbox is a *good*
 first step, but we can do better.
 
-### 13. Add the `record_data` to your Google Apps Script
+### 13. Add the `record_data` Function to your Google Apps Script
+
+![record_data example](https://cloud.githubusercontent.com/assets/194400/10581613/8b4f9ad4-767b-11e5-90cc-962a9d6acc91.png)
+
+This will record the data received from the `POST` as a *row* in the spreadsheet.  
+See: [**google-apps-script.js**](https://github.com/nelsonic/html-form-send-email-via-google-script-without-server/blob/master/google-apps-script.js) for the full code you can *copy-paste*.
 
 
-
-### 7. Run the Setup Script
+### 14. Run the Setup Script
 
 The Setup Script gets the Name of your associated Google Spreadsheet
 so it knows where to put the data...
@@ -191,5 +197,7 @@ so it knows where to put the data...
 + Google Apps Scripts Basics: https://developers.google.com/apps-script/articles
 + Logger (like console.log):
 https://developers.google.com/apps-script/reference/base/logger
++ Simple Mail Merge using Google Spreadsheets:
+https://developers.google.com/apps-script/articles/mail_merge
 + Original Tutorial: AJAX post to google spreadsheet: http://stackoverflow.com/questions/10000020/ajax-post-to-google-spreadsheet which points to:
   + https://mashe.hawksey.info/2011/10/google-spreadsheets-as-a-database-insert-with-apps-script-form-postget-submit-method/
