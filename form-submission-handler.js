@@ -42,8 +42,7 @@ function handleFormSubmit(event) {
   }
 }
 function loaded() {
-  console.log('loaded');
-  getFormData();
+  console.log('contact form submission handler loaded successfully');
   // bind to the submit event of our form
   var form = document.getElementById('gform');
   form.addEventListener("submit", handleFormSubmit, false);
