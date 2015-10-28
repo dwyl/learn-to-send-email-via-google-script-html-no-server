@@ -13,15 +13,15 @@ function getFormData() {
   console.log(data);
   return data;
 }
-// handles form submit withtout any jquery
-function handleFormSubmit(event) {
-  event.preventDefault();     // we are submitting via xhr below
-  var data = getFormData();   // get the values submitted in the form
-  if( !validEmail(data.email) ) {
+
+function handleFormSubmit(event) {  // handles form submit withtout any jquery
+  event.preventDefault();           // we are submitting via xhr below
+  var data = getFormData();         // get the values submitted in the form
+  if( !validEmail(data.email) ) {   // if email is not valid show error
     document.getElementById('email-invalid').style.display = 'block';
     return false;
   } else {
-    var url = event.target.action;
+    var url = event.target.action;  //
     var xhr = new XMLHttpRequest();
     xhr.open('POST', url);
     // xhr.withCredentials = true;
@@ -30,8 +30,7 @@ function handleFormSubmit(event) {
         console.log( xhr.status, xhr.statusText )
         console.log(xhr.responseText);
         document.getElementById('gform').style.display = 'none'; // hide form
-        document.getElementById('thankyou').style.display = 'block';
-        document.getElementById('browse_all').style.display = 'block';
+        document.getElementById('thankyou_message').style.display = 'block';
         return;
     };
     // url encode form data for sending as post data
