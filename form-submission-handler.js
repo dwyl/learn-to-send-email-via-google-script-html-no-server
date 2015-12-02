@@ -10,7 +10,19 @@ function getFormData() {
   //   email   : document.getElementById("email").value,
   //   message : document.getElementById("message").value
   // }
-  var data = document.getElementById("gform").elements;
+  var elements = document.getElementById("gform").elements;
+  console.log(elements); // all form elements
+  console.log(typeof elements);
+  var keys = Object.keys(elements);
+  console.log(keys);
+  var fields = keys.filter(function(k){
+    return k.length > 1 && elements[k].name && elements[k].name.length > 0 ;
+  });
+  console.log(fields);
+  var data = {};
+  fields.forEach(function(k){
+    data[k] = elements[k].value;
+  });
   console.log(data);
   return data;
 }
