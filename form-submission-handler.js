@@ -5,11 +5,12 @@ function validEmail(email) { // see:
 }
 // get all data in form and return object
 function getFormData() {
-  var data   = {
-    name    : document.getElementById("name").value,
-    email   : document.getElementById("email").value,
-    message : document.getElementById("message").value
-  }
+  // var data   = {
+  //   name    : document.getElementById("name").value,
+  //   email   : document.getElementById("email").value,
+  //   message : document.getElementById("message").value
+  // }
+  var data = document.getElementById("gform").elements;
   console.log(data);
   return data;
 }
