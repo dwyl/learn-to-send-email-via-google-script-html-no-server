@@ -5,20 +5,10 @@ function validEmail(email) { // see:
 }
 // get all data in form and return object
 function getFormData() {
-  // var data   = {
-  //   name    : document.getElementById("name").value,
-  //   email   : document.getElementById("email").value,
-  //   message : document.getElementById("message").value
-  // }
-  var elements = document.getElementById("gform").elements;
-  console.log(elements); // all form elements
-  console.log(typeof elements);
-  var keys = Object.keys(elements);
-  console.log(keys);
-  var fields = keys.filter(function(k){
+  var elements = document.getElementById("gform").elements; // all form elements
+  var fields = Object.keys(elements).filter(function(k){
     return k.length > 1 && elements[k].name && elements[k].name.length > 0 ;
   });
-  console.log(fields);
   var data = {};
   fields.forEach(function(k){
     data[k] = elements[k].value;

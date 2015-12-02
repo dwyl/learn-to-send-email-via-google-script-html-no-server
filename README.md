@@ -22,7 +22,7 @@ which is *easy* but requires *maintenance*,
 use Google to send mail on your behalf
 and use Google Spreadsheets to keep track of the data!
 
-> You *could* use a "*free*" service like http://formspree.io/ to process your form submissions   
+> You *could* use a "*free*" service like http://formspree.io/ to process your form submissions
 if you don't care where you are sending your data and want to manage the data submitted  
 in your email inbox (*messy ... yuck*!)  
 *Or*... you can *invest* a few minutes and keep data private/manageable.
@@ -123,7 +123,7 @@ Open the inbox for the email address you set in **Step 3** (*above*)
 # *Part Two - Make It Look Good* ...
 
 We are going to keep this ***Super Lean*** by using [**PURE CSS**](http://purecss.io/start/)
-for our Style (*fix the "ugly" HTML Form in step 8*).   
+for our Style (*fix the "ugly" HTML Form in step 8*).
 And `submit` the form using [**JQuery** "***AJAX***"](http://api.jquery.com/jquery.ajax/) to keep the person
 on your page/site (*avoid "ugly" response page*)
 
@@ -202,9 +202,32 @@ Follow Steps 4, 5 & 6 to save a new version and ***re-publish*** the script.
 
 ![17-confirm-data-inserted](https://cloud.githubusercontent.com/assets/194400/10582676/eb8af5d8-7680-11e5-92bb-30dd08d2d7b3.png)
 
+
 # *Want more*?
 
 If you want us to take this tutorial further, [***please let us know***!](https://github.com/nelsonic/html-form-send-email-via-google-script-without-server/issues)
+
+
+## Add your own fields!
+
+In response to [Henry Beary's request](https://github.com/dwyl/html-form-send-email-via-google-script-without-server/issues/9)
+we made the form handler *generic* which means you can now add any fields you want to the form.
+
+remember to include the fields *inside* the form that has the id `gform`
+and ensure that the `name` of the form element matches the new column heading in your spreadsheet.
+e.g:
+```HTML
+<fieldset class="pure-group">
+  <label for="color">Favourite Color: </label>
+  <input id="color" name="color" placeholder="green" />
+</fieldset>
+```
+This will allow you to capture the person's favourite color:
+e.g:
+![new-field-contains-data](https://cloud.githubusercontent.com/assets/194400/11547132/9f162f6a-9949-11e5-89ac-aeb91e025844.png)
+
+Let us know if you have any questions!
+
 
 ## Background Reading
 
