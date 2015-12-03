@@ -1,0 +1,31 @@
+{
+  "name": "html-form-send-email-via-google-script-without-server",
+  "version": "1.0.0",
+  "description": "tutorial showing how to save data to a google doc spreadsheet from any html form (including sending emails!)",
+  "main": "static-server.js",
+  "scripts": {
+    "start": "./node_modules/.bin/nodemon static-server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dwyl/html-form-send-email-via-google-script-without-server.git"
+  },
+  "keywords": [
+    "tutorial",
+    "google",
+    "docs",
+    "email",
+    "form"
+  ],
+  "author": "nelsonic @dwyl",
+  "license": "GPL-2.0",
+  "bugs": {
+    "url": "https://github.com/dwyl/html-form-send-email-via-google-script-without-server/issues"
+  },
+  "homepage": "https://github.com/dwyl/html-form-send-email-via-google-script-without-server#readme",
+  "devDependencies": {
+    "hapi": "^11.1.2",
+    "inert": "^3.2.0",
+    "nodemon": "^1.8.1"
+  }
+}
