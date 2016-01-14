@@ -127,18 +127,17 @@ for our Style (*fix the "ugly" HTML Form in step 8*).
 And `submit` the form using [**JQuery** "***AJAX***"](http://api.jquery.com/jquery.ajax/) to keep the person
 on your page/site (*avoid "ugly" response page*)
 
-### 10. Submit the Form using **JQuery** "***AJAX***"
+### 10. Submit the Form using **JavaScript** "***AJAX***"
 
 To *prevent* the page from changing to the `JSON` response/result
 we need to submit the form using ***AJAX***.
 
-Update your `index.html` to include the **JQuery** library and `jquery-ajax-form-handler.js` at the *end* of your file
+Update your `index.html` to include the following JavaScript file at the *end* of your file
 (*before the closing `</body>` tag)
 
 ```js
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script data-cfasync="false" type="text/javascript"
-src="https://cdn.rawgit.com/nelsonic/html-form-send-email-via-google-script-without-server/master/jquery-ajax-form-handler.js"></script>
+src="https://cdn.rawgit.com/dwyl/html-form-send-email-via-google-script-without-server/master/form-submission-handler.js"></script>
 ```
 
 This will now display a "Thank You" *message* when the form is submitted:
