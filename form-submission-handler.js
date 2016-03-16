@@ -6,8 +6,12 @@ function validEmail(email) { // see:
 // get all data in form and return object
 function getFormData() {
   var elements = document.getElementById("gform").elements; // all form elements
-  var fields = Object.keys(elements).filter(function(k){
-    return k.length > 1 && elements[k].name && elements[k].name.length > 0 ;
+  var fields = Object.keys(elements).map(function(k) {
+    if(elements[k].name !== undefined) {
+      return elements[k].name;
+    }
+  }).filter(function(item, pos, self) {
+    return self.indexOf(item) == pos && item;
   });
   var data = {};
   fields.forEach(function(k){
