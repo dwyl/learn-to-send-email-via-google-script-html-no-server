@@ -9,6 +9,9 @@ function getFormData() {
   var fields = Object.keys(elements).map(function(k) {
     if(elements[k].name !== undefined) {
       return elements[k].name;
+    // special case for Edge's html collection
+    }else if(elements[k].length > 0){
+      return elements[k].item(0).name;
     }
   }).filter(function(item, pos, self) {
     return self.indexOf(item) == pos && item;
@@ -18,6 +21,13 @@ function getFormData() {
     data[k] = elements[k].value;
     if(elements[k].type === "checkbox"){
       data[k] = elements[k].checked;
+    // special case for Edge's html collection
+    }else if(elements[k].length){
+      for(var i = 0; i < elements[k].length; i++){
+        if(elements[k].item(i).checked){
+          data[k] = elements[k].item(i).value;
+        }
+      }
     }
   });
   console.log(data);
