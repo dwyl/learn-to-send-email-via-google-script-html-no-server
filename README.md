@@ -4,7 +4,7 @@ A ***Step-by-Step Example*** of using an **HTML Form** to send a "Contact Us" Me
 
 ## Why?
 
-We needed a way of sending an email from from a "*static*" HTML page
+We needed a way of sending an email from a "*static*" HTML page
 when you don't (*want* to) *have* a *server*.
 
 ### *Key Advantages*
