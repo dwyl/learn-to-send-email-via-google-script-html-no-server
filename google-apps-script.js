@@ -26,17 +26,6 @@ function doPost(e) {
   }
 }
 
-// new property service GLOBAL
-var SCRIPT_PROP = PropertiesService.getScriptProperties();
-// see: https://developers.google.com/apps-script/reference/properties/
-
-/**
- * select the sheet
- */
-function setup() {
-    var doc = SpreadsheetApp.getActiveSpreadsheet();
-    SCRIPT_PROP.setProperty("key", doc.getId());
-}
 
 /**
  * record_data inserts the data received from the html form submission
@@ -45,7 +34,7 @@ function setup() {
 function record_data(e) {
   Logger.log(JSON.stringify(e)); // log the POST data in case we need to debug it
   try {
-    var doc = SpreadsheetApp.getActiveSpreadsheet();
+    var doc     = SpreadsheetApp.getActiveSpreadsheet();
     var sheet   = doc.getSheetByName('responses'); // select the responses sheet
     var headers = sheet.getRange(1, 1, 1, sheet.getLastColumn()).getValues()[0];
     var nextRow = sheet.getLastRow()+1; // get next row
