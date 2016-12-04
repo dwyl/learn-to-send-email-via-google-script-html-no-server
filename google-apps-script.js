@@ -10,9 +10,9 @@ function doPost(e) {
 
   try {
     Logger.log(e); // the Google Script version of console.log see: Class Logger
+    record_data(e);
     MailApp.sendEmail(TO_ADDRESS, "Contact Form Submitted",
                       JSON.stringify(e.parameters));
-    record_data(e);
     return ContentService    // return json success results
           .createTextOutput(
             JSON.stringify({"result":"success",
