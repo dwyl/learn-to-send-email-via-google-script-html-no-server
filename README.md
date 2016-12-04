@@ -181,23 +181,15 @@ first step, but we can do better.
 This will record the data received from the `POST` as a *row* in the spreadsheet.  
 See: [**google-apps-script.js**](https://github.com/nelsonic/html-form-send-email-via-google-script-without-server/blob/master/google-apps-script.js) for the full code you can *copy-paste*.
 
-
-### 14. Run the Setup Script
-
-The Setup Script gets the Name of your associated Google Spreadsheet
-so it knows where to put the data...
-
-![12 7-run-setup-function](https://cloud.githubusercontent.com/assets/194400/10540765/e5da721a-7402-11e5-822a-0589c713cb47.png)
-
-### 15. Save a New Version and Re-Publish it
+### 14. Save a New Version and Re-Publish it
 
 Follow Steps 4, 5 & 6 to save a new version and ***re-publish*** the script.
 
-### 16. Re-Test Submitting the Form
+### 15. Re-Test Submitting the Form
 
 ![submit the form](https://cloud.githubusercontent.com/assets/194400/10582654/cf3081e6-7680-11e5-9fd1-b989a8ba0b65.png)
 
-### 17 Confirm the Data was Inserted into the Spreadsheet
+### 16 Confirm the Data was Inserted into the Spreadsheet
 
 ![17-confirm-data-inserted](https://cloud.githubusercontent.com/assets/194400/10582676/eb8af5d8-7680-11e5-92bb-30dd08d2d7b3.png)
 
