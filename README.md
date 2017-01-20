@@ -168,28 +168,103 @@ Without spending *too much* time on this, we can make the form *look*
 
 ![contact form with pure css](https://github-cloud.s3.amazonaws.com/assets/194400/10566392/f38bc454-75dd-11e5-85dd-6819494a98f2.png)
 
+### 13. Make the email look good too!
+
+By default, the sent email just dumps a blob of JSON into the message body. This isn't very pretty and a bit confusing for a non-technical user. With a bit of an edit to the Google script we can improve this.
+
+The lines in the script that we need to concern ourselves with are: 
+
+```javascript
+MailApp.sendEmail(TO_ADDRESS, "Contact Form Submitted",
+                  JSON.stringify(e.parameters));
+```
+
+That is using Google's `MailApp.sendEmail()` method, which you can read more about: 
+https://developers.google.com/apps-script/reference/mail/mail-app
+
+That method will accept an object of config, rather than just the arguments as specified above. That gives you access to some extra options, in particular `htmlBody`. We can convert it like so: 
+
+```javascript
+MailApp.sendEmail({
+  to: TO_ADDRESS,
+  subject: "Contact form submitted",
+  htmlBody: // Put some HTML here
+});
+```
+
+While we're here, there's also a `replyTo` option which I thought would be good to utilise (just in case your form notification recipient tries to reply in their email client), since we can easily grab that from the `e.parameters` object. Lets put that in: 
+
+```javascript
+MailApp.sendEmail({
+  to: TO_ADDRESS,
+  subject: "Contact form submitted",
+  replyTo: "" + e.parameters.email,
+  htmlBody: // Put some HTML here
+});
+```
+
+(I had to concatenate the variable with a string to get it to work. I'm sure there's a better way to do that, but it worked for me) Also, it's hard-coded, so you will always need a field named `email` in the form.
+
+Lets format the `htmlBody` now.  
+Initially, I used the following code: 
+
+```javascript
+htmlBody: (
+  "<p><strong>Name:</strong> " + e.parameters.name + "</p>" +
+  "<p><strong>Email address:</strong> " + e.parameters.email + "</p>" +
+  "<p><strong>Message:</strong></p> <div>" + e.parameters.message + "</div>"
+)
+```
+
+Which, while it worked, I wasn't super happy with, since it meant you had to update things in multiple places if you added a new field to the form. What we really want to do is take the parameters object and loop over it, returning an HTML representation of it. Fortunately, we can do that! Here's my code: 
+
+```javascript
+var mailData = e.parameters // just so we don't have to write `e.parameters` everywhere
+
+function formatMailBody(obj) {
+  var result = "";
+  for (var p in obj) {
+    if (obj.hasOwnProperty(p)) {
+      result += "<h4 style='text-transform: capitalize; margin-bottom: 0'>" + p + "</h4><div>" + obj[p] + "</div>";
+      // the text-transform CSS is just there to make the heading in the email body look a bit nicer, since it's all lower case in the object
+    }
+  }
+  return result;
+}
+
+MailApp.sendEmail({
+  to: TO_ADDRESS,
+  subject: "Contact form submitted",
+  replyTo: "" + mailData.email, // we can update this too, now that we have the maildata variable.
+  htmlBody: formatMailBody(mailData)
+});
+```
+
+That should be quite straight forward, create a function where we loop over the key-value pairs, and put the key in an `<h4>` (no real reason, it was just around the right font size in my email client) and the value in a `<div>`. I went for a `<div>` because we don't know what the field wil be, single-line or multiline, so it should probably always sit under the heading. There's a tiny amount of CSS there to do some basic formatting to my taste. You can DWYL of course! ;-)  
+Then call the function for the `htmlBody`.
+
 
 # *Part Three - Store Submitted Contact Form Data in a Spreadsheet*
 
 Sending the form data directly to your email inbox is a *good*
 first step, but we can do better.
 
-### 13. Add the `record_data` Function to your Google Apps Script
+### 14. Add the `record_data` Function to your Google Apps Script
 
 ![record_data example](https://cloud.githubusercontent.com/assets/194400/10581613/8b4f9ad4-767b-11e5-90cc-962a9d6acc91.png)
 
 This will record the data received from the `POST` as a *row* in the spreadsheet.  
 See: [**google-apps-script.js**](https://github.com/nelsonic/html-form-send-email-via-google-script-without-server/blob/master/google-apps-script.js) for the full code you can *copy-paste*.
 
-### 14. Save a New Version and Re-Publish it
+### 15. Save a New Version and Re-Publish it
 
 Follow Steps 4, 5 & 6 to save a new version and ***re-publish*** the script.
 
-### 15. Re-Test Submitting the Form
+### 16. Re-Test Submitting the Form
 
 ![submit the form](https://cloud.githubusercontent.com/assets/194400/10582654/cf3081e6-7680-11e5-9fd1-b989a8ba0b65.png)
 
-### 16 Confirm the Data was Inserted into the Spreadsheet
+### 17 Confirm the Data was Inserted into the Spreadsheet
 
 ![17-confirm-data-inserted](https://cloud.githubusercontent.com/assets/194400/10582676/eb8af5d8-7680-11e5-92bb-30dd08d2d7b3.png)
 
