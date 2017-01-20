@@ -179,7 +179,7 @@ MailApp.sendEmail(TO_ADDRESS, "Contact Form Submitted",
                   JSON.stringify(e.parameters));
 ```
 
-That is using Google's `MailApp.sendEmail()` method, which you can read more about: 
+That is using Google's `MailApp.sendEmail()` method, which you can read more about:  
 https://developers.google.com/apps-script/reference/mail/mail-app
 
 That method will accept an object of config, rather than just the arguments as specified above. That gives you access to some extra options, in particular `htmlBody`. We can convert it like so: 
