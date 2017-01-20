@@ -11,8 +11,26 @@ function doPost(e) {
   try {
     Logger.log(e); // the Google Script version of console.log see: Class Logger
     record_data(e);
-    MailApp.sendEmail(TO_ADDRESS, "Contact Form Submitted",
-                      JSON.stringify(e.parameters));
+    
+    var mailData = e.parameters
+
+    function formatMailBody(obj) {
+      var result = "";
+      for (var p in obj) {
+        if (obj.hasOwnProperty(p)) {
+          result += "<h4 style='text-transform: capitalize; margin-bottom: 0'>" + p + "</h4><div>" + obj[p] + "</div>";
+        }
+      }
+      return result;
+    }
+
+    MailApp.sendEmail({
+      to: TO_ADDRESS,
+      subject: "Contact form submitted",
+      replyTo: "" + mailData.email,
+      htmlBody: formatMailBody(mailData)
+    });
+
     return ContentService    // return json success results
           .createTextOutput(
             JSON.stringify({"result":"success",
