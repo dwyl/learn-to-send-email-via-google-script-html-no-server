@@ -243,6 +243,8 @@ MailApp.sendEmail({
 That should be quite straight forward, create a function where we loop over the key-value pairs, and put the key in an `<h4>` (no real reason, it was just around the right font size in my email client) and the value in a `<div>`. I went for a `<div>` because we don't know what the field wil be, single-line or multiline, so it should probably always sit under the heading. There's a tiny amount of CSS there to do some basic formatting to my taste. You can DWYL of course! ;-)  
 Then call the function for the `htmlBody`.
 
+You should get something that looks roughly like: 
+![Nicely formatted email](https://cloud.githubusercontent.com/assets/5610747/22168070/335ad734-df62-11e6-9523-6e193e94151f.png)
 
 # *Part Three - Store Submitted Contact Form Data in a Spreadsheet*
 
