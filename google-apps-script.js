@@ -27,7 +27,7 @@ function doPost(e) {
     MailApp.sendEmail({
       to: TO_ADDRESS,
       subject: "Contact form submitted",
-      replyTo: "" + mailData.email,
+      // replyTo: String(mailData.email), // This is optional and reliant on your form actually collecting a field named `email`
       htmlBody: formatMailBody(mailData)
     });
 

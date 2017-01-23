@@ -198,12 +198,12 @@ While we're here, there's also a `replyTo` option which I thought would be good 
 MailApp.sendEmail({
   to: TO_ADDRESS,
   subject: "Contact form submitted",
-  replyTo: "" + e.parameters.email,
+  replyTo: String(e.parameters.email),
   htmlBody: // Put some HTML here
 });
 ```
 
-(I had to concatenate the variable with a string to get it to work. I'm sure there's a better way to do that, but it worked for me) Also, it's hard-coded, so you will always need a field named `email` in the form.
+It just needs to be made into a string so the email send method works properly. Also, it's hard-coded, so you will always need a field named `email` in the form. This field is commented out by default in the example script in this repo because it may not be a requirement for everyone.
 
 Lets format the `htmlBody` now.  
 Initially, I used the following code: 
@@ -217,6 +217,8 @@ htmlBody: (
 ```
 
 Which, while it worked, I wasn't super happy with, since it meant you had to update things in multiple places if you added a new field to the form. What we really want to do is take the parameters object and loop over it, returning an HTML representation of it. Fortunately, we can do that! Here's my code: 
+
+> Bear in mind that this is a work in progress and does potentially open you up to getting more than you bargained for in the email. Because the email content is now looping over all the data sent in the form, if a robot or malicious user decides to `POST` more than you've asked for, you'll likely get it in your inbox. Use with caution for now. We're investigating improvements.
 
 ```javascript
 var mailData = e.parameters // just so we don't have to write `e.parameters` everywhere
@@ -235,12 +237,12 @@ function formatMailBody(obj) {
 MailApp.sendEmail({
   to: TO_ADDRESS,
   subject: "Contact form submitted",
-  replyTo: "" + mailData.email, // we can update this too, now that we have the maildata variable.
+  replyTo: String(mailData.email), // we can update this too, now that we have the maildata variable.
   htmlBody: formatMailBody(mailData)
 });
 ```
 
-That should be quite straight forward, create a function where we loop over the key-value pairs, and put the key in an `<h4>` (no real reason, it was just around the right font size in my email client) and the value in a `<div>`. I went for a `<div>` because we don't know what the field wil be, single-line or multiline, so it should probably always sit under the heading. There's a tiny amount of CSS there to do some basic formatting to my taste. You can DWYL of course! ;-)  
+That should be quite straight forward, create a function where we loop over the key-value pairs, and put the key in an `<h4>` (no real reason, it was just around the right font size in my email client) and the value in a `<div>`. I went for a `<div>` because we don't know what the field will be, single-line or multiline, so it should probably always sit under the heading. There's a tiny amount of CSS there to do some basic formatting to my taste. You can DWYL of course! ;-)  
 Then call the function for the `htmlBody`.
 
 You should get something that looks roughly like: 
