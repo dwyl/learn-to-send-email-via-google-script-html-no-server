@@ -170,83 +170,37 @@ Without spending *too much* time on this, we can make the form *look*
 
 ### 13. Make the email look good too!
 
-By default, the sent email just dumps a blob of JSON into the message body. This isn't very pretty and a bit confusing for a non-technical user. With a bit of an edit to the Google script we can improve this.
+By default, the sent email's body contains the key-value pairs from the form, with the key as an `<h4>` and the value as a `<div>`. This is a fairly basic, and foolproof view for the data.
 
-The lines in the script that we need to concern ourselves with are: 
-
-```javascript
-MailApp.sendEmail(TO_ADDRESS, "Contact Form Submitted",
-                  JSON.stringify(e.parameters));
-```
-
-That is using Google's `MailApp.sendEmail()` method, which you can read more about:  
-https://developers.google.com/apps-script/reference/mail/mail-app
-
-That method will accept an object of config, rather than just the arguments as specified above. That gives you access to some extra options, in particular `htmlBody`. We can convert it like so: 
-
-```javascript
-MailApp.sendEmail({
-  to: TO_ADDRESS,
-  subject: "Contact form submitted",
-  htmlBody: // Put some HTML here
-});
-```
-
-While we're here, there's also a `replyTo` option which I thought would be good to utilise (just in case your form notification recipient tries to reply in their email client), since we can easily grab that from the `e.parameters` object. Lets put that in: 
-
-```javascript
-MailApp.sendEmail({
-  to: TO_ADDRESS,
-  subject: "Contact form submitted",
-  replyTo: String(e.parameters.email),
-  htmlBody: // Put some HTML here
-});
-```
-
-It just needs to be made into a string so the email send method works properly. Also, it's hard-coded, so you will always need a field named `email` in the form. This field is commented out by default in the example script in this repo because it may not be a requirement for everyone.
-
-Lets format the `htmlBody` now.  
-Initially, I used the following code: 
-
-```javascript
-htmlBody: (
-  "<p><strong>Name:</strong> " + e.parameters.name + "</p>" +
-  "<p><strong>Email address:</strong> " + e.parameters.email + "</p>" +
-  "<p><strong>Message:</strong></p> <div>" + e.parameters.message + "</div>"
-)
-```
-
-Which, while it worked, I wasn't super happy with, since it meant you had to update things in multiple places if you added a new field to the form. What we really want to do is take the parameters object and loop over it, returning an HTML representation of it. Fortunately, we can do that! Here's my code: 
+You should get something that looks roughly like: 
+![Nicely formatted email](https://cloud.githubusercontent.com/assets/5610747/22168070/335ad734-df62-11e6-9523-6e193e94151f.png)
 
 > Bear in mind that this is a work in progress and does potentially open you up to getting more than you bargained for in the email. Because the email content is now looping over all the data sent in the form, if a robot or malicious user decides to `POST` more than you've asked for, you'll likely get it in your inbox. Use with caution for now. We're investigating improvements.
 
+You can modify this though, via the script editor. The line: 
+
 ```javascript
-var mailData = e.parameters // just so we don't have to write `e.parameters` everywhere
+result += "<h4 style='text-transform: capitalize; margin-bottom: 0'>" + key + "</h4><div>" + obj[key] + "</div>";
+```
 
-function formatMailBody(obj) {
-  var result = "";
-  for (var p in obj) {
-    if (obj.hasOwnProperty(p)) {
-      result += "<h4 style='text-transform: capitalize; margin-bottom: 0'>" + p + "</h4><div>" + obj[p] + "</div>";
-      // the text-transform CSS is just there to make the heading in the email body look a bit nicer, since it's all lower case in the object
-    }
-  }
-  return result;
-}
+has all you need. You can adjust the markup to suit you. We chose an `<h4>` because it was around the best size for the email, and added the small amount of CSS to it to fix the capitalisation (the keys all lower case in the JS object) and a bit of default spacing. While inline styles like this are generally bad practice on normal web pages, for email HTML they're about the only reliable way to do CSS!  
+We went with a `<div>` for the value part, because it could be anything - single-line, multiline (a `<p>` for example wouldn't cut it).
 
+While we're here, there's also a `replyTo` option for the `sendEmail()` method which is commented out by default: 
+
+```javascript
 MailApp.sendEmail({
   to: TO_ADDRESS,
   subject: "Contact form submitted",
-  replyTo: String(mailData.email), // we can update this too, now that we have the maildata variable.
+  // replyTo: String(mailData.email), // This is optional and reliant on your form actually collecting a field named `email`
   htmlBody: formatMailBody(mailData)
 });
 ```
 
-That should be quite straight forward, create a function where we loop over the key-value pairs, and put the key in an `<h4>` (no real reason, it was just around the right font size in my email client) and the value in a `<div>`. I went for a `<div>` because we don't know what the field will be, single-line or multiline, so it should probably always sit under the heading. There's a tiny amount of CSS there to do some basic formatting to my taste. You can DWYL of course! ;-)  
-Then call the function for the `htmlBody`.
+You can uncomment that if you want to add a reply-to field to your email. The example in the script will set the reply-to as the email submitted in the form.
 
-You should get something that looks roughly like: 
-![Nicely formatted email](https://cloud.githubusercontent.com/assets/5610747/22168070/335ad734-df62-11e6-9523-6e193e94151f.png)
+Google's documentation provides more information about MailApp.sendEmail (for example `cc`/`bcc` etc.) if you're interested: 
+https://developers.google.com/apps-script/reference/mail/mail-app 
 
 # *Part Three - Store Submitted Contact Form Data in a Spreadsheet*
 
