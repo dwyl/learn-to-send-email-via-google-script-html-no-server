@@ -183,7 +183,7 @@ You can modify this though, via the script editor. The line:
 result += "<h4 style='text-transform: capitalize; margin-bottom: 0'>" + key + "</h4><div>" + obj[key] + "</div>";
 ```
 
-has all you need. You can adjust the markup to suit you. We chose an `<h4>` because it was around the best size for the email, and added the small amount of CSS to it to fix the capitalisation (the keys all lower case in the JS object) and a bit of default spacing. While inline styles like this are generally bad practice on normal web pages, for email HTML they're about the only reliable way to do CSS!  
+has all you need. You can adjust the markup to suit you. We chose an `<h4>` because it was the best size for the email, and added the small amount of CSS to it to fix the capitalisation (the keys are all lower case in the JS object) and a bit of default spacing. While inline styles like this are generally bad practice on normal web pages, for email HTML they're about the only reliable way to do CSS!  
 We went with a `<div>` for the value part, because it could be anything - single-line, multiline (a `<p>` for example wouldn't cut it).
 
 While we're here, there's also a `replyTo` option for the `sendEmail()` method which is commented out by default: 
