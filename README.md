@@ -168,28 +168,61 @@ Without spending *too much* time on this, we can make the form *look*
 
 ![contact form with pure css](https://github-cloud.s3.amazonaws.com/assets/194400/10566392/f38bc454-75dd-11e5-85dd-6819494a98f2.png)
 
+### 13. Make the email look good too!
+
+By default, the sent email's body contains the key-value pairs from the form, with the key as an `<h4>` and the value as a `<div>`. This is a fairly basic, and foolproof view for the data.
+
+You should get something that looks roughly like: 
+![Nicely formatted email](https://cloud.githubusercontent.com/assets/5610747/22168070/335ad734-df62-11e6-9523-6e193e94151f.png)
+
+> Bear in mind that this is a work in progress and does potentially open you up to getting more than you bargained for in the email. Because the email content is now looping over all the data sent in the form, if a robot or malicious user decides to `POST` more than you've asked for, you'll likely get it in your inbox. Use with caution for now. We're investigating improvements.
+
+You can modify this though, via the script editor. The line: 
+
+```javascript
+result += "<h4 style='text-transform: capitalize; margin-bottom: 0'>" + key + "</h4><div>" + obj[key] + "</div>";
+```
+
+has all you need. You can adjust the markup to suit you. We chose an `<h4>` because it was the best size for the email, and added the small amount of CSS to it to fix the capitalisation (the keys are all lower case in the JS object) and a bit of default spacing. While inline styles like this are generally bad practice on normal web pages, for email HTML they're about the only reliable way to do CSS!  
+We went with a `<div>` for the value part, because it could be anything - single-line, multiline (a `<p>` for example wouldn't cut it).
+
+While we're here, there's also a `replyTo` option for the `sendEmail()` method which is commented out by default: 
+
+```javascript
+MailApp.sendEmail({
+  to: TO_ADDRESS,
+  subject: "Contact form submitted",
+  // replyTo: String(mailData.email), // This is optional and reliant on your form actually collecting a field named `email`
+  htmlBody: formatMailBody(mailData)
+});
+```
+
+You can uncomment that if you want to add a reply-to field to your email. The example in the script will set the reply-to as the email submitted in the form.
+
+Google's documentation provides more information about MailApp.sendEmail (for example `cc`/`bcc` etc.) if you're interested: 
+https://developers.google.com/apps-script/reference/mail/mail-app 
 
 # *Part Three - Store Submitted Contact Form Data in a Spreadsheet*
 
 Sending the form data directly to your email inbox is a *good*
 first step, but we can do better.
 
-### 13. Add the `record_data` Function to your Google Apps Script
+### 14. Add the `record_data` Function to your Google Apps Script
 
 ![record_data example](https://cloud.githubusercontent.com/assets/194400/10581613/8b4f9ad4-767b-11e5-90cc-962a9d6acc91.png)
 
 This will record the data received from the `POST` as a *row* in the spreadsheet.  
 See: [**google-apps-script.js**](https://github.com/nelsonic/html-form-send-email-via-google-script-without-server/blob/master/google-apps-script.js) for the full code you can *copy-paste*.
 
-### 14. Save a New Version and Re-Publish it
+### 15. Save a New Version and Re-Publish it
 
 Follow Steps 4, 5 & 6 to save a new version and ***re-publish*** the script.
 
-### 15. Re-Test Submitting the Form
+### 16. Re-Test Submitting the Form
 
 ![submit the form](https://cloud.githubusercontent.com/assets/194400/10582654/cf3081e6-7680-11e5-9fd1-b989a8ba0b65.png)
 
-### 16 Confirm the Data was Inserted into the Spreadsheet
+### 17 Confirm the Data was Inserted into the Spreadsheet
 
 ![17-confirm-data-inserted](https://cloud.githubusercontent.com/assets/194400/10582676/eb8af5d8-7680-11e5-92bb-30dd08d2d7b3.png)
 

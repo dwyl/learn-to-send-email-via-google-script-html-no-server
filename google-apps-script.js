@@ -6,13 +6,31 @@
 
 var TO_ADDRESS = "contact.nelsonic+form.submit@gmail.com"; // change this ...
 
+function formatMailBody(obj) { // function to spit out all the keys/values from the form in HTML
+  var result = "";
+  for (var key in obj) { // loop over the object passed to the function
+    result += "<h4 style='text-transform: capitalize; margin-bottom: 0'>" + key + "</h4><div>" + obj[key] + "</div>";
+    // for every key, concatenate an `<h4 />`/`<div />` pairing of the key name and its value, 
+    // and append it to the `result` string created at the start.
+  }
+  return result; // once the looping is done, `result` will be one long string to put in the email body
+}
+
 function doPost(e) {
 
   try {
     Logger.log(e); // the Google Script version of console.log see: Class Logger
     record_data(e);
-    MailApp.sendEmail(TO_ADDRESS, "Contact Form Submitted",
-                      JSON.stringify(e.parameters));
+
+    var mailData = e.parameters; // just create a slightly nicer variable name for the data
+    
+    MailApp.sendEmail({
+      to: TO_ADDRESS,
+      subject: "Contact form submitted",
+      // replyTo: String(mailData.email), // This is optional and reliant on your form actually collecting a field named `email`
+      htmlBody: formatMailBody(mailData)
+    });
+
     return ContentService    // return json success results
           .createTextOutput(
             JSON.stringify({"result":"success",
