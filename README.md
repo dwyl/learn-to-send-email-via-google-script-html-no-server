@@ -245,9 +245,9 @@ but once that's done your `live-server` will start up.
 
 That starts a node.js HTTP server on port 8000 
 and opens the form you just created in your default browser.
-If you wish to edit the styles in **style.css** or the
+If you wish to update the form styles in **style.css** or the
 client-side Javascript in **form-submission-handler.js**,
-please be sure to update `index.html` to load those resources
+please be sure to edit **index.html** to load those resources
 locally rather than via GitHub.
 
 > **Note**: This is a _light_ taste of Node.js for absolute beginners.
