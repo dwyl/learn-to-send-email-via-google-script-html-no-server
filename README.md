@@ -202,6 +202,34 @@ Follow Steps 4, 5 & 6 to save a new version and ***re-publish*** the script.
 ![17-confirm-data-inserted](https://cloud.githubusercontent.com/assets/194400/10582676/eb8af5d8-7680-11e5-92bb-30dd08d2d7b3.png)
 
 
+### _Live_ Server (_on your `localhost`_)
+
+Because we are loading external **.js** files our web browser will not _allow_
+us to simply open the **index.html** from the directory.
+
+Open your terminal and run this command
+to _**install** the **node modules** and **start** the **live server**_:
+
+```sh
+npm install live-server --save-dev && node_modules/.bin/live-server --port=8000
+```
+
+It will take a a minute to install,
+but once that's done your `live-server` will start up.
+
+That starts a node.js HTTP server on port 8000 
+and opens the form you just created in your default brower.
+
+> **Note**: this is _light_ taste of Node.js for absolute beginners.
+you do **not** need node.js to "deploy" this form, 
+you can run it on an **_any_ web server** that serves HTML/CSS/JavaScript
+if you have never used Node.js before, see: http://nodeguide.com/beginner.html
+but for the purposes of this exercise (_submitting a form **without** a server_)
+you _don't **need**_ node.js or `live-server` 
+it's just a _nice_ thing to have when you are creating 
+your form because it automatically re-loads the page when you make changes in your text editor!
+
+
 # *Want more*?
 
 If you want us to take this tutorial further, [***please let us know***!](https://github.com/nelsonic/html-form-send-email-via-google-script-without-server/issues)
@@ -226,6 +254,8 @@ e.g:
 ![new-field-contains-data](https://cloud.githubusercontent.com/assets/194400/11547132/9f162f6a-9949-11e5-89ac-aeb91e025844.png)
 
 Let us know if you have any questions!
+
+
 
 
 ## Background Reading
