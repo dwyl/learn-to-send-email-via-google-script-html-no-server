@@ -204,8 +204,9 @@ Follow Steps 4, 5 & 6 to save a new version and ***re-publish*** the script.
 
 ### _Live_ Server (_on your `localhost`_)
 
-Because we are loading external **.js** files our web browser will not _allow_
-us to simply open the **index.html** from the directory.
+Because we are loading external **.js** files, our web browser
+will not _allow_ us to simply open the **index.html** from a
+local directory for testing out the form.
 
 Open your terminal and run this command
 to _**install** the **node modules** and **start** the **live server**_:
@@ -214,16 +215,20 @@ to _**install** the **node modules** and **start** the **live server**_:
 npm install live-server --save-dev && node_modules/.bin/live-server --port=8000
 ```
 
-It will take a a minute to install,
+It will take a minute to install,
 but once that's done your `live-server` will start up.
 
 That starts a node.js HTTP server on port 8000 
-and opens the form you just created in your default brower.
+and opens the form you just created in your default browser.
+If you wish to edit the styles in **style.css** or the
+client-side Javascript in **form-submission-handler.js**,
+please be sure to update `index.html` to load those resources
+locally rather than via GitHub.
 
-> **Note**: this is _light_ taste of Node.js for absolute beginners.
-you do **not** need node.js to "deploy" this form, 
-you can run it on an **_any_ web server** that serves HTML/CSS/JavaScript
-if you have never used Node.js before, see: http://nodeguide.com/beginner.html
+> **Note**: This is a _light_ taste of Node.js for absolute beginners.
+You do **not** need node.js to "deploy" this form, 
+you can run it on an **_any_ web server** that serves HTML/CSS/JavaScript.
+If you have never used Node.js before, see: http://nodeguide.com/beginner.html
 but for the purposes of this exercise (_submitting a form **without** a server_)
 you _don't **need**_ node.js or `live-server` 
 it's just a _nice_ thing to have when you are creating 
