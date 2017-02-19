@@ -32,7 +32,7 @@ in your email inbox (*messy ... yuck*!)
 
 ### 1. Make a Copy of the Sample Spreadsheet
 
-> Sample: https://docs.google.com/spreadsheets/d/1UZdTuBtfmr-p0yQL6pwL5IrIWLsNLRX05Q-qP6nFu8U/
+> Sample: https://docs.google.com/spreadsheets/d/1Bn4m6iA_Xch1zzhNvo_6CoQWqOAgwwkOWJKC-phHx2Q/
 
 In Google Sheets, Click "**File**" > "**Make a copy**..."
 
