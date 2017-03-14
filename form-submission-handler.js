@@ -19,13 +19,16 @@ function getFormData() {
   var data = {};
   fields.forEach(function(k){
     data[k] = elements[k].value;
+    var str = "";
     if(elements[k].type === "checkbox"){
-      data[k] = elements[k].checked;
+      str = str + elements[k].checked + ", ";
+      data[k] = str.slice(0, -2);
     // special case for Edge's html collection
     }else if(elements[k].length){
       for(var i = 0; i < elements[k].length; i++){
         if(elements[k].item(i).checked){
-          data[k] = elements[k].item(i).value;
+          str = str + elements[k].item(i).value + ", ";
+          data[k] = str.slice(0, -2);
         }
       }
     }
