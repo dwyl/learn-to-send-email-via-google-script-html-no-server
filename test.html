@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>test: html-form-send-email-via-google-script-without-server</title>
+
+  <meta name="description" content="Test all HTML form and input elements for html-form-send-email-via-google-script-without-server." />
+  <meta name="author" content="dwyl">
+
+  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.rawgit.com/dwyl/html-form-send-email-via-google-script-without-server/master/style.css">
+</head>
+
+<body>
+
+  <h1>Test All Form and Input Elements</h1>
+  <p>
+    Here is a form that is meant to include all form and input elements possible
+    on a page. This way we can test out if the form functions as expected. We
+    will populate with default values if possible or using Javascript to
+    simplify testing.
+  </p>
+
+
+  <form id="gform" method="POST" class="pure-form pure-form-stacked" action="https://script.google.com/macros/s/AKfycbyF7zsZXQUZLKBOaVKfsrzyr30FPHprgqd8flvC5WeuYQJnc5E/exec">
+
+    <!--submit/button-->
+    <button class="button-success pure-button button-xlarge">
+      <i class="fa fa-paper-plane"></i>&nbsp;Send
+    </button>
+
+    <!--text-field-->
+    <fieldset class="pure-group">
+      <label for="text">Name: </label>
+      <input id="text" name="text" value="What your Mom calls you" />
+    </fieldset>
+
+    <!--text-area-->
+    <fieldset class="pure-group">
+      <label for="text-area">Message: </label>
+      <textarea id="text-area" name="text-area" rows="10">Tell us what's on your mind...</textarea>
+    </fieldset>
+
+    <!--email-->
+    <fieldset class="pure-group">
+      <label for="email"><em>Your</em> Email Address:</label>
+      <input id="email" name="email" type="email" required value="your.name@email.com" />
+      <span id="email-invalid" style="visibility:hidden">
+        Must be a valid email address</span>
+    </fieldset>
+
+    <!--color-->
+    <fieldset class="pure-group">
+      <label for="color">Favourite Color: </label>
+      <input type="color" name="color" />
+    </fieldset>
+
+    <!--radio button-->
+    <fieldset class="pure-group">
+      <label for="radio">Choose a Programming Language: </label>
+      <input type="radio" name="radio" value="js" checked />Javascript
+    </fieldset>
+
+    <!--radio group-->
+    <fieldset class="pure-group">
+      <label for="radio-group">OK, Now Really Choose:</label>
+      <input type="radio" name="radio-group" value="js" />Javascript
+      <input type="radio" name="radio-group" value="java" />Java
+      <input type="radio" name="radio-group" value="c++" />C++
+      <input type="radio" name="radio-group" value="python" checked />Python
+      <input type="radio" name="radio-group" value="other" />Other
+    </fieldset>
+
+    <!--checkbox-->
+    <fieldset class="pure-group">
+      <label for="checkbox">What are you Most Comfortable With?</label>
+      <input type="checkbox" name="checkbox" value="js" checked />Javascript
+    </fieldset>
+
+    <!--checkboxes-->
+    <fieldset class="pure-group">
+      <label for="checkboxes">What are you Most Comfortable With?</label>
+      <input type="checkbox" name="checkboxes" value="js" checked />Javascript
+      <input type="checkbox" name="checkboxes" value="java" />Java
+      <input type="checkbox" name="checkboxes" value="c++" />C++
+      <input type="checkbox" name="checkboxes" value="python" checked />Python
+      <input type="checkbox" name="checkboxes" value="other" checked />Other
+    </fieldset>
+
+    <!--menu-->
+    <fieldset class="pure-group">
+      <label for="menu">Try Again:</label>
+      <select name="menu">
+        <option selected>Javascript</option>
+        <option>Java</option>
+        <option>C++</option>
+        <option>Python</option>
+        <option>Other</option>
+      </select>
+    </fieldset>
+
+    <!--list-->
+    <fieldset class="pure-group">
+      <label for="list">And Again:</label>
+      <select name="list" size="5">
+        <option>Javascript</option>
+        <option>Java</option>
+        <option>C++</option>
+        <option selected>Python</option>
+        <option>Other</option>
+      </select>
+    </fieldset>
+
+    <!--datalist-->
+    <fieldset class="pure-group">
+      <label for="datalist">And Yet Again!:</label>
+      <input list="progLang" name="datalist" value="C++" />
+      <datalist id="progLang">
+        <option value="Javascript">
+        <option value="Java">
+        <option value="C++">
+        <option value="Python">
+        <option value="Other">
+     </datalist> 
+    </fieldset>
+
+    <!--date-->
+    <fieldset class="pure-group">
+      <label for="date"></label>
+      <input type="date" name="date" value="2017-03-16" />
+    </fieldset>
+
+    <!--datetime-local-->
+    <fieldset class="pure-group">
+      <label for="datetime-local"></label>
+      <input type="datetime-local" name="datetime-local" value="2017-03-16T23:59:59" />
+    </fieldset>
+
+    <!--month-->
+    <fieldset class="pure-group">
+      <label for="month"></label>
+      <input type="month" name="month" value="2017-10" />
+    </fieldset>
+
+    <!--number-->
+    <fieldset class="pure-group">
+      <label for="number"></label>
+      <input type="number" name="number" value="3" />
+    </fieldset>
+
+    <!--range-->
+    <fieldset class="pure-group">
+      <label for="range"></label>
+      <input type="range" name="range" value="76" min="0" max="100" />
+    </fieldset>
+
+    <!--search-->
+    <fieldset class="pure-group">
+      <label for="search"></label>
+      <input type="search" name="search" value="Bing || Google || DuckDuckGo" />
+    </fieldset>
+
+    <!--tel-->
+    <fieldset class="pure-group">
+      <label for="tel"></label>
+      <input type="tel" name="tel" value="012-345-6789" />
+    </fieldset>
+
+    <!--time-->
+    <fieldset class="pure-group">
+      <label for="time"></label>
+      <input type="time" name="time" value="10:51:36" />
+    </fieldset>
+
+    <!--url-->
+    <fieldset class="pure-group">
+      <label for="url"></label>
+      <input type="url" name="url" value="https://github.com/dwyl/html-form-send-email-via-google-script-without-server" />
+    </fieldset>
+
+    <!--week-->
+    <fieldset class="pure-group">
+      <label for="week"></label>
+      <input type="week" name="week" value="2017-W51" />
+    </fieldset>
+
+    <!--hidden-->
+    <input type="hidden" name="hidden" value="this is hidden" />
+
+  </form>
+
+  <div style="display:none;" id="thankyou_message">
+    <h2><em>Thanks</em> for filling out our test form!
+      We will get back to you soon!</h2>
+  </div>
+
+  <script data-cfasync="false" type="text/javascript" src="form-submission-handler.js"></script>
+
+</body>
+</html>
