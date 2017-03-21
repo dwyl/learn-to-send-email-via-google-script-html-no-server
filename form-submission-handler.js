@@ -19,15 +19,20 @@ function getFormData() {
   var data = {};
   fields.forEach(function(k){
     data[k] = elements[k].value;
-    var str = "";
-    if(elements[k].type === "checkbox"){
-      str = str + elements[k].checked + ", ";
-      data[k] = str.slice(0, -2);
-    // special case for Edge's html collection
+    var str = ""; // declare empty string outside of loop to allow
+                  // it to be appended to for each item in the loop
+    if(elements[k].type === "checkbox"){ // special case for Edge's html collection
+      str = str + elements[k].checked + ", "; // take the string and append 
+                                              // the current checked value to 
+                                              // the end of it, along with 
+                                              // a comma and a space
+      data[k] = str.slice(0, -2); // remove the last comma and space 
+                                  // from the  string to make the output 
+                                  // prettier in the spreadsheet
     }else if(elements[k].length){
       for(var i = 0; i < elements[k].length; i++){
         if(elements[k].item(i).checked){
-          str = str + elements[k].item(i).value + ", ";
+          str = str + elements[k].item(i).value + ", "; // same as above
           data[k] = str.slice(0, -2);
         }
       }
