@@ -54,7 +54,7 @@ function record_data(e) {
   try {
     var doc     = SpreadsheetApp.getActiveSpreadsheet();
     var whichSheet = 'responses'; // Set a default sheet name
-    if (e.parameter.sheetName !== undefined) {
+    if (e.parameter.googleSheetName !== undefined) {
       whichSheet = e.parameter.sheetName; // If there is a defined sheet from the form, then select that one
     }
     var sheet = doc.getSheetByName(whichSheet); // select the responses sheet
