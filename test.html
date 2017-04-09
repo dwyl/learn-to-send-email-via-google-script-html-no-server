@@ -56,45 +56,45 @@
     <!--color-->
     <fieldset class="pure-group">
       <label for="color">Favourite Color: </label>
-      <input type="color" name="color" />
+      <input id="color" type="color" name="color" />
     </fieldset>
 
     <!--radio button-->
     <fieldset class="pure-group">
       <label for="radio">Choose a Programming Language: </label>
-      <input type="radio" name="radio" value="js" checked />Javascript
+      <input id="radio" type="radio" name="radio" value="js" checked />Javascript
     </fieldset>
 
     <!--radio group-->
     <fieldset class="pure-group">
-      <label for="radio-group">OK, Now Really Choose:</label>
-      <input type="radio" name="radio-group" value="js" />Javascript
-      <input type="radio" name="radio-group" value="java" />Java
-      <input type="radio" name="radio-group" value="c++" />C++
-      <input type="radio" name="radio-group" value="python" checked />Python
-      <input type="radio" name="radio-group" value="other" />Other
+      <legend>OK, Now Really Choose:</legend>
+      <input id="radio-group--javascript" type="radio" name="radio-group" value="js" /> <label for="radio-group--javascript">Javascript</label>
+      <input id="radio-group--java" type="radio" name="radio-group" value="java" /> <label for="radio-group--java">Java</label>
+      <input id="radio-group--cplusplus" type="radio" name="radio-group" value="c++" /> <label for="radio-group--cplusplus">C++</label>
+      <input id="radio-group--python" type="radio" name="radio-group" value="python" checked /> <label for="radio-group--python">Python</label>
+      <input id="radio-group--other" type="radio" name="radio-group" value="other" /> <label for="radio-group--other">Other</label>
     </fieldset>
 
     <!--checkbox-->
     <fieldset class="pure-group">
       <label for="checkbox">What are you Most Comfortable With?</label>
-      <input type="checkbox" name="checkbox" value="js" checked />Javascript
+      <input id="checkbox" type="checkbox" name="checkbox" value="js" checked />Javascript
     </fieldset>
 
     <!--checkboxes-->
     <fieldset class="pure-group">
-      <label for="checkboxes">What are you Most Comfortable With?</label>
-      <input type="checkbox" name="checkboxes" value="js" checked />Javascript
-      <input type="checkbox" name="checkboxes" value="java" />Java
-      <input type="checkbox" name="checkboxes" value="c++" />C++
-      <input type="checkbox" name="checkboxes" value="python" checked />Python
-      <input type="checkbox" name="checkboxes" value="other" checked />Other
+      <legend>What are you Most Comfortable With?</legend>
+      <input id="checkboxes--javascript" type="checkbox" name="checkboxes" value="js" checked /> <label for="checkboxes--javascript">Javascript</label>
+      <input id="checkboxes--java" type="checkbox" name="checkboxes" value="java" /> <label for="checkboxes--java">Java</label>
+      <input id="checkboxes--cplusplus" type="checkbox" name="checkboxes" value="c++" /> <label for="checkboxes--cplusplus">C++</label>
+      <input id="checkboxes--python" type="checkbox" name="checkboxes" value="python" checked /> <label for="checkboxes--python">Python</label>
+      <input id="checkboxes--other" type="checkbox" name="checkboxes" value="other" checked /> <label for="checkboxes--other">Other</label>
     </fieldset>
 
     <!--menu-->
     <fieldset class="pure-group">
       <label for="menu">Try Again:</label>
-      <select name="menu">
+      <select id="menu" name="menu">
         <option selected>Javascript</option>
         <option>Java</option>
         <option>C++</option>
@@ -106,7 +106,7 @@
     <!--list-->
     <fieldset class="pure-group">
       <label for="list">And Again:</label>
-      <select name="list" size="5">
+      <select id="list" name="list" size="5">
         <option>Javascript</option>
         <option>Java</option>
         <option>C++</option>
@@ -118,7 +118,7 @@
     <!--datalist-->
     <fieldset class="pure-group">
       <label for="datalist">And Yet Again!:</label>
-      <input list="progLang" name="datalist" value="C++" />
+      <input id="datalist" list="progLang" name="datalist" value="C++" />
       <datalist id="progLang">
         <option value="Javascript">
         <option value="Java">
@@ -130,62 +130,62 @@
 
     <!--date-->
     <fieldset class="pure-group">
-      <label for="date"></label>
-      <input type="date" name="date" value="2017-03-16" />
+      <label for="date">Date</label>
+      <input id="date" type="date" name="date" value="2017-03-16" />
     </fieldset>
 
     <!--datetime-local-->
     <fieldset class="pure-group">
-      <label for="datetime-local"></label>
-      <input type="datetime-local" name="datetime-local" value="2017-03-16T23:59:59" />
+      <label for="datetime-local">Datetime local</label>
+      <input id="datetime-local" type="datetime-local" name="datetime-local" value="2017-03-16T23:59:59" />
     </fieldset>
 
     <!--month-->
     <fieldset class="pure-group">
-      <label for="month"></label>
-      <input type="month" name="month" value="2017-10" />
+      <label for="month">Month</label>
+      <input id="month" type="month" name="month" value="2017-10" />
     </fieldset>
 
     <!--number-->
     <fieldset class="pure-group">
-      <label for="number"></label>
-      <input type="number" name="number" value="3" />
+      <label for="number">Number</label>
+      <input id="number" type="number" name="number" value="3" />
     </fieldset>
 
     <!--range-->
     <fieldset class="pure-group">
-      <label for="range"></label>
-      <input type="range" name="range" value="76" min="0" max="100" />
+      <label for="range">Range</label>
+      <input id="range" type="range" name="range" value="76" min="0" max="100" />
     </fieldset>
 
     <!--search-->
     <fieldset class="pure-group">
-      <label for="search"></label>
-      <input type="search" name="search" value="Bing || Google || DuckDuckGo" />
+      <label for="search">Search</label>
+      <input id="search" type="search" name="search" value="Bing || Google || DuckDuckGo" />
     </fieldset>
 
     <!--tel-->
     <fieldset class="pure-group">
-      <label for="tel"></label>
-      <input type="tel" name="tel" value="012-345-6789" />
+      <label for="tel">Tel</label>
+      <input id="tel" type="tel" name="tel" value="012-345-6789" />
     </fieldset>
 
     <!--time-->
     <fieldset class="pure-group">
-      <label for="time"></label>
-      <input type="time" name="time" value="10:51:36" />
+      <label for="time">Time</label>
+      <input id="time" type="time" name="time" value="10:51:36" />
     </fieldset>
 
     <!--url-->
     <fieldset class="pure-group">
-      <label for="url"></label>
-      <input type="url" name="url" value="https://github.com/dwyl/html-form-send-email-via-google-script-without-server" />
+      <label for="url">URL</label>
+      <input id="url" type="url" name="url" value="https://github.com/dwyl/html-form-send-email-via-google-script-without-server" />
     </fieldset>
 
     <!--week-->
     <fieldset class="pure-group">
-      <label for="week"></label>
-      <input type="week" name="week" value="2017-W51" />
+      <label for="week">Week</label>
+      <input id="week" type="week" name="week" value="2017-W51" />
     </fieldset>
 
     <!--hidden-->
