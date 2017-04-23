@@ -5,7 +5,8 @@ function validEmail(email) { // see:
 }
 // get all data in form and return object
 function getFormData() {
-  var elements = document.getElementById("gform").elements; // all form elements
+  var form = document.getElementById("gform");
+  var elements = form.elements; // all form elements
   var fields = Object.keys(elements).map(function(k) {
     if(elements[k].name !== undefined) {
       return elements[k].name;
@@ -38,6 +39,12 @@ function getFormData() {
       }
     }
   });
+
+  // add form-specific values into the data
+  data.formDataNameOrder = JSON.stringify(fields);
+  data.formGoogleSheetName = form.dataset.sheet || "responses"; // default sheet name
+  data.formGoogleSendEmail = form.dataset.email || ""; // no email by default
+
   console.log(data);
   return data;
 }
