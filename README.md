@@ -287,30 +287,15 @@ Let us know if you have any questions!
 
 ## SPAM prevention
 
-In order to avoid getting spammed and fill up google apps usage quota, we will be implementing a simple SPAM prevention technique that's known as Honeypot where it essentially creates a hidden text field that if filled up is assumed as a spam bot.
+In order to avoid getting spammed and fill up google apps usage quota, we will be implementing a simple SPAM prevention technique that's known as Honeypot where it essentially creates a hidden text field that if filled up is assumed as a spam bot and prevents the form from submit.
 
 ```html
-<form action="https://script.google.com/macros/s/..." method="post" onsubmit="return validateMyForm();">
-<!--onsubmit="return validateMyForm();" will run the javascript code below upon form submission-->
+<form action="https://script.google.com/macros/s/..." method="post">
+  <!--input id must be honeypot or else it wont work-->
   <label class="sr-only">Keep this field blank</label>
   <input id="honeypot" type="text" name="honeypot" value="" />
   <!--the rest of your form-->
 </form>
-```
-
-```javascript
-function validateMyForm() {
-  // The field is empty, submit the form.
-  if(!document.getElementById("honeypot").value) { 
-    console.log("You're not a robot!");
-  	return true;
-  } 
-   // the field has a value it's a spam bot
-  else {
-    console.log("You're a robot!");
-  	return false;
-  }
-}
 ```
 
 ```css
