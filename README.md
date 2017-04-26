@@ -304,6 +304,15 @@ In order to avoid getting spammed and fill up google apps usage quota, we will b
 }
 ```
 
+```javascript
+/* form-submission-handler.js */
+/* remove the comment from this if statement */
+
+if (validateHuman(data.honeypot)) {  //if form is filled, form will not be submitted
+  return false;
+}
+
+```
 
 
 ## Background Reading
