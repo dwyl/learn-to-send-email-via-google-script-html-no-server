@@ -1,192 +1,191 @@
-# Send Email from a *Static* HTML Form using Google Apps Mail!
+# Enviar Email desde un formulario HTML *Estático* usando Google Apps Mail!
 
-A ***Step-by-Step Example*** of using an **HTML Form** to send a "Contact Us" Message via Email without a Backend Server using a Google Script - No PHP, Python, Ruby, Java, Node.js etc.
+Un ***Ejemplo-Paso-a-Paso*** de usar un **Formulario HTML** para enviar un mensaje de "Contáctenos" Por Email sin un servidor Backend utilizando un Google Script - Sin PHP, Python, Ruby, Java, Node.js etc.
 
-## Why?
+## ¿Por qué?
 
-We needed a way of sending an email from a "*static*" HTML page
-when you don't (*want* to) *have* a *server*.
+Era necesaria una manera de enviar un email desde una página HTML "*estática*"
+cuando no se (*quiere*) *tiene* un *servidor*.
 
-### *Key Advantages*
+### *Ventajas Clave*
 
-+ No "*Backend*" to Deploy/Maintain/Pay for
-+ ***Fully Customisabe*** - every aspect is customisable!
-+ Email *sent via* ***Google Mail*** which is ***Whitelisted Everywhere*** (*high deliverability success*)
-+ **Collect/Store** any **form data** in a ***Spreadsheet*** for easy viewing  
-(*perfect if you need to share it with non-technical people*)
++ Sin "*Backend*" para Implementar/Mantener/Pagar
++ ***Completamente personalizable*** - cada aspecto es personalizable!
++ Email *enviado a través de* ***Google Mail*** que está ***Permitido en Todas Partes*** (*Alto rendimiento de entrega*)
++ **Recopilar/Almacenar** cualquier **dato de un formulario** en una ***Hoja de Cálculo*** para una sencilla visualización  
+(*perfecto si necesitas compartirlo con personas no técnicas*)
 
-## What?
+## ¿Qué?
 
-Instead of using a server to send your email,
-which is *easy* but requires *maintenance*,  
-use Google to send mail on your behalf
-and use Google Spreadsheets to keep track of the data!
+En lugar de usar un servidor para enviar un email,
+que es *fácil* pero requiere *mantenimiento*,  
+utiliza Google para enviar correos en tu nombre
+y usa las Hojas de Cálculo de Google para realizar un seguimiento de los datos!
 
-> You *could* use a "*free*" service like http://formspree.io/ to process your form submissions
-if you don't care where you are sending your data and want to manage the data submitted  
-in your email inbox (*messy ... yuck*!)  
-*Or*... you can *invest* a few minutes and keep data private/manageable.
-*Take your pick*.
+> *Podrías* utilizar un servicio "*gratuito*" como http://formspree.io/ para procesar tus envíos de formulario
+si no te te iteresa a donde estás enviando tus datos y querer manejar la data enviada  
+en tu bandeja de entrada (*sucio ... apesta*!)  
+*Ó*... puedes *invertir* unos minutos y mantener tus datos privados/manejables.
+*Tú eliges*.
 
-## *How*?
+## ¿*Cómo*?
 
-### 1. Make a Copy of the Sample Spreadsheet
+### 1. Haz una Copia de la Hoja de Cálculo de Ejemplo
 
-> Sample: https://docs.google.com/spreadsheets/d/1Bn4m6iA_Xch1zzhNvo_6CoQWqOAgwwkOWJKC-phHx2Q/
+> Ejemplo: https://docs.google.com/spreadsheets/d/1Bn4m6iA_Xch1zzhNvo_6CoQWqOAgwwkOWJKC-phHx2Q/
 
-In Google Sheets, Click "**File**" > "**Make a copy**..."
+En Hojas de Google, Haz Click en "**Archivo**" > "**Crear una copia**..."
 
 ![1-make-copy](https://cloud.githubusercontent.com/assets/194400/10559679/d0056a0c-74ee-11e5-9fdc-c12e13684a46.png)
 
-This should give you something like this:
+Esto debería mostrarte algo como esto:
 
 ![2-copy-of-sheet](https://cloud.githubusercontent.com/assets/194400/10559710/3aec92f0-74ef-11e5-9295-f1988a23257b.png)
 
-> Note: Feel free to change the name of the Copy to anything you want,
-it will not affect the outcome.
+> Nota: Sientete libre de cambiar el nombre de la Copia como sea que quieras,
+esto no afectará el resultado final.
 
-### 2. Open the Script Editor
+### 2. Abre el Editor de Secuencia de Comandos
 
-Open the **Script editor...** by clicking "**Tools**" > "**Script editor...**"
+Abre el **Editor de secuencia de comandos...** haciendo click en "**Herramientas**" > "**Editor de secuencia de comandos...**"
 
 ![2 script-editor](https://cloud.githubusercontent.com/assets/194400/10559732/8db2b9f6-74ef-11e5-8bf2-de286f079929.png)
 
-Here's a *snapshot* of the script you need (*at this point in the exercise*): [google-script-just-email.js](https://raw.githubusercontent.com/nelsonic/html-form-send-email-via-google-script-without-server/1d1c6727f69dec64a6b7f6bd6ff0dd72d0374210/google-script-just-email.js)
+Aquí está una *instantánea* del script que necesitas (*en este punto del ejercicio*): [google-script-just-email.js](https://raw.githubusercontent.com/nelsonic/html-form-send-email-via-google-script-without-server/1d1c6727f69dec64a6b7f6bd6ff0dd72d0374210/google-script-just-email.js)
 
-### 3. Set the `TO_ADDRESS` in the Script
+### 3. Establecer el `TO_ADDRESS` en el Script
 
-In the editor window you should expect to see:
+En la ventana del editor deberías ver:
 
 ![3-script-editor-showing-script](https://cloud.githubusercontent.com/assets/194400/10560379/9efa5b3a-7501-11e5-96ba-a9e3b2d77ee4.png)
 
-Change the value of the `TO_ADDRESS` to which ever email you want to receive
-the contact form message.
+Cambia el valor de el `TO_ADDRESS` a la dirección que deseas recibir
+el mensaje del formulario de contacto.
 
-### 4. Save a *New Version* of your Script
+### 4. Guarda una *Nueva Versión* de tu Script
 
-It's not immediately *obvious* but you have to *click* on "*Manage Versions...*"
+No es inmediatamente *obvio* pero tienes que hacer *click* en "*Gestionar Versiones...*"
 
 ![19 google-script-no-save-new-version](https://cloud.githubusercontent.com/assets/194400/10558249/527f3c98-74c1-11e5-8290-5af7fa7f5f75.png)
 
-Then *create* your new version:
+Luego *crea* tu nueva versión:
 
 ![20 google-script-save-new-version](https://cloud.githubusercontent.com/assets/194400/10558250/53d21d5e-74c1-11e5-88c5-7bc2d8ce6228.png)
 
-### 5. Publish the *Updated* Script as a Web App
+### 5. Publica el Script *Actualizado* como a Aplicación Web
 
 ![20 a-publish](https://cloud.githubusercontent.com/assets/194400/10558288/50980aa8-74c2-11e5-8576-72084a564779.png)
 
-Select the *latest* project version to deploy:
+Selecciona la *última* versión del proyecto para implementar:
 
 ![21 deploy-new-version](https://cloud.githubusercontent.com/assets/194400/10558251/570a5428-74c1-11e5-8ced-5dd26d3de3c4.png)
 
-### 6. Authorize the Script to Send Emails
+### 6. Autoriza el Script para enviar Correos a tu nombre
 
 ![5 auth-required](https://cloud.githubusercontent.com/assets/194400/10560412/89d3fb0c-7502-11e5-81ce-fb239bf545b2.png)
 
 ![5-allow-sending-emails](https://cloud.githubusercontent.com/assets/194400/10560416/a86a26ae-7502-11e5-9add-d5081d409af4.png)
 
-Copy the web app URL to your clip board / note pad.
-Then Click "OK".
+Copia la URL de la aplicación web en tu portapapeles / bloc de notas.
+Luego haz Click en "Aceptar".
 
 ![22 1-deploy-as-web-app](https://cloud.githubusercontent.com/assets/194400/10558255/6eec31e2-74c1-11e5-9c07-cea6209526df.png)
 
 
-### 7. Create your *basic* HTML Form
+### 7. Crea tu Formulario HTML *básico*
 
-Using the template in `index.html` in this repo,
-create your own html file with the basic form. (*save the file*)
+Usando la plantilla en el `index.html` en este repositorio,
+crea tu propio archivo html con el formulario básico. (*guarda el archivo*)
 
-> Remember to change the Form `action` URL to the one you copied in
-the previous step:
+> Recuerda cambiar la URL del `action` del formulario con la que copiaste en el paso anterior:
 
 ![7-html-form](https://cloud.githubusercontent.com/assets/194400/10560470/e2d7fcb6-7503-11e5-9d9a-3771423e51fa.png)
 
-### 8. Open the HTML Form (*page*) in your Browser
+### 8. Abre el Formulario HTML (*página*) en tu Navegador
 
-Fill in some sample data in the HTML Form:
+Rellena algunos datos de muestra en el formulario HTML:
 
 ![html form](https://cloud.githubusercontent.com/assets/194400/10560494/674b64c4-7504-11e5-801a-b537d276f671.png)
 
-Submit the form. You should see a confirmation that it was sent:
+Envía el formulario. Deberias ver una confirmación de que se envió:
 ![form sent](https://cloud.githubusercontent.com/assets/194400/10560501/8f605dd4-7504-11e5-8cd7-06d768beba4d.png)
 
-### 9. Check the email inbox for the address you set
+### 9. Verifica la bandeja de entrada de la dirección que estableciste
 
-Open the inbox for the email address you set in **Step 3** (*above*)
+Abre la bandeja de entrada de la direccion email que estableciste en el **Paso 3** (*arriba*)
 
 ![email received](https://cloud.githubusercontent.com/assets/194400/10560512/f87f1652-7504-11e5-8b0f-c342c395a193.png)
 
 
-> ***Done***. That's it. You just created an HTML form that sends email!
+> ***Listo***. Eso es. Acabas de crear un formulario HTML que envia correos!
 
-# *Part Two - Make It Look Good* ...
+# *Parte Dos - Hazlo Lucir Bien* ...
 
-We are going to keep this ***Super Lean*** by using [**PURE CSS**](http://purecss.io/start/)
-for our Style (*fix the "ugly" HTML Form in step 8*).
-And `submit` the form using [**JQuery** "***AJAX***"](http://api.jquery.com/jquery.ajax/) to keep the person
-on your page/site (*avoid "ugly" response page*)
+Vamos a mantener esto ***Súper Ligero*** utilizando [**PURE CSS**](http://purecss.io/start/)
+para nuesto Estilo (*Arreglar el "horrible" Formulario HTML en el paso 8*).
+Y `submit` (enviar) el formulario usando [**JQuery** "***AJAX***"](http://api.jquery.com/jquery.ajax/) para mantener a la persona en tu página/sitio (*evitar la "horrible" página de respuesta*)
 
-### 10. Submit the Form using **JavaScript** "***AJAX***"
+### 10. Enviar el Formulario utilizando **JavaScript** "***AJAX***"
 
-To *prevent* the page from changing to the `JSON` response/result
-we need to submit the form using ***AJAX***.
+Para *prevenir* que la página del formulario cambie a la respuesta/resultado en `JSON`
+se necesita enviar el formulario usando ***AJAX***.
 
-Update your `index.html` to include the following JavaScript file at the *end* of your file
-(*before the closing `</body>` tag)
+Actualiza el `index.html` para incluir el siguiente archivo JavaScript al *final* de tu fila
+(*antes de cerrar el tag `</body>`*)
 
 ```js
 <script data-cfasync="false" type="text/javascript"
 src="https://cdn.rawgit.com/dwyl/html-form-send-email-via-google-script-without-server/master/form-submission-handler.js"></script>
 ```
 
-This will now display a "Thank You" *message* when the form is submitted:
+Esto ahora va a mostrar un *message* de "Gracias" cuando el formlario es enviado:
 
 ![thankyou message](https://cloud.githubusercontent.com/assets/194400/10561147/4086a89a-7517-11e5-840d-7f490353e225.png)
 
-Keeps the person on the same page. No refresh.
+Mantiene a la persona en la misma página. No recarga.
 
-### 11. Customise the  Message Shown when Form Submitted
+### 11. Personaliza el Mensaje Mostrado cuando el Formulario es Enviado
 
-Taylor your message by editing the `thankyou_message` div:
+Adapta el mensaje editando el div `thankyou_message`:
 
 ![10-customise-the-thankyou-message](https://cloud.githubusercontent.com/assets/194400/10561213/9e6d3342-7518-11e5-9860-43a268102de2.png)
 
 
-### 12. Use CSS to Make the Form *Look Good*
+### 12. Usa CSS para Hacer que el Formulario *Luzca Genial*
 
-For `this` *example* we are using ***Pure CSS***: http://purecss.io/start/
-because its ***light weight*** (***4.0KB minified and gzipped***)
-and *solves* our current "*problem*": Making it Look Good.
+Para `este` *ejemplo* utilizamos ***Pure CSS***: http://purecss.io/start/
+porque tien un ***peso ligero*** (***4.0KB resumido y gzipped***)
+y *soluciona* nuestro actual "*problema*": Hacerlo ver bien.
 
 ![PureCSS-Logo-Intro](https://github-cloud.s3.amazonaws.com/assets/194400/10565838/72d6d52a-75d2-11e5-9b92-ca02b1124920.png)
 
 ![PureCSS-module-sizes](https://github-cloud.s3.amazonaws.com/assets/194400/10565844/8f4885a0-75d2-11e5-9490-e3fc42c32616.png)
 
-Without spending *too much* time on this, we can make the form *look*
-***a lot*** nicer:
+Sin perder *demasiado* tiempo en esto, podemos hacer que el formulario *luzca*
+***mucho*** mejor:
 
 ![contact form with pure css](https://github-cloud.s3.amazonaws.com/assets/194400/10566392/f38bc454-75dd-11e5-85dd-6819494a98f2.png)
 
-### 13. Make the email look good too!
+### 13. Haz que el email Luzca Bien También!
 
-By default, the sent email's body contains the key-value pairs from the form, with the key as an `<h4>` and the value as a `<div>`. This is a fairly basic, and foolproof view for the data.
+Por defecto, los body de los correos enviados contienen los pares key-value del formulario, con el key como un `<h4>` y el value como un
+`<div>`. Esto es una vista bastante sencilla e infalible para los datos.
 
-You should get something that looks roughly like: 
+Deberías obtener algo que se vea mas o menos como esto:
 ![Nicely formatted email](https://cloud.githubusercontent.com/assets/5610747/22168070/335ad734-df62-11e6-9523-6e193e94151f.png)
 
-> Bear in mind that this is a work in progress and does potentially open you up to getting more than you bargained for in the email. Because the email content is now looping over all the data sent in the form, if a robot or malicious user decides to `POST` more than you've asked for, you'll likely get it in your inbox. Use with caution for now. We're investigating improvements.
+> Ten en cuenta que se trata de un trabajo en progreso y potencialmente te expone a obtener más de lo que esperabas en el correo electrónico. Debido a que el contenido del correo electrónico está realizando un bucle sobre todos los datos enviados en el formulario, si un robot o un usuario malintencionado decide hacer `POST` más de lo que ha pedido, probablemente lo recibirás en tu bandeja de entrada. Usar con precaución por ahora. Estamos investigando mejoras.
 
-You can modify this though, via the script editor. The line: 
+Tu puedes modificar esto, a través del Editor de secuencia de comandos. La linea:
 
 ```javascript
 result += "<h4 style='text-transform: capitalize; margin-bottom: 0'>" + key + "</h4><div>" + obj[key] + "</div>";
 ```
 
-has all you need. You can adjust the markup to suit you. We chose an `<h4>` because it was the best size for the email, and added the small amount of CSS to it to fix the capitalisation (the keys are all lower case in the JS object) and a bit of default spacing. While inline styles like this are generally bad practice on normal web pages, for email HTML they're about the only reliable way to do CSS!  
-We went with a `<div>` for the value part, because it could be anything - single-line, multiline (a `<p>` for example wouldn't cut it).
+tiene todo lo que necesitas. Puedes ajustar el marcado para que se adapte a ti. Elegimos un `<h4>` porque era el mejor tamaño para el correo electrónico, y añadimos una pequeña cantidad de CSS a él para fijar la capitalización (las llaves son todas minúsculas en el objeto JS) y un poco de espaciamiento por defecto. Mientras que los estilos en línea como este son generalmente malas prácticas en las páginas web normales, para el correo electrónico HTML son la única manera fiable de hacer CSS!
+Fuimos con un `<div>` para la parte de valor, ya que podría ser cualquier cosa - de una sola línea, multilínea (un `<p>` por ejemplo no lo cortaría).
 
-While we're here, there's also a `replyTo` option for the `sendEmail()` method which is commented out by default: 
+Mientras estamos aquí, también hay una opción `replyTo` para el método` sendEmail () `que está comentado por defecto:
 
 ```javascript
 MailApp.sendEmail({
@@ -197,103 +196,102 @@ MailApp.sendEmail({
 });
 ```
 
-You can uncomment that if you want to add a reply-to field to your email. The example in the script will set the reply-to as the email submitted in the form.
+Puedes descomentarlo si deseas agregar un campo de respuesta a tu correo electrónico. El ejemplo en el script establecerá el reply-to como el correo electrónico enviado en el formulario (por el usuario).
 
-Google's documentation provides more information about MailApp.sendEmail (for example `cc`/`bcc` etc.) if you're interested: 
-https://developers.google.com/apps-script/reference/mail/mail-app 
+La documentación de Google provee más información sobre MailApp.sendEmail (por ejemplo `cc`/`bcc` etc.) si te interesa:
+https://developers.google.com/apps-script/reference/mail/mail-app
 
-# *Part Three - Store Submitted Contact Form Data in a Spreadsheet*
+# *Parte Tres - Almacena los Datos del Formulario Enviado en una Hoja de Cálculo*
 
-Sending the form data directly to your email inbox is a *good*
-first step, but we can do better.
+Enviar los datos del Formulario directamente a tu bandeja de entrada es un *buen*
+primer paso, pero podemos hacerlo mejor.
 
-### 14. Add the `record_data` Function to your Google Apps Script
+### 14. Agrega la Función `record_data` a tu Google Apps Script
 
 ![record_data example](https://cloud.githubusercontent.com/assets/194400/10581613/8b4f9ad4-767b-11e5-90cc-962a9d6acc91.png)
 
-This will record the data received from the `POST` as a *row* in the spreadsheet.  
-See: [**google-apps-script.js**](https://github.com/nelsonic/html-form-send-email-via-google-script-without-server/blob/master/google-apps-script.js) for the full code you can *copy-paste*.
+Esto grabará los datos recibidos desde el `POST` como una *fila* en la hoja de cálculo.  
+Observa: [**google-apps-script.js**](https://github.com/nelsonic/html-form-send-email-via-google-script-without-server/blob/master/google-apps-script.js) para obtener el código completo puedes *copiar y pegar*.
 
-### 15. Save a New Version and Re-Publish it
+### 15. Guarda una Nueva Versión y Re-Publicalo
 
-Follow Steps 4, 5 & 6 to save a new version and ***re-publish*** the script.
+Sigue los Pasos 4, 5 y 6 para guardar una nueva versión y ***re-publicar*** el script.
 
-### 16. Re-Test Submitting the Form
+### 16. Prueba de Nuevo Enviando el Formulario
 
 ![submit the form](https://cloud.githubusercontent.com/assets/194400/10582654/cf3081e6-7680-11e5-9fd1-b989a8ba0b65.png)
 
-### 17 Confirm the Data was Inserted into the Spreadsheet
+### 17 Confirma que los Datos fueron Insertados dentro de la Hoja de Cálculo
 
 ![17-confirm-data-inserted](https://cloud.githubusercontent.com/assets/194400/10582676/eb8af5d8-7680-11e5-92bb-30dd08d2d7b3.png)
 
 
-### _Live_ Server (_on your `localhost`_)
+### _Live_ Server (_en tu `localhost`_)
 
-Because we are loading external **.js** files, our web browser
-will not _allow_ us to simply open the **index.html** from a
-local directory for testing out the form.
+Porque estamos carganto erchivos **.js** externos, nuestro buscador no nos _peromitirá_ simplemente
+abrir el **index.html** desde un directorio local para probar el formlario.
 
-Open your terminal and run this command
-to _**install** the **node modules** and **start** the **live server**_:
+Abre tu terminal y corre este comando
+para _**instalar** los **módulos node** e **iniciar** el **live server**_:
 
 ```sh
 npm install live-server --save-dev && node_modules/.bin/live-server --port=8000
 ```
 
-It will take a minute to install,
-but once that's done your `live-server` will start up.
+Tomará un minuto la instalación,
+pero cuando esté listo, tu `live-server` se iniciará.
 
-That starts a node.js HTTP server on port 8000 
-and opens the form you just created in your default browser.
-If you wish to update the form styles in **style.css** or the
-client-side Javascript in **form-submission-handler.js**,
-please be sure to edit **index.html** to load those resources
-locally rather than via GitHub.
+Esto inicia un servidor HTTP de node.js en el puerto 8000
+y abre el formulario que acabas de crear en tu buscador por defecto.
+Si deseas actualizar los estilos del formulario en el **style.css** o el
+Javascript del lado del cliente en el **form-submission-handler.js**,
+por favor asegurate de editar el **index.html** para caragar esos recursos
+localmente en lugar de a través de GitHub.
 
-> **Note**: This is a _light_ taste of Node.js for absolute beginners.
-You do **not** need node.js to "deploy" this form, 
-you can run it on an **_any_ web server** that serves HTML/CSS/JavaScript.
-If you have never used Node.js before, see: http://nodeguide.com/beginner.html
-but for the purposes of this exercise (_submitting a form **without** a server_)
-you _don't **need**_ node.js or `live-server` 
-it's just a _nice_ thing to have when you are creating 
-your form because it automatically re-loads the page when you make changes in your text editor!
-
-
-# *Want more*?
-
-If you want us to take this tutorial further, [***please let us know***!](https://github.com/nelsonic/html-form-send-email-via-google-script-without-server/issues)
+> **Nota**: Esto es una _ligera_ mordida de Node.js para principiantes en absoluto.
+Tu **no** necesitas node.js para "implementar" este formulario,
+puedes correrlo en **_cualquier_ servidor web** que soporte HTML/CSS/JavaScript.
+Si núnca has usado antes Node.js, Observa: http://nodeguide.com/beginner.html
+pero para el propósito de este ejercicio (_enviar un formulario **sin** un servidor_)
+_No **necesitas**_ node.js ó `live-server`
+es sólo una _buena_ cosa para tener cuando estás creando
+tu formulario porque automáticamente recarga la página cuando haces cambios en tu editor de texto!
 
 
-## Add your own fields!
+# ¿*Quieres más*?
 
-In response to [Henry Beary's request](https://github.com/dwyl/html-form-send-email-via-google-script-without-server/issues/9)
-we made the form handler *generic* which means you can now add any fields you want to the form.
+Si deseas seguir este tutorial, [***por favor déjanos saberlo***!](https://github.com/nelsonic/html-form-send-email-via-google-script-without-server/issues)
 
-remember to include the fields *inside* the form that has the id `gform`
-and ensure that the `name` of the form element matches the new column heading in your spreadsheet.
-e.g:
+
+## ¡Añade tus propios campos!
+
+En respuesta a [ La solicitud de Henry Beary](https://github.com/dwyl/html-form-send-email-via-google-script-without-server/issues/9)
+hemos hecho el handler del formulario *genérico* lo que significa que ahora puedes agregar cualquier campo que desees al formulario.
+
+recuerda incluir los campos *dentro* del formulario que tiene la id `gform`
+y asegurate de que el `name` del elemento de formulario coincida con el nuevo encabezado de la columna en su hoja de cálculo.
+ Ej.:
 ```HTML
 <fieldset class="pure-group">
   <label for="color">Favourite Color: </label>
   <input id="color" name="color" placeholder="green" />
 </fieldset>
 ```
-This will allow you to capture the person's favourite color:
-e.g:
+Esto te permitirá capturar el color favorito de la persona:
+ Ej.:
 ![new-field-contains-data](https://cloud.githubusercontent.com/assets/194400/11547132/9f162f6a-9949-11e5-89ac-aeb91e025844.png)
 
-Let us know if you have any questions!
+¡Ház saber si tienes alguna pregunta!
 
 
 
 
-## Background Reading
+## Lectura de Fondo
 
-+ Google Apps Scripts Basics: https://developers.google.com/apps-script/articles
-+ Logger (like console.log):
++ Conceptos básicos de Google Apps Scripts: https://developers.google.com/apps-script/articles
++ Logger (como console.log):
 https://developers.google.com/apps-script/reference/base/logger
-+ Simple Mail Merge using Google Spreadsheets:
++ Simple Union de Correo utilizando Hojas de Cálculo de Google:
 https://developers.google.com/apps-script/articles/mail_merge
-+ Original Tutorial: AJAX post to google spreadsheet: http://stackoverflow.com/questions/10000020/ajax-post-to-google-spreadsheet which points to:
++ Tutorial Original: Publicación de AJAX en la Hoja de Cálculo de Google: http://stackoverflow.com/questions/10000020/ajax-post-to-google-spreadsheet que apunta a:
   + https://mashe.hawksey.info/2011/10/google-spreadsheets-as-a-database-insert-with-apps-script-form-postget-submit-method/
