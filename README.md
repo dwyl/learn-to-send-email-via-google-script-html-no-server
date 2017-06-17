@@ -98,6 +98,13 @@ Then Click "OK".
 Using the template in `index.html` in this repo,
 create your own html file with the basic form. (*save the file*)
 
+:warning: If you're already trying to use *your own form* by this step rather than the example one in this repo:
++ Each of your form elements must have a `name` attribute equal to that of your column name in the Google sheet
++ The form `id` must be `gform`, i.e. `<form id = "gform">`
+  + If you want to alter this later, you will need to create your
+  own version of `form-submission-handler.js` and amend the expected `id`
+
+
 > Remember to change the Form `action` URL to the one you copied in
 the previous step:
 
