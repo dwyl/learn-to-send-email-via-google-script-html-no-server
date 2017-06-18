@@ -76,7 +76,8 @@ Then *create* your new version:
 
 ![20 a-publish](https://cloud.githubusercontent.com/assets/194400/10558288/50980aa8-74c2-11e5-8576-72084a564779.png)
 
-Select the *latest* project version to deploy:
+Select the *latest* project version to deploy.  
+:warning: Note: You *must* select the `Anyone, even anonymous` option for the 'Who has access to the app' dropdown or form responses will not be added to the spreadsheet! :warning:
 
 ![21 deploy-new-version](https://cloud.githubusercontent.com/assets/194400/10558251/570a5428-74c1-11e5-8ced-5dd26d3de3c4.png)
 
@@ -96,6 +97,13 @@ Then Click "OK".
 
 Using the template in `index.html` in this repo,
 create your own html file with the basic form. (*save the file*)
+
+:warning: If you're already trying to use *your own form* by this step rather than the example one in this repo:
++ Each of your form elements must have a `name` attribute equal to that of your column name in the Google sheet
++ The form `id` must be `gform`, i.e. `<form id = "gform">`
+  + If you want to alter this later, you will need to create your
+  own version of `form-submission-handler.js` and amend the expected `id`
+
 
 > Remember to change the Form `action` URL to the one you copied in
 the previous step:
@@ -172,12 +180,12 @@ Without spending *too much* time on this, we can make the form *look*
 
 By default, the sent email's body contains the key-value pairs from the form, with the key as an `<h4>` and the value as a `<div>`. This is a fairly basic, and foolproof view for the data.
 
-You should get something that looks roughly like: 
+You should get something that looks roughly like:
 ![Nicely formatted email](https://cloud.githubusercontent.com/assets/5610747/22168070/335ad734-df62-11e6-9523-6e193e94151f.png)
 
 > Bear in mind that this is a work in progress and does potentially open you up to getting more than you bargained for in the email. Because the email content is now looping over all the data sent in the form, if a robot or malicious user decides to `POST` more than you've asked for, you'll likely get it in your inbox. Use with caution for now. We're investigating improvements.
 
-You can modify this though, via the script editor. The line: 
+You can modify this though, via the script editor. The line:
 
 ```javascript
 result += "<h4 style='text-transform: capitalize; margin-bottom: 0'>" + key + "</h4><div>" + obj[key] + "</div>";
@@ -186,7 +194,7 @@ result += "<h4 style='text-transform: capitalize; margin-bottom: 0'>" + key + "<
 has all you need. You can adjust the markup to suit you. We chose an `<h4>` because it was the best size for the email, and added the small amount of CSS to it to fix the capitalisation (the keys are all lower case in the JS object) and a bit of default spacing. While inline styles like this are generally bad practice on normal web pages, for email HTML they're about the only reliable way to do CSS!  
 We went with a `<div>` for the value part, because it could be anything - single-line, multiline (a `<p>` for example wouldn't cut it).
 
-While we're here, there's also a `replyTo` option for the `sendEmail()` method which is commented out by default: 
+While we're here, there's also a `replyTo` option for the `sendEmail()` method which is commented out by default:
 
 ```javascript
 MailApp.sendEmail({
@@ -199,8 +207,8 @@ MailApp.sendEmail({
 
 You can uncomment that if you want to add a reply-to field to your email. The example in the script will set the reply-to as the email submitted in the form.
 
-Google's documentation provides more information about MailApp.sendEmail (for example `cc`/`bcc` etc.) if you're interested: 
-https://developers.google.com/apps-script/reference/mail/mail-app 
+Google's documentation provides more information about MailApp.sendEmail (for example `cc`/`bcc` etc.) if you're interested:
+https://developers.google.com/apps-script/reference/mail/mail-app
 
 # *Part Three - Store Submitted Contact Form Data in a Spreadsheet*
 
@@ -243,7 +251,7 @@ npm install live-server --save-dev && node_modules/.bin/live-server --port=8000
 It will take a minute to install,
 but once that's done your `live-server` will start up.
 
-That starts a node.js HTTP server on port 8000 
+That starts a node.js HTTP server on port 8000
 and opens the form you just created in your default browser.
 If you wish to update the form styles in **style.css** or the
 client-side Javascript in **form-submission-handler.js**,
@@ -251,12 +259,12 @@ please be sure to edit **index.html** to load those resources
 locally rather than via GitHub.
 
 > **Note**: This is a _light_ taste of Node.js for absolute beginners.
-You do **not** need node.js to "deploy" this form, 
+You do **not** need node.js to "deploy" this form,
 you can run it on an **_any_ web server** that serves HTML/CSS/JavaScript.
 If you have never used Node.js before, see: http://nodeguide.com/beginner.html
 but for the purposes of this exercise (_submitting a form **without** a server_)
-you _don't **need**_ node.js or `live-server` 
-it's just a _nice_ thing to have when you are creating 
+you _don't **need**_ node.js or `live-server`
+it's just a _nice_ thing to have when you are creating
 your form because it automatically re-loads the page when you make changes in your text editor!
 
 
