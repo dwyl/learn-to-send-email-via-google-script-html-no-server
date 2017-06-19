@@ -1,11 +1,16 @@
+var options = {
+  "invalidEmailMessage": "email-invalid",
+  "submitMessage": "thankyou_message",
+  "sucuessUrl": null
+}
 
 function validEmail(email) { // see:
   var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
   return re.test(email);
 }
 // get all data in form and return object
-function getFormData() {
-  var elements = document.getElementById("gform").elements; // all form elements
+function getFormData(form) {
+  var elements = form.elements; // all form elements
   var fields = Object.keys(elements).map(function(k) {
     if(elements[k].name !== undefined) {
       return elements[k].name;
@@ -44,9 +49,9 @@ function getFormData() {
 
 function handleFormSubmit(event) {  // handles form submit withtout any jquery
   event.preventDefault();           // we are submitting via xhr below
-  var data = getFormData();         // get the values submitted in the form
-  if( !validEmail(data.email) ) {   // if email is not valid show error
-    document.getElementById('email-invalid').style.display = 'block';
+  var data = getFormData(this);         // get the values submitted in the form
+  if( data.email && !validEmail(data.email) ) {   // if email is not valid show error
+    document.getElementById(options.invalidEmailMessage).style.display = 'block';
     return false;
   } else {
     var url = event.target.action;  //
@@ -57,8 +62,13 @@ function handleFormSubmit(event) {  // handles form submit withtout any jquery
     xhr.onreadystatechange = function() {
         console.log( xhr.status, xhr.statusText )
         console.log(xhr.responseText);
-        document.getElementById('gform').style.display = 'none'; // hide form
-        document.getElementById('thankyou_message').style.display = 'block';
+        if (options.successUrl) {
+          window.location.assign(options.successUrl);
+        }
+        else {
+          event.target.style.display = 'none'; // hide form
+          document.getElementById(options.submitMessage).style.display = 'block';
+        }
         return;
     };
     // url encode form data for sending as post data
@@ -71,7 +81,24 @@ function handleFormSubmit(event) {  // handles form submit withtout any jquery
 function loaded() {
   console.log('contact form submission handler loaded successfully');
   // bind to the submit event of our form
-  var form = document.getElementById('gform');
-  form.addEventListener("submit", handleFormSubmit, false);
-};
+  var forms = document.querySelectorAll("[data-form='gform']");
+  if (document.getElementById('gform')) {
+    form = document.getElementById('gform');
+    form.addEventListener("submit", handleFormSubmit, false);
+  }
+}
+
 document.addEventListener('DOMContentLoaded', loaded, false);
+
+function init(form){
+  document.getElementById(form).addEventListener("submit", handleFormSubmit, false);
+}
+
+function setOptions(o){
+  for (opt in o){
+    options[opt] = o[opt];
+  }
+}
+
+exports.init = init;
+exports.setOptions = setOptions;
