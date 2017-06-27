@@ -4,6 +4,9 @@
  * All credit still goes to Martin and any issues/complaints/questions to me. *
  ******************************************************************************/
 
+// if you want to store your email server-side (hidden), uncomment the next line
+// var TO_ADDRESS = "contact.nelsonic+form.submit@gmail.com";
+
 // spit out all the keys/values from the form in HTML for email
 function formatMailBody(obj, order) {
   var result = "";
@@ -29,8 +32,13 @@ function doPost(e) {
     // names and order of form elements
     var dataOrder = JSON.parse(e.parameters.formDataNameOrder);
     
+    // determine recepient of the email
+    // if you have your email uncommented above, it uses that `TO_ADDRESS`
+    // otherwise, it defaults to the email provided by the form's data attribute
+    var sendEmailTo = (typeof TO_ADDRESS !== "undefined") ? TO_ADDRESS : mailData.formGoogleSendEmail;
+    
     MailApp.sendEmail({
-      to: String(mailData.formGoogleSendEmail),
+      to: String(sendEmailTo),
       subject: "Contact form submitted",
       // replyTo: String(mailData.email), // This is optional and reliant on your form actually collecting a field named `email`
       htmlBody: formatMailBody(mailData, dataOrder)
