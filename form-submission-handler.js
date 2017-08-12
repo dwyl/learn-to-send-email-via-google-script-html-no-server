@@ -3,6 +3,16 @@ function validEmail(email) { // see:
   var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
   return re.test(email);
 }
+
+function validateHuman(honeypot) {
+  if (honeypot) {  //if hidden form filled up
+    console.log("Robot Detected!");
+    return true;
+  } else {
+    console.log("Welcome Human!");
+  }
+}
+
 // get all data in form and return object
 function getFormData() {
   var elements = document.getElementById("gform").elements; // all form elements
@@ -45,6 +55,13 @@ function getFormData() {
 function handleFormSubmit(event) {  // handles form submit withtout any jquery
   event.preventDefault();           // we are submitting via xhr below
   var data = getFormData();         // get the values submitted in the form
+
+  /* OPTION: Remove this comment to enable SPAM prevention, see README.md
+  if (validateHuman(data.honeypot)) {  //if form is filled, form will not be submitted
+    return false;
+  }
+  */
+
   if( !validEmail(data.email) ) {   // if email is not valid show error
     document.getElementById('email-invalid').style.display = 'block';
     return false;
