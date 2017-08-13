@@ -2,6 +2,8 @@
 
 A ***Step-by-Step Example*** of using an **HTML Form** to send a "Contact Us" Message via Email without a Backend Server using a Google Script - No PHP, Python, Ruby, Java, Node.js etc.
 
+See a working example here: https://dwyl.github.io/html-form-send-email-via-google-script-without-server/
+
 ## Why?
 
 We needed a way of sending an email from a "*static*" HTML page
@@ -272,13 +274,23 @@ your form because it automatically re-loads the page when you make changes in yo
 
 If you want us to take this tutorial further, [***please let us know***!](https://github.com/nelsonic/html-form-send-email-via-google-script-without-server/issues)
 
+For your convenience, we have hosted a working demo of the field on GitHub
+Pages, check it out to see the code and how it works:
+https://dwyl.github.io/html-form-send-email-via-google-script-without-server/
+
 
 ## Add your own fields!
 
 In response to [Henry Beary's request](https://github.com/dwyl/html-form-send-email-via-google-script-without-server/issues/9)
 we made the form handler *generic* which means you can now add any fields you want to the form.
 
-remember to include the fields *inside* the form that has the id `gform`
+We also created a form, `test.html`, which uses all kinds of form input elements
+so you can just copy and paste elements as desired into your own form. Just be
+sure to update their names and IDs. You can find a working example of this test
+form here:
+https://dwyl.github.io/html-form-send-email-via-google-script-without-server/test.html
+
+Remember to include the fields *inside* the form that has the id `gform`
 and ensure that the `name` of the form element matches the new column heading in your spreadsheet.
 e.g:
 ```HTML
