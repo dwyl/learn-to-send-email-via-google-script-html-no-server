@@ -342,6 +342,37 @@ if (validateHuman(data.honeypot)) {  //if form is filled, form will not be submi
 ```
 
 
+## Frequently Asked Questions (FAQ's)
+
+1. _How can I get help using this tutorial?_
+
+- This tutorial is meant to help people learn how to use web technologies and make simple, customizable forms with the Google Script API. If you have been unable to get a working example of your code, please check each of the tutorial steps first. You may have missed or glossed over a detail, and this can save both you, and us, time, when trying to help you. Furthermore, if you do this and are still unable to fix your problem, feel free to submit a GitHub issue, but try to include an example of the problem. Highlight what steps you have gone through, what exactly isn't working and why it isn't working. What do you expect to happen? Having an example of the problem, say a GitHub pages or a CodePen, goes a long way since it lowers the barrier for someone to take your code and see what the issue is. If you want to get a faster response, I would highly encourage putting together an example.
+
+2. _Can I get edit access to the example spreadsheet?_
+
+- No. This is being used to show a working example for anyone to copy, and an editable version could be broken accidentally, or maliciously, by any user.
+
+3. _Why is the webpage forwarding to a bunch of text when I hit submit?_
+
+- You are not properly loading the required Javascript which submits the data via AJAX, or your browser does not support AJAX. Please see Part 2 and check your console logs in case you are finding errors.
+
+4. _Why is the webpage not successfully submitting the form?_
+
+- Check your Javascript console logs. There could be an error while reading in the Javascript we have provided. There could be errors while submitting the form. It is required that your form have an ID of `gform`, and also a `data-email` attribute if you have not set the `TO_ADDRESS` variable inside the Google Script file. Furthermore, the provided Javascript code also expects to see an email form element which it uses to check, a warning message for that element when an improper email is submitted, and then a `thank-you` div as well, which is shown after a form is successfully submitted. Please ensure that all of these HTML elements are in your form. See the sample file for code you can copy and paste. When you have all of these elements and a proper form set up, you should not see any error messages in your Javascript console when you hit submit.
+
+5. _The webpage is saying my data was submitted, but why isn't my data being saved or sent to me?_
+
+- When you copied the spreadsheet and published the Google Script, did you set the permissions to "Anyone, even Anonymous"? This is required for the form to work, since anyone on the internet can hit send to give you their data. Be sure that you have deployed the proper version of the script and used "Manage versions..." when making changes.
+
+6. _How can I upload files?_
+
+- Unfortunately, this feature is not currently supported at this time. It may be possible to tap into the Google Drive API via the Google Script, to save files that were uploaded. We would encourage anyone who has a working example to submit a PR or post an issue with how they solved this.
+
+7. _Is this secure? Can I use it for sensitive data?_
+
+- No. While data that is sent over POST may be more protected, the information could easily be intercepted by a third party or middleman, and Google has complete access to the data inside a Google Spreadsheet. Email is also not a very secure communication medium by default. We would recommend you invest in a secure platform and server for storing your data if this is a requirement.
+
+
 ## Background Reading
 
 + Google Apps Scripts Basics: https://developers.google.com/apps-script/articles
