@@ -4,6 +4,11 @@ A ***Step-by-Step Example*** of using an **HTML Form** to send a "Contact Us" Me
 
 See a working example here: https://dwyl.github.io/html-form-send-email-via-google-script-without-server/
 
+**_Warning:_** Google's API has limits on how many emails it can send in a day.
+This may vary on your Google account, see [the limits here](https://developers.google.com/apps-script/guides/services/quotas).
+We recommend implementing this tutorial through Part 3, since the data will
+always be added to the spreadsheet first, then emailed if possible.
+
 ## Why?
 
 We needed a way of sending an email from a "*static*" HTML page
@@ -215,7 +220,9 @@ https://developers.google.com/apps-script/reference/mail/mail-app
 # *Part Three - Store Submitted Contact Form Data in a Spreadsheet*
 
 Sending the form data directly to your email inbox is a *good*
-first step, but we can do better.
+first step, but we can do better. Also, as noted above, Google
+has limits on how many emails you can send in a day, so storing
+the data into a spreadsheet is safer and less prone to data loss.
 
 ### 14. Add the `record_data` Function to your Google Apps Script
 
