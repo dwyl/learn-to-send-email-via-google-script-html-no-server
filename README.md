@@ -32,11 +32,11 @@ in your email inbox (*messy ... yuck*!)
 
 ### 1. Make a Copy of the Sample Spreadsheet
 
-> Sample: https://docs.google.com/spreadsheets/d/1Bn4m6iA_Xch1zzhNvo_6CoQWqOAgwwkOWJKC-phHx2Q/
+> Sample: https://docs.google.com/spreadsheets/d/1Bn4m6iA_Xch1zzhNvo_6CoQWqOAgwwkOWJKC-phHx2Q/copy
 
-In Google Sheets, Click "**File**" > "**Make a copy**..."
+Sign in to your Google account and click on "**Make a copy**..."
 
-![1-make-copy](https://cloud.githubusercontent.com/assets/194400/10559679/d0056a0c-74ee-11e5-9fdc-c12e13684a46.png)
+![1-make-copy](https://user-images.githubusercontent.com/1406149/29245471-feb7b034-7f97-11e7-9c0d-f06238e8362b.png)
 
 This should give you something like this:
 
