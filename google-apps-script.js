@@ -5,7 +5,7 @@
  ******************************************************************************/
 
 // if you want to store your email server-side (hidden), uncomment the next line
-// var TO_ADDRESS = "contact.nelsonic+form.submit@gmail.com";
+// var TO_ADDRESS = "example@email.net";
 
 // spit out all the keys/values from the form in HTML for email
 function formatMailBody(obj, order) {
