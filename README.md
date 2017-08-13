@@ -55,12 +55,22 @@ Here's a *snapshot* of the script you need (*at this point in the exercise*): [g
 
 ### 3. Set the `TO_ADDRESS` in the Script
 
-In the editor window you should expect to see:
+**_Warning:_** If you do not uncomment and set your email as the value of
+`TO_ADDRESS`, it is possible for someone who has web skills to alter your form
+and send emailed data to an arbitrary email address.
+
+This risk may not be very likely. Instead, if you wish, you can leave this
+variable commented out if you accept this possible risk but want the added
+convenience of setting this email variable inside your HTML form as a
+`data-email` attribute. This allows you to easily change where to send emails
+inside your HTML form without going back through steps 2-6. This functionality
+does **require** you to use the provided JS file in Part Two, Step 10.
+
+If you do not want to accept that potential risk, please uncomment the code for
+the variable `TO_ADDRESS`, and set this value equal to the email which should
+receive the form's data when submitted.
 
 ![3-script-editor-showing-script](https://cloud.githubusercontent.com/assets/194400/10560379/9efa5b3a-7501-11e5-96ba-a9e3b2d77ee4.png)
-
-Change the value of the `TO_ADDRESS` to which ever email you want to receive
-the contact form message.
 
 ### 4. Save a *New Version* of your Script
 
@@ -139,6 +149,11 @@ Update your `index.html` to include the following JavaScript file at the *end* o
 <script data-cfasync="false" type="text/javascript"
 src="https://cdn.rawgit.com/dwyl/html-form-send-email-via-google-script-without-server/master/form-submission-handler.js"></script>
 ```
+
+**Warning:** If you did not set the `TO_ADDRESS` variable in Step 3, then
+you need to include a `data-email="example@email.net"` attribute inside the
+main form element. See the example form for more details. Otherwise, if you did
+set this variable, then you do not need this form attribute.
 
 This will now display a "Thank You" *message* when the form is submitted:
 
