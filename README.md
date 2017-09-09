@@ -346,7 +346,7 @@ if (validateHuman(data.honeypot)) {  //if form is filled, form will not be submi
 
 1. _How can I get help using this tutorial?_
 
-- This tutorial is meant to help people learn how to use web technologies and make simple, customizable forms with the Google Script API. If you have been unable to get a working example of your code, please check each of the tutorial steps first. You may have missed or glossed over a detail, and this can save both you, and us, time, when trying to help you. Furthermore, if you do this and are still unable to fix your problem, feel free to submit a GitHub issue, but try to include an example of the problem. Highlight what steps you have gone through, what exactly isn't working and why it isn't working. What do you expect to happen? Having an example of the problem, say a GitHub pages or a CodePen, goes a long way since it lowers the barrier for someone to take your code and see what the issue is. If you want to get a faster response, I would highly encourage putting together an example.
+- Feel free to [post an issue](https://github.com/dwyl/html-form-send-email-via-google-script-without-server/issues/new) describing in detail which steps you have gone through and what isn't working. [A working example](https://stackoverflow.com/help/mcve) that reproduces your issue online is most ideal (e.g., host on GitHub Pages or CodePen), and such examples or providing console errors increase your chances of getting a helpful response.
 
 2. _Can I get edit access to the example spreadsheet?_
 
