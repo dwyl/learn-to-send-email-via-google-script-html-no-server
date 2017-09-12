@@ -2,6 +2,13 @@
 
 A ***Step-by-Step Example*** of using an **HTML Form** to send a "Contact Us" Message via Email without a Backend Server using a Google Script - No PHP, Python, Ruby, Java, Node.js etc.
 
+See a working example here: https://dwyl.github.io/html-form-send-email-via-google-script-without-server/
+
+**_Warning:_** Google's API has limits on how many emails it can send in a day.
+This may vary on your Google account, see [the limits here](https://developers.google.com/apps-script/guides/services/quotas).
+We recommend implementing this tutorial through Part 3, since the data will
+always be added to the spreadsheet first, then emailed if possible.
+
 ## Why?
 
 We needed a way of sending an email from a "*static*" HTML page
@@ -32,11 +39,11 @@ in your email inbox (*messy ... yuck*!)
 
 ### 1. Make a Copy of the Sample Spreadsheet
 
-> Sample: https://docs.google.com/spreadsheets/d/1Bn4m6iA_Xch1zzhNvo_6CoQWqOAgwwkOWJKC-phHx2Q/
+> Sample: https://docs.google.com/spreadsheets/d/1Bn4m6iA_Xch1zzhNvo_6CoQWqOAgwwkOWJKC-phHx2Q/copy
 
-In Google Sheets, Click "**File**" > "**Make a copy**..."
+Sign in to your Google account and click on "**Make a copy**..."
 
-![1-make-copy](https://cloud.githubusercontent.com/assets/194400/10559679/d0056a0c-74ee-11e5-9fdc-c12e13684a46.png)
+![1-make-copy](https://user-images.githubusercontent.com/1406149/29245471-feb7b034-7f97-11e7-9c0d-f06238e8362b.png)
 
 This should give you something like this:
 
@@ -213,7 +220,9 @@ https://developers.google.com/apps-script/reference/mail/mail-app
 # *Part Three - Store Submitted Contact Form Data in a Spreadsheet*
 
 Sending the form data directly to your email inbox is a *good*
-first step, but we can do better.
+first step, but we can do better. Also, as noted above, Google
+has limits on how many emails you can send in a day, so storing
+the data into a spreadsheet is safer and less prone to data loss.
 
 ### 14. Add the `record_data` Function to your Google Apps Script
 
@@ -272,13 +281,23 @@ your form because it automatically re-loads the page when you make changes in yo
 
 If you want us to take this tutorial further, [***please let us know***!](https://github.com/nelsonic/html-form-send-email-via-google-script-without-server/issues)
 
+For your convenience, we have hosted a working demo of the field on GitHub
+Pages, check it out to see the code and how it works:
+https://dwyl.github.io/html-form-send-email-via-google-script-without-server/
+
 
 ## Add your own fields!
 
 In response to [Henry Beary's request](https://github.com/dwyl/html-form-send-email-via-google-script-without-server/issues/9)
 we made the form handler *generic* which means you can now add any fields you want to the form.
 
-remember to include the fields *inside* the form that has the id `gform`
+We also created a form, `test.html`, which uses all kinds of form input elements
+so you can just copy and paste elements as desired into your own form. Just be
+sure to update their names and IDs. You can find a working example of this test
+form here:
+https://dwyl.github.io/html-form-send-email-via-google-script-without-server/test.html
+
+Remember to include the fields *inside* the form that has the id `gform`
 and ensure that the `name` of the form element matches the new column heading in your spreadsheet.
 e.g:
 ```HTML
@@ -321,6 +340,37 @@ if (validateHuman(data.honeypot)) {  //if form is filled, form will not be submi
 }
 
 ```
+
+
+## Frequently Asked Questions (FAQ's)
+
+1. _How can I get help using this tutorial?_
+
+- Feel free to [post an issue](https://github.com/dwyl/html-form-send-email-via-google-script-without-server/issues/new) describing in detail which steps you have gone through and what isn't working. [A working example](https://stackoverflow.com/help/mcve) that reproduces your issue online is most ideal (e.g., host on GitHub Pages or CodePen), and such examples or providing console errors increase your chances of getting a helpful response.
+
+2. _Can I get edit access to the example spreadsheet?_
+
+- No. This is being used to show a working example for anyone to copy, and an editable version could be broken accidentally, or maliciously, by any user.
+
+3. _Why is the webpage forwarding to a bunch of text when I hit submit?_
+
+- You are not properly loading the required Javascript which submits the data via AJAX, or your browser does not support AJAX. Please see Part 2 and check your console logs in case you are finding errors.
+
+4. _Why is the webpage not successfully submitting the form?_
+
+- Check your Javascript console logs. There could be an error while reading in the Javascript we have provided. There could be errors while submitting the form. It is required that your form have an ID of `gform`, and also a `data-email` attribute if you have not set the `TO_ADDRESS` variable inside the Google Script file. Furthermore, the provided Javascript code also expects to see an email form element which it uses to check, a warning message for that element when an improper email is submitted, and then a `thank-you` div as well, which is shown after a form is successfully submitted. Please ensure that all of these HTML elements are in your form. See the sample file for code you can copy and paste. When you have all of these elements and a proper form set up, you should not see any error messages in your Javascript console when you hit submit.
+
+5. _The webpage is saying my data was submitted, but why isn't my data being saved or sent to me?_
+
+- When you copied the spreadsheet and published the Google Script, did you set the permissions to "Anyone, even Anonymous"? This is required for the form to work, since anyone on the internet can hit send to give you their data. Be sure that you have deployed the proper version of the script and used "Manage versions..." when making changes.
+
+6. _How can I upload files?_
+
+- Unfortunately, this feature is not currently supported at this time. It may be possible to tap into the Google Drive API via the Google Script, to save files that were uploaded. We would encourage anyone who has a working example to submit a PR or post an issue with how they solved this.
+
+7. _Is this secure? Can I use it for sensitive data?_
+
+- No. While data that is sent over POST may be more protected, the information could easily be intercepted by a third party or middleman, and Google has complete access to the data inside a Google Spreadsheet. Email is also not a very secure communication medium by default. We would recommend you invest in a secure platform and server for storing your data if this is a requirement.
 
 
 ## Background Reading
