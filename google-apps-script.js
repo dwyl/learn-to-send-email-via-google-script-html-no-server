@@ -4,11 +4,15 @@
  * All credit still goes to Martin and any issues/complaints/questions to me. *
  ******************************************************************************/
 
-var TO_ADDRESS = "contact.nelsonic+form.submit@gmail.com"; // change this ...
+// if you want to store your email server-side (hidden), uncomment the next line
+// var TO_ADDRESS = "example@email.net";
 
-function formatMailBody(obj) { // function to spit out all the keys/values from the form in HTML
+// spit out all the keys/values from the form in HTML for email
+function formatMailBody(obj, order) {
   var result = "";
-  for (var key in obj) { // loop over the object passed to the function
+  // loop over all keys in the ordered form data
+  for (var idx in order) {
+    var key = order[idx];
     result += "<h4 style='text-transform: capitalize; margin-bottom: 0'>" + key + "</h4><div>" + obj[key] + "</div>";
     // for every key, concatenate an `<h4 />`/`<div />` pairing of the key name and its value, 
     // and append it to the `result` string created at the start.
@@ -21,14 +25,23 @@ function doPost(e) {
   try {
     Logger.log(e); // the Google Script version of console.log see: Class Logger
     record_data(e);
-
-    var mailData = e.parameters; // just create a slightly nicer variable name for the data
+    
+    // shorter name for form data
+    var mailData = e.parameters;
+    
+    // names and order of form elements
+    var dataOrder = JSON.parse(e.parameters.formDataNameOrder);
+    
+    // determine recepient of the email
+    // if you have your email uncommented above, it uses that `TO_ADDRESS`
+    // otherwise, it defaults to the email provided by the form's data attribute
+    var sendEmailTo = (typeof TO_ADDRESS !== "undefined") ? TO_ADDRESS : mailData.formGoogleSendEmail;
     
     MailApp.sendEmail({
-      to: TO_ADDRESS,
+      to: String(sendEmailTo),
       subject: "Contact form submitted",
       // replyTo: String(mailData.email), // This is optional and reliant on your form actually collecting a field named `email`
-      htmlBody: formatMailBody(mailData)
+      htmlBody: formatMailBody(mailData, dataOrder)
     });
 
     return ContentService    // return json success results
@@ -53,7 +66,7 @@ function record_data(e) {
   Logger.log(JSON.stringify(e)); // log the POST data in case we need to debug it
   try {
     var doc     = SpreadsheetApp.getActiveSpreadsheet();
-    var sheet   = doc.getSheetByName('responses'); // select the responses sheet
+    var sheet   = doc.getSheetByName(e.parameters.formGoogleSheetName); // select the 'responses' sheet by default
     var headers = sheet.getRange(1, 1, 1, sheet.getLastColumn()).getValues()[0];
     var nextRow = sheet.getLastRow()+1; // get next row
     var row     = [ new Date() ]; // first element in the row should always be a timestamp
