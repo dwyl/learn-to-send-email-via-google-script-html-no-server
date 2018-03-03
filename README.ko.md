@@ -1,6 +1,6 @@
 # Google Apps Mail을 사용해 **정적** HTML Form에서 메일을 보내세요!
 
-A 백엔드 서버 없이 HTML Form을 사용하여, "Contact Us" 메시지를 보내는 ***스텝-바이-스텝 예제***입니다.
+A 백엔드 서버 없이 HTML Form을 사용하여, "Contact Us" 메시지를 보내는 ***스텝-바이-스텝 예제*** 입니다.
 - PHP, Python, Ruby, Java, Node.js 등은 필요없습니다.
 
 작동 예제는 이곳에서 : https://dwyl.github.io/html-form-send-email-via-google-script-without-server/
@@ -18,7 +18,7 @@ Google 계정에 따라 다를 수 있습니다, [이곳에서](https://develope
 + 배포/유지/지불을 위한 *백엔드* 서버가 필요없습니다.
 + ***완전한 사용자정의 가능*** 모든 측면에서 커스터마이징이 가능합니다!
 + ***어디에서나 허용 목록에 포함된 Google Mail*** 을 통해 보내는 Email (*높은 전송 성공률*)
-+ 어떤 데이터든 쉽게 볼 수 있는 ***스프레드시트***에 **수집/저장**합니다.
++ 어떤 데이터든 쉽게 볼 수 있는 ***스프레드시트*** 에 **수집/저장**합니다.
 (*코딩을 전혀 모르는 사람과 공유해야하는 경우도 완벽합니다.*)
 
 ## What?
@@ -73,7 +73,7 @@ Google 스프레드시트를 사용해 데이터를 추적하세요!
 
 ### 4. 스크립트의 *새로운 버전* 저장
 
-애매하지만 *"버전 관리 ..."*를 클릭해야 합니다.
+애매하지만 *"버전 관리 ..."* 를 클릭해야 합니다.
 
 ![19 google-script-no-save-new-version](https://cloud.githubusercontent.com/assets/194400/10558249/527f3c98-74c1-11e5-8290-5af7fa7f5f75.png)
 
@@ -86,6 +86,7 @@ Google 스프레드시트를 사용해 데이터를 추적하세요!
 ![20 a-publish](https://cloud.githubusercontent.com/assets/194400/10558288/50980aa8-74c2-11e5-8576-72084a564779.png)
 
 배포 할 *최신* 프로젝트 버전을 선택합니다.
+
 :warning: 참고: '웹에 액세스할 수 있는 사용자' 드롭다운에서 `누구나, 익명 사용자 포함` 옵션을 선택해야 합니다. 
 다른걸 선택하면 form 응답이 스프레드시트에 추가되지 않을 것입니다. :warning:
 
@@ -107,7 +108,7 @@ Google 스프레드시트를 사용해 데이터를 추적하세요!
 이 레포지토리의 `index.html` 템플릿을 사용하여,
 기본 form 형식을 가진 html 파일을 만드세요.(*저장하세요!*)
 
-:warning: 만약 이 레포지토리의 예제가 아닌 *직접 짠 form*을 벌써 사용하려고 한다면:
+:warning: 만약 이 레포지토리의 예제가 아닌 *직접 작성한 form*을 벌써 사용하려고 한다면:
 + 각각의 form 요소 `name` 속성은 Google 시트의 컬럼네임과 같아야 합니다.
 + form태그의 `id`는 `gform`이 되어야 합니다. 즉, `<form id = "gform">`
   + 나중에 이걸 변경하려고 한다면, `form-submission-handler.js`의 고유버전을 만들고 `id`를 고쳐야 됩니다.
@@ -138,13 +139,12 @@ Submit 하세요. 보내졌으면 아래와 같이 확인할 수 있습니다:
 
 > ***끝***. 이게 전부입니다. HTML form 태그만을 이용해 이메일 보내기에 성공했습니다.
 
-# *파트 2 - 이쁘게 하고싶어..* ...
+# *파트 2 - 이쁘게 하고싶어..*
 
 우리 스타일에 [**순수 CSS**](http://purecss.io/start/)를 사용해 
-이 ***Super Lean***을 유지할 겁니다 (*step 8의 "못생긴" HTML Form태그를 고쳐요*).
-And `submit` the form using  to keep the person
+이 ***Super Lean*** 을 유지할 겁니다 (*step 8의 "못생긴" HTML Form태그를 고쳐요*).
 그리고 독자분의 페이지/사이트에 사용자를 유지하기 위해 Form태그 양식을 `submit`할 때
-[**JQuery** "***AJAX***"](http://api.jquery.com/jquery.ajax/)를 사용하겠습니다 (*"구린" 응답페이지는 빼구요*).
+[**JQuery** "***AJAX***"](http://api.jquery.com/jquery.ajax/) 를 사용하겠습니다 (*"구린" 응답페이지는 빼구요*).
 
 ### 10. **JavaScript** 와 "***AJAX***" 를 사용한 양식 제출
 
@@ -157,8 +157,7 @@ And `submit` the form using  to keep the person
 src="https://cdn.rawgit.com/dwyl/html-form-send-email-via-google-script-without-server/master/form-submission-handler.js"></script>
 ```
 
-**경고:** If you did not set the `TO_ADDRESS` variable in Step 3, then
-위의 3단계에서 `TO_ADDRESS` 변수를 설정하지 않은 경우, 메인 form 요소에 `data-email="example@email.net"`를 포함시켜야 됩니다.
+**경고:** 위의 3단계에서 `TO_ADDRESS` 변수를 설정하지 않은 경우, 메인 form 요소에 `data-email="example@email.net"`를 포함시켜야 됩니다.
 자세한 내용은 아래 양식을 확인하세요.
 설정하셨다면 이 속성은 필요하지 않습니다.
 
@@ -177,7 +176,7 @@ src="https://cdn.rawgit.com/dwyl/html-form-send-email-via-google-script-without-
 
 ### 12. CSS를 사용해 Form을 *멋지게* 만들기
 
-`이번` *예제*에서는 ***순수 CSS***: http://purecss.io/start/를 사용하고 있습니다. 
+`이번` *예제*에서는 ***순수 CSS*** : http://purecss.io/start/ 를 사용하고 있습니다. 
 ***적은 용량*** (***4.0KB 축소 및 압축된***)과 현재 "문제"(보기에 구린)를 *해결*하기 때문입니다.
 
 ![PureCSS-Logo-Intro](https://github-cloud.s3.amazonaws.com/assets/194400/10565838/72d6d52a-75d2-11e5-9b92-ca02b1124920.png)
@@ -196,6 +195,7 @@ By default, the sent email's body contains the key-value pairs from the form, wi
 이것은 베이직하지만, 데이터를 보기엔 어색합니다.
 
 아마 대충 이런 형식의 메일을 받았을 겁니다:
+
 ![Nicely formatted email](https://cloud.githubusercontent.com/assets/5610747/22168070/335ad734-df62-11e6-9523-6e193e94151f.png)
 
 > 이 과정은 진행 중이며 잠재적으로 기대한 이메일보다 더 많은 메일을 받을 수 있음을 명심하세요. 
@@ -262,7 +262,7 @@ Because we are loading external **.js** files, our web browser
 외부 **.js* 파일들을 로드하고 있기 때문에 우리의 웹브라우저는 로컬 디렉토리에서 **index.html**을 열지 않습니다.
 _(파일로 실행시켜 단순 웹브라우저로 테스트하지 마세요.)_
 
-터미널을 열고 다음 커맨드를 실행해 _**node 모듈**을 **설치**하고 *live 서버**를 **시작**하세요_:
+터미널을 열고 다음 커맨드를 실행해 _**node 모듈**을 **설치**하고 *live 서버** 를 **시작**하세요_:
 
 ```sh
 npm install live-server --save-dev && node_modules/.bin/live-server --port=8000
@@ -271,27 +271,11 @@ npm install live-server --save-dev && node_modules/.bin/live-server --port=8000
 설치하는데 1분 정도 걸리고, 
 완료되면 당신의 `live-server`가 시작됩니다.
 
-That starts a node.js HTTP server on port 8000
-and opens the form you just created in your default browser.
-If you wish to update the form styles in **style.css** or the
-client-side Javascript in **form-submission-handler.js**,
-please be sure to edit **index.html** to load those resources
-locally rather than via GitHub.
-
 포트 8080에서 node.js HTTP 서버가 시작되고 방금 만들었던 양식이 기본 브라우저에서 열립니다.
  **style.css**의 form style 혹은 **form-submission-handler.js**의 클라이언트 측 자바스크립트를 업데이트하려면, 
  GitHub가 아닌 로컬로 해당 자원을 로드하도록 **index.html**을 편집하세요.
 
-> **참고**: This is a _light_ taste of Node.js for absolute beginners.
-You do **not** need node.js to "deploy" this form,
-you can run it on an **_any_ web server** that serves HTML/CSS/JavaScript.
-If you have never used Node.js before, see: http://nodeguide.com/beginner.html
-but for the purposes of this exercise (_submitting a form **without** a server_)
-you _don't **need**_ node.js or `live-server`
-it's just a _nice_ thing to have when you are creating
-your form because it automatically re-loads the page when you make changes in your text editor!
-
-이건 절대적인 초보자를 위한 Node.js의 _맛보기_입니다. 
+> **참고**: 이건 절대적인 초보자를 위한 Node.js의 _맛보기_입니다. 
 이 양식을 "배포"하기 위해 node.js가 무조건 필요한 것은 아니며,
 HTML / CSS / JavaScript를 제공하는 **_모든_ 웹 서버**에서 실행할 수 있습니다. 
 이전에 Node.js를 사용한 적이 없다면 http://nodeguide.com/beginner.html을 참조하세요.
@@ -303,8 +287,6 @@ HTML / CSS / JavaScript를 제공하는 **_모든_ 웹 서버**에서 실행할 
 
 이 튜토리얼보다 더 많은 것을 알고 싶다면, [***알려주세요***!](https://github.com/nelsonic/html-form-send-email-via-google-script-without-server/issues)
 
-For your convenience, we have hosted a working demo of the field on GitHub
-Pages, check it out to see the code and how it works:
 독자분의 편의를 위해 GitHub Pages에서 데모페이지를 호스트해 두었습니다.
 코드를 확인하고 작동 방식을 확인하세요 : 
 https://dwyl.github.io/html-form-send-email-via-google-script-without-server/
