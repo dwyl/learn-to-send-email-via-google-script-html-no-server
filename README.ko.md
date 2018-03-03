@@ -1,4 +1,4 @@
-# Google Apps Mail을 사용해 *정적** HTML Form에서 메일을 보내세요!
+# Google Apps Mail을 사용해 **정적** HTML Form에서 메일을 보내세요!
 
 A 백엔드 서버 없이 HTML Form을 사용하여, "Contact Us" 메시지를 보내는 ***스텝-바이-스텝 예제***입니다.
 - PHP, Python, Ruby, Java, Node.js 등은 필요없습니다.
