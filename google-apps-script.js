@@ -13,12 +13,21 @@ function formatMailBody(obj, order) {
   // loop over all keys in the ordered form data
   for (var idx in order) {
     var key = order[idx];
-    result += "<h4 style='text-transform: capitalize; margin-bottom: 0'>" + key + "</h4><div>" + obj[key] + "</div>";
+    result += "<h4 style='text-transform: capitalize; margin-bottom: 0'>" + key + "</h4><div>" + sanitizeInput(obj[key]) + "</div>";
     // for every key, concatenate an `<h4 />`/`<div />` pairing of the key name and its value, 
     // and append it to the `result` string created at the start.
   }
   return result; // once the looping is done, `result` will be one long string to put in the email body
 }
+
+// sanitize content from the user - trust no one 
+// ref: https://developers.google.com/apps-script/reference/html/html-output#appendUntrusted(String)
+function sanitizeInput(rawInput) {
+   var placeholder = HtmlService.createHtmlOutput(" ");
+   placeholder.appendUntrusted(rawInput);
+  
+   return placeholder.getContent();
+ }
 
 function doPost(e) {
 
