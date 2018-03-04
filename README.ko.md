@@ -113,8 +113,6 @@ Google 스프레드시트를 사용해 데이터를 추적하세요!
 + form태그의 `id`는 `gform`이 되어야 합니다. 즉, `<form id = "gform">`
   + 나중에 이걸 변경하려고 한다면, `form-submission-handler.js`의 고유버전을 만들고 `id`를 고쳐야 됩니다.
 
-  이미이 repo의 예제가 아닌이 단계에서 자신의 양식을 사용하려는 경우 : 각 양식 요소의 이름 속성은 Google 시트의 열 이름과 동일해야합니다. 양식 ID는 gform (예 : <form id = "gform">)이어야합니다. 나중에 이것을 변경하려면 form-submission-handler.js의 고유 한 버전을 만들어 예상 ID를 수정해야합니다 이전 단계에서 복사 한 양식 작업 URL을 변경해야합니다.
-
 
 > Form태그의 `action` 속성을 전 단계에서 복사해놓은 URL로 고쳐야 함을 잊지 마세요.
 
@@ -142,7 +140,7 @@ Submit 하세요. 보내졌으면 아래와 같이 확인할 수 있습니다:
 # *파트 2 - 이쁘게 하고싶어..*
 
 우리 스타일에 [**순수 CSS**](http://purecss.io/start/)를 사용해 
-이 ***Super Lean*** 을 유지할 겁니다 (*step 8의 "못생긴" HTML Form태그를 고쳐요*).
+이 ***Super Lean*** 을 유지할 겁니다 ( *step 8의 "못생긴" HTML Form태그를 고* ).
 그리고 독자분의 페이지/사이트에 사용자를 유지하기 위해 Form태그 양식을 `submit`할 때
 [**JQuery** "***AJAX***"](http://api.jquery.com/jquery.ajax/) 를 사용하겠습니다 (*"구린" 응답페이지는 빼구요*).
 
@@ -165,7 +163,7 @@ src="https://cdn.rawgit.com/dwyl/html-form-send-email-via-google-script-without-
 
 ![thankyou message](https://cloud.githubusercontent.com/assets/194400/10561147/4086a89a-7517-11e5-840d-7f490353e225.png)
 
-사용자를 같은 페이지에 유지시키세요. 새로고침 없이.
+사용자를 새로고침 없이 같은 페이지에 유지시키세요.
 
 ### 11. 양식이 제출될 때 나오는 메시지 커스터마이징하기
 
@@ -316,8 +314,6 @@ id가 gform 인 form태그 내에 필드를 포함시키고 양식 요소의 이
 질문이 더 있으면 알려주세요!
 
 ## 스팸 방지
-
-In order to avoid getting spammed and fill up google apps usage quota, we will be implementing a simple SPAM prevention technique that's known as Honeypot where it essentially creates a hidden text field that if filled up is assumed as a spam bot and prevents the form from submit.
 
 스팸으로 분류되는 것을 피하고 Google Apps 사용 할당량을 채우기 위해, 우리는 Honeypot이라고 하는 간단한 스팸방지 기술을 구현할 겁니다.
 이 기술은 필수적으로 숨겨진(hidden) textfield를 만드며, 이 textfield가 채워지면 스팸 봇으로 간주하여 양식을 차단합니다.
