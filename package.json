@@ -1,6 +1,6 @@
 {
   "name": "html-form-send-email-via-google-script-without-server",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "Tutorial showing how to save data to a google doc spreadsheet from any html form (including sending emails!)",
   "main": "static-server.js",
   "scripts": {
