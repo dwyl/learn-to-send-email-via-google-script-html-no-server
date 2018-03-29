@@ -2,7 +2,7 @@
 
 A ***Step-by-Step Example*** of using an **HTML Form** to send a "Contact Us" Message via Email without a Backend Server using a Google Script - No PHP, Python, Ruby, Java, Node.js etc.
 
-See a working example here: https://dwyl.github.io/html-form-send-email-via-google-script-without-server/
+See a working example here: https://dwyl.github.io/learn-to-send-email-via-google-script-html-no-server/
 
 **_Warning:_** Google's API has limits on how many emails it can send in a day.
 This may vary on your Google account, see [the limits here](https://developers.google.com/apps-script/guides/services/quotas).
@@ -58,7 +58,7 @@ Open the **Script editor...** by clicking "**Tools**" > "**Script editor...**"
 
 ![2 script-editor](https://cloud.githubusercontent.com/assets/194400/10559732/8db2b9f6-74ef-11e5-8bf2-de286f079929.png)
 
-Here's a *snapshot* of the script you need (*at this point in the exercise*): [google-script-just-email.js](https://raw.githubusercontent.com/nelsonic/html-form-send-email-via-google-script-without-server/1d1c6727f69dec64a6b7f6bd6ff0dd72d0374210/google-script-just-email.js)
+Here's a *snapshot* of the script you need (*at this point in the exercise*): [google-script-just-email.js](https://raw.githubusercontent.com/dwyl/learn-to-send-email-via-google-script-html-no-server/1d1c6727f69dec64a6b7f6bd6ff0dd72d0374210/google-script-just-email.js)
 
 ### 3. Set the `TO_ADDRESS` in the Script
 
@@ -162,7 +162,7 @@ Update your `index.html` to include the following JavaScript file at the *end* o
 
 ```js
 <script data-cfasync="false" type="text/javascript"
-src="https://cdn.rawgit.com/dwyl/html-form-send-email-via-google-script-without-server/master/form-submission-handler.js"></script>
+src="https://cdn.rawgit.com/dwyl/learn-to-send-email-via-google-script-html-no-server/master/form-submission-handler.js"></script>
 ```
 
 **Warning:** If you did not set the `TO_ADDRESS` variable in Step 3, then
@@ -244,7 +244,7 @@ the data into a spreadsheet is safer and less prone to data loss.
 ![record_data example](https://cloud.githubusercontent.com/assets/194400/10581613/8b4f9ad4-767b-11e5-90cc-962a9d6acc91.png)
 
 This will record the data received from the `POST` as a *row* in the spreadsheet.  
-See: [**google-apps-script.js**](https://github.com/nelsonic/html-form-send-email-via-google-script-without-server/blob/master/google-apps-script.js) for the full code you can *copy-paste*.
+See: [**google-apps-script.js**](https://github.com/dwyl/learn-to-send-email-via-google-script-html-no-server/blob/master/google-apps-script.js) for the full code you can *copy-paste*.
 
 ### 15. Save a New Version and Re-Publish it
 
@@ -294,23 +294,23 @@ your form because it automatically re-loads the page when you make changes in yo
 
 # *Want more*?
 
-If you want us to take this tutorial further, [***please let us know***!](https://github.com/nelsonic/html-form-send-email-via-google-script-without-server/issues)
+If you want us to take this tutorial further, [***please let us know***!](https://github.com/dwyl/learn-to-send-email-via-google-script-html-no-server/issues)
 
 For your convenience, we have hosted a working demo of the field on GitHub
 Pages, check it out to see the code and how it works:
-https://dwyl.github.io/html-form-send-email-via-google-script-without-server/
+https://dwyl.github.io/learn-to-send-email-via-google-script-html-no-server/
 
 
 ## Add your own fields!
 
-In response to [Henry Beary's request](https://github.com/dwyl/html-form-send-email-via-google-script-without-server/issues/9)
+In response to [Henry Beary's request](https://github.com/dwyl/learn-to-send-email-via-google-script-html-no-server/issues/9)
 we made the form handler *generic* which means you can now add any fields you want to the form.
 
 We also created a form, `test.html`, which uses all kinds of form input elements
 so you can just copy and paste elements as desired into your own form. Just be
 sure to update their names and IDs. You can find a working example of this test
 form here:
-https://dwyl.github.io/html-form-send-email-via-google-script-without-server/test.html
+https://dwyl.github.io/learn-to-send-email-via-google-script-html-no-server/test.html
 
 Remember to include the fields *inside* the form that has the id `gform`
 and ensure that the `name` of the form element matches the new column heading in your spreadsheet.
@@ -361,7 +361,7 @@ if (validateHuman(data.honeypot)) {  //if form is filled, form will not be submi
 
 1. _How can I get help using this tutorial?_
 
-- Feel free to [post an issue](https://github.com/dwyl/html-form-send-email-via-google-script-without-server/issues/new) describing in detail which steps you have gone through and what isn't working. [A working example](https://stackoverflow.com/help/mcve) that reproduces your issue online is most ideal (e.g., host on GitHub Pages or CodePen), and such examples or providing console errors increase your chances of getting a helpful response.
+- Feel free to [post an issue](https://github.com/dwyl/learn-to-send-email-via-google-script-html-no-server/issues/new) describing in detail which steps you have gone through and what isn't working. [A working example](https://stackoverflow.com/help/mcve) that reproduces your issue online is most ideal (e.g., host on GitHub Pages or CodePen), and such examples or providing console errors increase your chances of getting a helpful response.
 
 2. _Can I get edit access to the example spreadsheet?_
 
