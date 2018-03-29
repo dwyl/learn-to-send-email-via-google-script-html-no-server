@@ -51,7 +51,7 @@ Abre el **Editor de secuencia de comandos...** haciendo click en "**Herramientas
 
 ![2 script-editor](https://cloud.githubusercontent.com/assets/194400/10559732/8db2b9f6-74ef-11e5-8bf2-de286f079929.png)
 
-Aquí está una *instantánea* del script que necesitas (*en este punto del ejercicio*): [google-script-just-email.js](https://raw.githubusercontent.com/nelsonic/html-form-send-email-via-google-script-without-server/1d1c6727f69dec64a6b7f6bd6ff0dd72d0374210/google-script-just-email.js)
+Aquí está una *instantánea* del script que necesitas (*en este punto del ejercicio*): [google-script-just-email.js](https://raw.githubusercontent.com/dwyl/learn-to-send-email-via-google-script-html-no-server/1d1c6727f69dec64a6b7f6bd6ff0dd72d0374210/google-script-just-email.js)
 
 ### 3. Establecer el `TO_ADDRESS` en el Script
 
@@ -135,7 +135,7 @@ Actualiza el `index.html` para incluir el siguiente archivo JavaScript al *final
 
 ```js
 <script data-cfasync="false" type="text/javascript"
-src="https://cdn.rawgit.com/dwyl/html-form-send-email-via-google-script-without-server/master/form-submission-handler.js"></script>
+src="https://cdn.rawgit.com/dwyl/learn-to-send-email-via-google-script-html-no-server/master/form-submission-handler.js"></script>
 ```
 
 Esto ahora va a mostrar un *message* de "Gracias" cuando el formlario es enviado:
@@ -211,7 +211,7 @@ primer paso, pero podemos hacerlo mejor.
 ![record_data example](https://cloud.githubusercontent.com/assets/194400/10581613/8b4f9ad4-767b-11e5-90cc-962a9d6acc91.png)
 
 Esto grabará los datos recibidos desde el `POST` como una *fila* en la hoja de cálculo.  
-Observa: [**google-apps-script.js**](https://github.com/nelsonic/html-form-send-email-via-google-script-without-server/blob/master/google-apps-script.js) para obtener el código completo puedes *copiar y pegar*.
+Observa: [**google-apps-script.js**](https://github.com/dwyl/learn-to-send-email-via-google-script-html-no-server/blob/master/google-apps-script.js) para obtener el código completo puedes *copiar y pegar*.
 
 ### 15. Guarda una Nueva Versión y Re-Publicalo
 
@@ -260,12 +260,12 @@ tu formulario porque automáticamente recarga la página cuando haces cambios en
 
 # ¿*Quieres más*?
 
-Si deseas seguir este tutorial, [***por favor déjanos saberlo***!](https://github.com/nelsonic/html-form-send-email-via-google-script-without-server/issues)
+Si deseas seguir este tutorial, [***por favor déjanos saberlo***!](https://github.com/dwyl/learn-to-send-email-via-google-script-html-no-server/issues)
 
 
 ## ¡Añade tus propios campos!
 
-En respuesta a [ La solicitud de Henry Beary](https://github.com/dwyl/html-form-send-email-via-google-script-without-server/issues/9)
+En respuesta a [ La solicitud de Henry Beary](https://github.com/dwyl/learn-to-send-email-via-google-script-html-no-server/issues/9)
 hemos hecho el handler del formulario *genérico* lo que significa que ahora puedes agregar cualquier campo que desees al formulario.
 
 recuerda incluir los campos *dentro* del formulario que tiene la id `gform`
