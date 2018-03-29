@@ -211,7 +211,7 @@ primer paso, pero podemos hacerlo mejor.
 ![record_data example](https://cloud.githubusercontent.com/assets/194400/10581613/8b4f9ad4-767b-11e5-90cc-962a9d6acc91.png)
 
 Esto grabará los datos recibidos desde el `POST` como una *fila* en la hoja de cálculo.  
-Observa: [**google-apps-script.js**](https://github.com/nelsonic/learn-to-send-email-via-google-script-html-no-server/blob/master/google-apps-script.js) para obtener el código completo puedes *copiar y pegar*.
+Observa: [**google-apps-script.js**](https://github.com/dwyl/learn-to-send-email-via-google-script-html-no-server/blob/master/google-apps-script.js) para obtener el código completo puedes *copiar y pegar*.
 
 ### 15. Guarda una Nueva Versión y Re-Publicalo
 
@@ -260,7 +260,7 @@ tu formulario porque automáticamente recarga la página cuando haces cambios en
 
 # ¿*Quieres más*?
 
-Si deseas seguir este tutorial, [***por favor déjanos saberlo***!](https://github.com/nelsonic/learn-to-send-email-via-google-script-html-no-server/issues)
+Si deseas seguir este tutorial, [***por favor déjanos saberlo***!](https://github.com/dwyl/learn-to-send-email-via-google-script-html-no-server/issues)
 
 
 ## ¡Añade tus propios campos!
