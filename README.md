@@ -58,7 +58,7 @@ Open the **Script editor...** by clicking "**Tools**" > "**Script editor...**"
 
 ![2 script-editor](https://cloud.githubusercontent.com/assets/194400/10559732/8db2b9f6-74ef-11e5-8bf2-de286f079929.png)
 
-Here's a *snapshot* of the script you need (*at this point in the exercise*): [google-script-just-email.js](https://raw.githubusercontent.com/nelsonic/html-form-send-email-via-google-script-without-server/1d1c6727f69dec64a6b7f6bd6ff0dd72d0374210/google-script-just-email.js)
+Here's a *snapshot* of the script you need (*at this point in the exercise*): [google-script-just-email.js](https://raw.githubusercontent.com/dwyl/learn-to-send-email-via-google-script-html-no-server/1d1c6727f69dec64a6b7f6bd6ff0dd72d0374210/google-script-just-email.js)
 
 ### 3. Set the `TO_ADDRESS` in the Script
 
