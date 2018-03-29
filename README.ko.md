@@ -3,7 +3,7 @@
 A 백엔드 서버 없이 HTML Form을 사용하여, "Contact Us" 메시지를 보내는 ***스텝-바이-스텝 예제*** 입니다.
 - PHP, Python, Ruby, Java, Node.js 등은 필요없습니다.
 
-작동 예제는 이곳에서 : https://dwyl.github.io/html-form-send-email-via-google-script-without-server/
+작동 예제는 이곳에서 : https://dwyl.github.io/learn-to-send-email-via-google-script-html-no-server/
 
 **_경고:_** Google의 API는 하루에 보낼 수 있는 메일 수에 제한이 있습니다.
 Google 계정에 따라 다를 수 있습니다, [이곳에서](https://developers.google.com/apps-script/guides/services/quotas) 본인의 한도를 확인하세요.
@@ -54,7 +54,7 @@ Google 스프레드시트를 사용해 데이터를 추적하세요!
 
 ![2 script-editor](https://cloud.githubusercontent.com/assets/194400/10559732/8db2b9f6-74ef-11e5-8bf2-de286f079929.png)
 
-필요한 스크립트의 스냅샷은 다음과 같습니다 : [google-script-just-email.js](https://raw.githubusercontent.com/nelsonic/html-form-send-email-via-google-script-without-server/1d1c6727f69dec64a6b7f6bd6ff0dd72d0374210/google-script-just-email.js)
+필요한 스크립트의 스냅샷은 다음과 같습니다 : [google-script-just-email.js](https://raw.githubusercontent.com/nelsonic/learn-to-send-email-via-google-script-html-no-server/1d1c6727f69dec64a6b7f6bd6ff0dd72d0374210/google-script-just-email.js)
 
 ### 3. 스크립트에서 `TO_ADDRESS` 를 설정합니다.
 
@@ -152,7 +152,7 @@ Submit 하세요. 보내졌으면 아래와 같이 확인할 수 있습니다:
 
 ```js
 <script data-cfasync="false" type="text/javascript"
-src="https://cdn.rawgit.com/dwyl/html-form-send-email-via-google-script-without-server/master/form-submission-handler.js"></script>
+src="https://cdn.rawgit.com/dwyl/learn-to-send-email-via-google-script-html-no-server/master/form-submission-handler.js"></script>
 ```
 
 **경고:** 위의 3단계에서 `TO_ADDRESS` 변수를 설정하지 않은 경우, 메인 form 요소에 `data-email="example@email.net"`를 포함시켜야 됩니다.
@@ -239,7 +239,7 @@ https://developers.google.com/apps-script/reference/mail/mail-app
 ![record_data example](https://cloud.githubusercontent.com/assets/194400/10581613/8b4f9ad4-767b-11e5-90cc-962a9d6acc91.png)
 
 이렇게 하면 `POST`로 받은 데이터가 스프레드시트의 *행(row)*으로 기록됩니다.
-참고: 다음 파일을 이용해 full code를 복붙할 수도 있습니다. [**google-apps-script.js**](https://github.com/nelsonic/html-form-send-email-via-google-script-without-server/blob/master/google-apps-script.js)
+참고: 다음 파일을 이용해 full code를 복붙할 수도 있습니다. [**google-apps-script.js**](https://github.com/nelsonic/learn-to-send-email-via-google-script-html-no-server/blob/master/google-apps-script.js)
 
 ### 15. 새로운 버전 저장하고 재배포하기
 
@@ -283,22 +283,22 @@ HTML / CSS / JavaScript를 제공하는 **_모든_ 웹 서버**에서 실행할 
 
 # *Want more*?
 
-이 튜토리얼보다 더 많은 것을 알고 싶다면, [***알려주세요***!](https://github.com/nelsonic/html-form-send-email-via-google-script-without-server/issues)
+이 튜토리얼보다 더 많은 것을 알고 싶다면, [***알려주세요***!](https://github.com/nelsonic/learn-to-send-email-via-google-script-html-no-server/issues)
 
 독자분의 편의를 위해 GitHub Pages에서 데모페이지를 호스트해 두었습니다.
 코드를 확인하고 작동 방식을 확인하세요 : 
-https://dwyl.github.io/html-form-send-email-via-google-script-without-server/
+https://dwyl.github.io/learn-to-send-email-via-google-script-html-no-server/
 
 
 ## 당신만의 필드를 추가하세요!
 
-[Henry Beary의 요청](https://github.com/dwyl/html-form-send-email-via-google-script-without-server/issues/9)에 따라
+[Henry Beary의 요청](https://github.com/dwyl/learn-to-send-email-via-google-script-html-no-server/issues/9)에 따라
 form 처리기를 *제네릭*으로 만들어 원하는 필드를 추가할 수 있도록 했습니다..
 
 또한 모든 종류의 form input 요소를 사용하는 `test.html`도 만들었으므로 원하는대로 요소를 복붙할 수 있습니다.
 요소의 name과 id 속성들만 업데이트하면 됩니다.
 이 테스트 양식의 작동예제는 이곳에서 확인할 수 있습니다:
-https://dwyl.github.io/html-form-send-email-via-google-script-without-server/test.html
+https://dwyl.github.io/learn-to-send-email-via-google-script-html-no-server/test.html
 
 id가 gform 인 form태그 내에 필드를 포함시키고 양식 요소의 이름이 스프레드 시트의 새로운 열 제목과 일치하는지 확인하세요! 즉 :
 
@@ -348,7 +348,7 @@ if (validateHuman(data.honeypot)) {  //이 부분이 채워져 있으면, 제출
 
 1. _이 자습서를 사용할 때 도움을 받으려면 어떻게 하나요?_
 
-- 어떤 단계를 거쳤으며 어떤 단계가 효과적이지 않은지 상세하게 설명하는 [문제를 게시](https://github.com/dwyl/html-form-send-email-via-google-script-without-server/issues/new)하세요. 온라인으로 겪으신 문제를 재현하는 [예제](https://stackoverflow.com/help/mcve)가 가장 이상적입니다 (예 : GitHub Pages 또는 CodePen의 호스트). 예를 들어 콘솔 오류를 제공하면 도움이 되는 응답을 받을 가능성이 높아집니다.
+- 어떤 단계를 거쳤으며 어떤 단계가 효과적이지 않은지 상세하게 설명하는 [문제를 게시](https://github.com/dwyl/learn-to-send-email-via-google-script-html-no-server/issues/new)하세요. 온라인으로 겪으신 문제를 재현하는 [예제](https://stackoverflow.com/help/mcve)가 가장 이상적입니다 (예 : GitHub Pages 또는 CodePen의 호스트). 예를 들어 콘솔 오류를 제공하면 도움이 되는 응답을 받을 가능성이 높아집니다.
 
 
 2. _예제 스프레드시트에 대한 수정권한을 얻을 수 있을까요?_
