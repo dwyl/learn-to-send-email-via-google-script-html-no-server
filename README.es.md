@@ -51,7 +51,7 @@ Abre el **Editor de secuencia de comandos...** haciendo click en "**Herramientas
 
 ![2 script-editor](https://cloud.githubusercontent.com/assets/194400/10559732/8db2b9f6-74ef-11e5-8bf2-de286f079929.png)
 
-Aquí está una *instantánea* del script que necesitas (*en este punto del ejercicio*): [google-script-just-email.js](https://raw.githubusercontent.com/nelsonic/learn-to-send-email-via-google-script-html-no-server/1d1c6727f69dec64a6b7f6bd6ff0dd72d0374210/google-script-just-email.js)
+Aquí está una *instantánea* del script que necesitas (*en este punto del ejercicio*): [google-script-just-email.js](https://raw.githubusercontent.com/nelsonic/html-form-send-email-via-google-script-without-server/1d1c6727f69dec64a6b7f6bd6ff0dd72d0374210/google-script-just-email.js)
 
 ### 3. Establecer el `TO_ADDRESS` en el Script
 

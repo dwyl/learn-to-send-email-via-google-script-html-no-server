@@ -54,7 +54,7 @@ Google 스프레드시트를 사용해 데이터를 추적하세요!
 
 ![2 script-editor](https://cloud.githubusercontent.com/assets/194400/10559732/8db2b9f6-74ef-11e5-8bf2-de286f079929.png)
 
-필요한 스크립트의 스냅샷은 다음과 같습니다 : [google-script-just-email.js](https://raw.githubusercontent.com/nelsonic/learn-to-send-email-via-google-script-html-no-server/1d1c6727f69dec64a6b7f6bd6ff0dd72d0374210/google-script-just-email.js)
+필요한 스크립트의 스냅샷은 다음과 같습니다 : [google-script-just-email.js](https://raw.githubusercontent.com/nelsonic/html-form-send-email-via-google-script-without-server/1d1c6727f69dec64a6b7f6bd6ff0dd72d0374210/google-script-just-email.js)
 
 ### 3. 스크립트에서 `TO_ADDRESS` 를 설정합니다.
 
