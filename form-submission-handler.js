@@ -72,9 +72,12 @@ function handleFormSubmit(event) {  // handles form submit withtout any jquery
   }
   */
 
-  if( !validEmail(data.email) ) {   // if email is not valid show error
-    document.getElementById("email-invalid").style.display = "block";
-    return false;
+  if( data.email && !validEmail(data.email) ) {   // if email is not valid show error
+    var invalidEmail = document.getElementById("email-invalid");
+    if (invalidEmail) {
+      invalidEmail.style.display = "block";
+      return false;
+    }
   } else {
     var url = event.target.action;  //
     var xhr = new XMLHttpRequest();
@@ -85,7 +88,10 @@ function handleFormSubmit(event) {  // handles form submit withtout any jquery
         console.log( xhr.status, xhr.statusText )
         console.log(xhr.responseText);
         document.getElementById("gform").style.display = "none"; // hide form
-        document.getElementById("thankyou_message").style.display = "block";
+        var thankYouMessage = document.getElementById("thankyou_message");
+        if (thankYouMessage) {
+          thankYouMessage.style.display = "block";
+        }
         return;
     };
     // url encode form data for sending as post data
