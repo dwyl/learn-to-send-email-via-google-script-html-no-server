@@ -36,12 +36,12 @@ function getFormData() {
     var str = ""; // declare empty string outside of loop to allow
                   // it to be appended to for each item in the loop
     if(elements[k].type === "checkbox"){ // special case for Edge's html collection
-      str = str + elements[k].checked + ", "; // take the string and append 
-                                              // the current checked value to 
-                                              // the end of it, along with 
+      str = str + elements[k].checked + ", "; // take the string and append
+                                              // the current checked value to
+                                              // the end of it, along with
                                               // a comma and a space
-      data[k] = str.slice(0, -2); // remove the last comma and space 
-                                  // from the  string to make the output 
+      data[k] = str.slice(0, -2); // remove the last comma and space
+                                  // from the  string to make the output
                                   // prettier in the spreadsheet
     }else if(elements[k].length){
       for(var i = 0; i < elements[k].length; i++){
@@ -105,6 +105,6 @@ function loaded() {
   console.log("Contact form submission handler loaded successfully.");
   // bind to the submit event of our form
   var form = document.getElementById("gform");
-  form.addEventListener("submit", handleFormSubmit, false);
+  form.addEventListener("submit", handleFormSubmit, false, {once: true});
 };
 document.addEventListener("DOMContentLoaded", loaded, false);
