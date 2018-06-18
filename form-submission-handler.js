@@ -62,7 +62,7 @@ function getFormData() {
   return data;
 }
 
-function handleFormSubmit(event) {  // handles form submit withtout any jquery
+function handleFormSubmit(event) {  // handles form submit without any jquery
   event.preventDefault();           // we are submitting via xhr below
   var data = getFormData();         // get the values submitted in the form
 
@@ -79,6 +79,7 @@ function handleFormSubmit(event) {  // handles form submit withtout any jquery
       return false;
     }
   } else {
+    disableAllButtons(event.target);
     var url = event.target.action;  //
     var xhr = new XMLHttpRequest();
     xhr.open('POST', url);
@@ -108,3 +109,10 @@ function loaded() {
   form.addEventListener("submit", handleFormSubmit, false);
 };
 document.addEventListener("DOMContentLoaded", loaded, false);
+
+function disableAllButtons(form) {
+  var buttons = form.querySelectorAll("button");
+  for (var i = 0; i < buttons.length; i++) {
+    buttons[i].disabled = true;
+  }
+}
