@@ -61,7 +61,7 @@ function doPost(e) {
   } catch(error) { // if error return this
     Logger.log(error);
     return ContentService
-          .createTextOutput(JSON.stringify({"result":"error", "error": e}))
+          .createTextOutput(JSON.stringify({"result":"error", "error": error}))
           .setMimeType(ContentService.MimeType.JSON);
   }
 }
@@ -89,7 +89,7 @@ function record_data(e) {
     sheet.getRange(nextRow, 1, 1, row.length).setValues([row]);
   }
   catch(error) {
-    Logger.log(e);
+    Logger.log(error);
   }
   finally {
     return;
