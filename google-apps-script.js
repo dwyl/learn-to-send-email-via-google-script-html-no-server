@@ -82,7 +82,18 @@ function record_data(e) {
     // loop through the header columns
     for (var i = 1; i < headers.length; i++) { // start at 1 to avoid Timestamp column
       if(headers[i].length > 0) {
-        row.push(e.parameter[headers[i]]); // add data to row
+        var temp = e.parameters[headers[i]];
+        if (temp.length === 1){
+          temp = e.parameter[headers[i]];
+          row.push(temp); // add data to row
+        }
+        else{
+          var output = temp[0];
+          for (var j = 1; j < temp.length; j++) {
+            output +=  ', ' + temp[j];
+          }
+          row.push(output);
+        }
       }
     }
     // more efficient to set values as [][] array than individually
