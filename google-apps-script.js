@@ -8,8 +8,13 @@
 // var TO_ADDRESS = "example@email.net";
 
 // spit out all the keys/values from the form in HTML for email
+// uses an array of keys if provided or the object to determine field order
 function formatMailBody(obj, order) {
   var result = "";
+  if (!order) {
+    order = Object.keys(obj);
+  }
+  
   // loop over all keys in the ordered form data
   for (var idx in order) {
     var key = order[idx];
@@ -37,21 +42,28 @@ function doPost(e) {
     
     // shorter name for form data
     var mailData = e.parameters;
-    
-    // names and order of form elements
-    var dataOrder = JSON.parse(e.parameters.formDataNameOrder);
+
+    // names and order of form elements (if set)
+    var orderParameter = e.parameters.formDataNameOrder;
+    var dataOrder;
+    if (orderParameter) {
+      dataOrder = JSON.parse(orderParameter);
+    }
     
     // determine recepient of the email
     // if you have your email uncommented above, it uses that `TO_ADDRESS`
     // otherwise, it defaults to the email provided by the form's data attribute
     var sendEmailTo = (typeof TO_ADDRESS !== "undefined") ? TO_ADDRESS : mailData.formGoogleSendEmail;
     
-    MailApp.sendEmail({
-      to: String(sendEmailTo),
-      subject: "Contact form submitted",
-      // replyTo: String(mailData.email), // This is optional and reliant on your form actually collecting a field named `email`
-      htmlBody: formatMailBody(mailData, dataOrder)
-    });
+    // send email if to address is set
+    if (sendEmailTo) {
+      MailApp.sendEmail({
+        to: String(sendEmailTo),
+        subject: "Contact form submitted",
+        // replyTo: String(mailData.email), // This is optional and reliant on your form actually collecting a field named `email`
+        htmlBody: formatMailBody(mailData, dataOrder)
+      });
+    }
 
     return ContentService    // return json success results
           .createTextOutput(
@@ -82,7 +94,12 @@ function record_data(e) {
     // loop through the header columns
     for (var i = 1; i < headers.length; i++) { // start at 1 to avoid Timestamp column
       if(headers[i].length > 0) {
-        row.push(e.parameter[headers[i]]); // add data to row
+        var values = e.parameters[headers[i]];
+        var output = values[0];
+        for (var j = 1; j < values.length; j++) {
+          output += ', ' + values[j];
+        }
+        row.push(output); // add data to row
       }
     }
     // more efficient to set values as [][] array than individually
