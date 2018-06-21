@@ -133,9 +133,9 @@ se necesita enviar el formulario usando ***AJAX***.
 Actualiza el `index.html` para incluir el siguiente archivo JavaScript al *final* de tu fila
 (*antes de cerrar el tag `</body>`*)
 
-```js
+```html
 <script data-cfasync="false" type="text/javascript"
-src="https://cdn.rawgit.com/dwyl/learn-to-send-email-via-google-script-html-no-server/master/form-submission-handler.js"></script>
+src="form-submission-handler.js"></script>
 ```
 
 Esto ahora va a mostrar un *message* de "Gracias" cuando el formlario es enviado:
@@ -211,7 +211,7 @@ primer paso, pero podemos hacerlo mejor.
 ![record_data example](https://cloud.githubusercontent.com/assets/194400/10581613/8b4f9ad4-767b-11e5-90cc-962a9d6acc91.png)
 
 Esto grabará los datos recibidos desde el `POST` como una *fila* en la hoja de cálculo.  
-Observa: [**google-apps-script.js**](https://github.com/dwyl/learn-to-send-email-via-google-script-html-no-server/blob/master/google-apps-script.js) para obtener el código completo puedes *copiar y pegar*.
+Observa: [**google-apps-script.js**](google-apps-script.js) para obtener el código completo puedes *copiar y pegar*.
 
 ### 15. Guarda una Nueva Versión y Re-Publicalo
 

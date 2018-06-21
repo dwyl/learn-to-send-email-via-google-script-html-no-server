@@ -150,9 +150,9 @@ Submit 하세요. 보내졌으면 아래와 같이 확인할 수 있습니다:
 
 파일 끝 (*`</body>` 태그 닫기 전)에 다음 JavaScript 파일을 포함하도록 index.html을 업데이트합시다.
 
-```js
+```html
 <script data-cfasync="false" type="text/javascript"
-src="https://cdn.rawgit.com/dwyl/learn-to-send-email-via-google-script-html-no-server/master/form-submission-handler.js"></script>
+src="form-submission-handler.js"></script>
 ```
 
 **경고:** 위의 3단계에서 `TO_ADDRESS` 변수를 설정하지 않은 경우, 메인 form 요소에 `data-email="example@email.net"`를 포함시켜야 됩니다.
@@ -239,7 +239,7 @@ https://developers.google.com/apps-script/reference/mail/mail-app
 ![record_data example](https://cloud.githubusercontent.com/assets/194400/10581613/8b4f9ad4-767b-11e5-90cc-962a9d6acc91.png)
 
 이렇게 하면 `POST`로 받은 데이터가 스프레드시트의 *행(row)*으로 기록됩니다.
-참고: 다음 파일을 이용해 full code를 복붙할 수도 있습니다. [**google-apps-script.js**](https://github.com/dwyl/learn-to-send-email-via-google-script-html-no-server/blob/master/google-apps-script.js)
+참고: 다음 파일을 이용해 full code를 복붙할 수도 있습니다. [**google-apps-script.js**](google-apps-script.js)
 
 ### 15. 새로운 버전 저장하고 재배포하기
 
