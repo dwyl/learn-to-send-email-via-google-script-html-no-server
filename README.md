@@ -157,12 +157,11 @@ on your page/site (*avoid "ugly" response page*)
 To *prevent* the page from changing to the `JSON` response/result
 we need to submit the form using ***AJAX***.
 
-Update your `index.html` to include the following JavaScript file at the *end* of your file
+Download [the following Javascript file](form-submission-handler.js) and update your `index.html` to point to it at the *end* of your file
 (*before the closing `</body>` tag)
 
-```js
-<script data-cfasync="false" type="text/javascript"
-src="https://cdn.rawgit.com/dwyl/learn-to-send-email-via-google-script-html-no-server/master/form-submission-handler.js"></script>
+```html
+<script data-cfasync="false" type="text/javascript" src="form-submission-handler.js"></script>
 ```
 
 **Warning:** If you did not set the `TO_ADDRESS` variable in Step 3, then
@@ -244,7 +243,7 @@ the data into a spreadsheet is safer and less prone to data loss.
 ![record_data example](https://cloud.githubusercontent.com/assets/194400/10581613/8b4f9ad4-767b-11e5-90cc-962a9d6acc91.png)
 
 This will record the data received from the `POST` as a *row* in the spreadsheet.  
-See: [**google-apps-script.js**](https://github.com/dwyl/learn-to-send-email-via-google-script-html-no-server/blob/master/google-apps-script.js) for the full code you can *copy-paste*.
+See: [**google-apps-script.js**](google-apps-script.js) for the full code you can *copy-paste*.
 
 ### 15. Save a New Version and Re-Publish it
 
