@@ -87,7 +87,11 @@ function record_data(e) {
   Logger.log(JSON.stringify(e)); // log the POST data in case we need to debug it
   try {
     var doc     = SpreadsheetApp.getActiveSpreadsheet();
-    var sheet   = doc.getSheetByName(e.parameters.formGoogleSheetName); // select the 'responses' sheet by default
+    
+    // select the 'responses' sheet by default
+    var sheetName = e.parameters.formGoogleSheetName || "responses";
+    var sheet   = doc.getSheetByName(sheetName);
+    
     var headers = sheet.getRange(1, 1, 1, sheet.getLastColumn()).getValues()[0];
     var nextRow = sheet.getLastRow()+1; // get next row
     var row     = [ new Date() ]; // first element in the row should always be a timestamp
