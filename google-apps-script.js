@@ -84,6 +84,9 @@ function doPost(e) {
  * e is the data received from the POST
  */
 function record_data(e) {
+  var lock = LockService.getDocumentLock();
+  lock.waitLock(30000); // hold off up to 30 sec to avoid concurrent writing
+  
   try {
     Logger.log(JSON.stringify(e)); // log the POST data in case we need to debug it
     
@@ -131,6 +134,7 @@ function record_data(e) {
     Logger.log(error);
   }
   finally {
+    lock.releaseLock();
     return;
   }
 
