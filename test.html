@@ -26,168 +26,220 @@
   </p>
 
 
-  <form id="gform" method="POST" class="pure-form pure-form-stacked" data-email="example@email.net" action="https://script.google.com/macros/s/AKfycbyF7zsZXQUZLKBOaVKfsrzyr30FPHprgqd8flvC5WeuYQJnc5E/exec">
+  <form class="gform pure-form pure-form-stacked" method="POST" data-email="example@email.net" action="https://script.google.com/macros/s/AKfycbyF7zsZXQUZLKBOaVKfsrzyr30FPHprgqd8flvC5WeuYQJnc5E/exec">
 
-    <!--submit/button-->
-    <button class="button-success pure-button button-xlarge">
-      <i class="fa fa-paper-plane"></i>&nbsp;Send
-    </button>
+    <div class="form-elements">
 
-    <!--text-field-->
-    <fieldset class="pure-group">
-      <label for="text">Name: </label>
-      <input id="text" name="text" value="What your Mom calls you" />
-    </fieldset>
+      <!--submit/button-->
+      <button class="button-success pure-button button-xlarge">
+        <i class="fa fa-paper-plane"></i>&nbsp;Send
+      </button>
 
-    <!--text-area-->
-    <fieldset class="pure-group">
-      <label for="text-area">Message: </label>
-      <textarea id="text-area" name="text-area" rows="10">Tell us what's on your mind...</textarea>
-    </fieldset>
+      <!--text-field-->
+      <fieldset class="pure-group">
+        <label for="text">Name: </label>
+        <input id="text" name="text" value="What your Mom calls you" />
+      </fieldset>
 
-    <!--email-->
-    <fieldset class="pure-group">
-      <label for="email"><em>Your</em> Email Address:</label>
-      <input id="email" name="email" type="email" required value="your.name@email.com" />
-    </fieldset>
+      <!--text-area-->
+      <fieldset class="pure-group">
+        <label for="text-area">Message: </label>
+        <textarea id="text-area" name="text-area" rows="10">Tell us what's on your mind...</textarea>
+      </fieldset>
 
-    <!--color-->
-    <fieldset class="pure-group">
-      <label for="color">Favourite Color: </label>
-      <input id="color" type="color" name="color" />
-    </fieldset>
+      <!--email-->
+      <fieldset class="pure-group">
+        <label for="email"><em>Your</em> Email Address:</label>
+        <input id="email" name="email" type="email" required value="your.name@email.com" />
+      </fieldset>
 
-    <!--radio button-->
-    <fieldset class="pure-group">
-      <label for="radio">Choose a Programming Language: </label>
-      <input id="radio" type="radio" name="radio" value="js" checked />Javascript
-    </fieldset>
+      <!--color-->
+      <fieldset class="pure-group">
+        <label for="color">Favourite Color: </label>
+        <input id="color" type="color" name="color" />
+      </fieldset>
 
-    <!--radio group-->
-    <fieldset class="pure-group">
-      <legend>OK, Now Really Choose:</legend>
-      <input id="radio-group--javascript" type="radio" name="radio-group" value="js" /> <label for="radio-group--javascript">Javascript</label>
-      <input id="radio-group--java" type="radio" name="radio-group" value="java" /> <label for="radio-group--java">Java</label>
-      <input id="radio-group--cplusplus" type="radio" name="radio-group" value="c++" /> <label for="radio-group--cplusplus">C++</label>
-      <input id="radio-group--python" type="radio" name="radio-group" value="python" checked /> <label for="radio-group--python">Python</label>
-      <input id="radio-group--other" type="radio" name="radio-group" value="other" /> <label for="radio-group--other">Other</label>
-    </fieldset>
+      <!--radio button-->
+      <fieldset class="pure-group">
+        <label for="radio">Choose a Programming Language: </label>
+        <input id="radio" type="radio" name="radio" value="js" checked />Javascript
+      </fieldset>
 
-    <!--checkbox-->
-    <fieldset class="pure-group">
-      <label for="checkbox">What are you Most Comfortable With?</label>
-      <input id="checkbox" type="checkbox" name="checkbox" value="js" checked />Javascript
-    </fieldset>
+      <!--radio group-->
+      <fieldset class="pure-group">
+        <legend>OK, Now Really Choose:</legend>
+        <input id="radio-group--javascript" type="radio" name="radio-group" value="js" /> <label for="radio-group--javascript">Javascript</label>
+        <input id="radio-group--java" type="radio" name="radio-group" value="java" /> <label for="radio-group--java">Java</label>
+        <input id="radio-group--cplusplus" type="radio" name="radio-group" value="c++" /> <label for="radio-group--cplusplus">C++</label>
+        <input id="radio-group--python" type="radio" name="radio-group" value="python" checked /> <label for="radio-group--python">Python</label>
+        <input id="radio-group--other" type="radio" name="radio-group" value="other" /> <label for="radio-group--other">Other</label>
+      </fieldset>
 
-    <!--checkboxes-->
-    <fieldset class="pure-group">
-      <legend>What are you Most Comfortable With?</legend>
-      <input id="checkboxes--javascript" type="checkbox" name="checkboxes" value="js" checked /> <label for="checkboxes--javascript">Javascript</label>
-      <input id="checkboxes--java" type="checkbox" name="checkboxes" value="java" /> <label for="checkboxes--java">Java</label>
-      <input id="checkboxes--cplusplus" type="checkbox" name="checkboxes" value="c++" /> <label for="checkboxes--cplusplus">C++</label>
-      <input id="checkboxes--python" type="checkbox" name="checkboxes" value="python" checked /> <label for="checkboxes--python">Python</label>
-      <input id="checkboxes--other" type="checkbox" name="checkboxes" value="other" checked /> <label for="checkboxes--other">Other</label>
-    </fieldset>
+      <!--checkbox-->
+      <fieldset class="pure-group">
+        <label for="checkbox">What are you Most Comfortable With?</label>
+        <input id="checkbox" type="checkbox" name="checkbox" value="js" checked />Javascript
+      </fieldset>
 
-    <!--menu-->
-    <fieldset class="pure-group">
-      <label for="menu">Try Again:</label>
-      <select id="menu" name="menu">
-        <option selected>Javascript</option>
-        <option>Java</option>
-        <option>C++</option>
-        <option>Python</option>
-        <option>Other</option>
-      </select>
-    </fieldset>
+      <!--checkboxes-->
+      <fieldset class="pure-group">
+        <legend>What are you Most Comfortable With?</legend>
+        <input id="checkboxes--javascript" type="checkbox" name="checkboxes" value="js" checked /> <label for="checkboxes--javascript">Javascript</label>
+        <input id="checkboxes--java" type="checkbox" name="checkboxes" value="java" /> <label for="checkboxes--java">Java</label>
+        <input id="checkboxes--cplusplus" type="checkbox" name="checkboxes" value="c++" /> <label for="checkboxes--cplusplus">C++</label>
+        <input id="checkboxes--python" type="checkbox" name="checkboxes" value="python" checked /> <label for="checkboxes--python">Python</label>
+        <input id="checkboxes--other" type="checkbox" name="checkboxes" value="other" checked /> <label for="checkboxes--other">Other</label>
+      </fieldset>
 
-    <!--list-->
-    <fieldset class="pure-group">
-      <label for="list">And Again:</label>
-      <select id="list" name="list" multiple size="5">
-        <option selected>Javascript</option>
-        <option>Java</option>
-        <option>C++</option>
-        <option selected>Python</option>
-        <option>Other</option>
-      </select>
-    </fieldset>
+      <!--menu-->
+      <fieldset class="pure-group">
+        <label for="menu">Try Again:</label>
+        <select id="menu" name="menu">
+          <option selected>Javascript</option>
+          <option>Java</option>
+          <option>C++</option>
+          <option>Python</option>
+          <option>Other</option>
+        </select>
+      </fieldset>
 
-    <!--datalist-->
-    <fieldset class="pure-group">
-      <label for="datalist">And Yet Again!:</label>
-      <input id="datalist" list="progLang" name="datalist" value="C++" />
-      <datalist id="progLang">
-        <option value="Javascript">
-        <option value="Java">
-        <option value="C++">
-        <option value="Python">
-        <option value="Other">
-     </datalist>
-    </fieldset>
+      <!--list-->
+      <fieldset class="pure-group">
+        <label for="list">And Again:</label>
+        <select id="list" name="list" multiple size="5">
+          <option selected>Javascript</option>
+          <option>Java</option>
+          <option>C++</option>
+          <option selected>Python</option>
+          <option>Other</option>
+        </select>
+      </fieldset>
 
-    <!--date-->
-    <fieldset class="pure-group">
-      <label for="date">Date</label>
-      <input id="date" type="date" name="date" value="2017-03-16" />
-    </fieldset>
+      <!--datalist-->
+      <fieldset class="pure-group">
+        <label for="datalist">And Yet Again!:</label>
+        <input id="datalist" list="progLang" name="datalist" value="C++" />
+        <datalist id="progLang">
+          <option value="Javascript" />
+          <option value="Java" />
+          <option value="C++" />
+          <option value="Python" />
+          <option value="Other" />
+        </datalist>
+      </fieldset>
 
-    <!--datetime-local-->
-    <fieldset class="pure-group">
-      <label for="datetime-local">Datetime local</label>
-      <input id="datetime-local" type="datetime-local" name="datetime-local" value="2017-03-16T23:59:59" />
-    </fieldset>
+      <!--date-->
+      <fieldset class="pure-group">
+        <label for="date">Date</label>
+        <input id="date" type="date" name="date" value="2017-03-16" />
+      </fieldset>
 
-    <!--month-->
-    <fieldset class="pure-group">
-      <label for="month">Month</label>
-      <input id="month" type="month" name="month" value="2017-10" />
-    </fieldset>
+      <!--datetime-local-->
+      <fieldset class="pure-group">
+        <label for="datetime-local">Datetime local</label>
+        <input id="datetime-local" type="datetime-local" name="datetime-local" value="2017-03-16T23:59:59" />
+      </fieldset>
 
-    <!--number-->
-    <fieldset class="pure-group">
-      <label for="number">Number</label>
-      <input id="number" type="number" name="number" value="3" />
-    </fieldset>
+      <!--month-->
+      <fieldset class="pure-group">
+        <label for="month">Month</label>
+        <input id="month" type="month" name="month" value="2017-10" />
+      </fieldset>
 
-    <!--range-->
-    <fieldset class="pure-group">
-      <label for="range">Range</label>
-      <input id="range" type="range" name="range" value="76" min="0" max="100" />
-    </fieldset>
+      <!--number-->
+      <fieldset class="pure-group">
+        <label for="number">Number</label>
+        <input id="number" type="number" name="number" value="3" />
+      </fieldset>
 
-    <!--search-->
-    <fieldset class="pure-group">
-      <label for="search">Search</label>
-      <input id="search" type="search" name="search" value="Bing || Google || DuckDuckGo" />
-    </fieldset>
+      <!--range-->
+      <fieldset class="pure-group">
+        <label for="range">Range</label>
+        <input id="range" type="range" name="range" value="76" min="0" max="100" />
+      </fieldset>
 
-    <!--tel-->
-    <fieldset class="pure-group">
-      <label for="tel">Tel</label>
-      <input id="tel" type="tel" name="tel" value="012-345-6789" />
-    </fieldset>
+      <!--search-->
+      <fieldset class="pure-group">
+        <label for="search">Search</label>
+        <input id="search" type="search" name="search" value="Bing || Google || DuckDuckGo" />
+      </fieldset>
 
-    <!--time-->
-    <fieldset class="pure-group">
-      <label for="time">Time</label>
-      <input id="time" type="time" name="time" value="10:51:36" />
-    </fieldset>
+      <!--tel-->
+      <fieldset class="pure-group">
+        <label for="tel">Tel</label>
+        <input id="tel" type="tel" name="tel" value="012-345-6789" />
+      </fieldset>
 
-    <!--url-->
-    <fieldset class="pure-group">
-      <label for="url">URL</label>
-      <input id="url" type="url" name="url" value="https://github.com/dwyl/learn-to-send-email-via-google-script-html-no-server" />
-    </fieldset>
+      <!--time-->
+      <fieldset class="pure-group">
+        <label for="time">Time</label>
+        <input id="time" type="time" name="time" value="10:51:36" />
+      </fieldset>
 
-    <!--week-->
-    <fieldset class="pure-group">
-      <label for="week">Week</label>
-      <input id="week" type="week" name="week" value="2017-W51" />
-    </fieldset>
+      <!--url-->
+      <fieldset class="pure-group">
+        <label for="url">URL</label>
+        <input id="url" type="url" name="url" value="https://github.com/dwyl/learn-to-send-email-via-google-script-html-no-server" />
+      </fieldset>
 
-    <!--hidden-->
-    <input type="hidden" name="hidden" value="this is hidden" />
+      <!--week-->
+      <fieldset class="pure-group">
+        <label for="week">Week</label>
+        <input id="week" type="week" name="week" value="2017-W51" />
+      </fieldset>
+
+      <!--hidden-->
+      <input type="hidden" name="hidden" value="this is hidden" />
+    </div>
+
+    <div class="thankyou_message" style="display:none;">
+      <h2><em>Thanks</em> for contacting us!
+        We will get back to you soon!</h2>
+    </div>
+
+  </form>
+
+  <!-- showing multiple forms working -->
+  <hr style="margin: 50px">
+
+  <form class="gform pure-form pure-form-stacked" method="POST" data-email="example@email.net"
+  action="https://script.google.com/macros/s/AKfycbwMxYDrufp73bKdU8gMvxFDdHRuzcR4IKQUB33B7GqwyfyZS04/exec">
+    <!-- change the form action to your script url -->
+
+    <div class="form-elements">
+      <fieldset class="pure-group">
+        <label for="name">Name: </label>
+        <input id="name" name="name" placeholder="What your Mom calls you" />
+      </fieldset>
+
+      <fieldset class="pure-group">
+        <label for="message">Message: </label>
+        <textarea id="message" name="message" rows="10"
+        placeholder="Tell us what's on your mind..."></textarea>
+      </fieldset>
+
+      <fieldset class="pure-group">
+        <label for="email"><em>Your</em> Email Address:</label>
+        <input id="email" name="email" type="email" value=""
+        required placeholder="your.name@email.com"/>
+        <span class="email-invalid" style="display:none">
+          Must be a valid email address</span>
+      </fieldset>
+
+      <fieldset class="pure-group">
+        <label for="color">Favourite Color: </label>
+        <input id="color" name="color" placeholder="green" />
+      </fieldset>
+
+      <button class="button-success pure-button button-xlarge">
+        <i class="fa fa-paper-plane"></i>&nbsp;Send</button>
+    </div>
+
+    <!-- Customise the Thankyou Message People See when they submit the form: -->
+    <div class="thankyou_message" style="display:none;">
+      <h2><em>Thanks</em> for contacting us again!
+        We will get back to you soon!</h2>
+    </div>
 
   </form>
 
