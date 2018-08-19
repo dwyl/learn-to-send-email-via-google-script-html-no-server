@@ -99,7 +99,7 @@ crea tu propio archivo html con el formulario básico. (*guarda el archivo*)
 
 > Recuerda cambiar la URL del `action` del formulario con la que copiaste en el paso anterior:
 
-![7-html-form](https://cloud.githubusercontent.com/assets/194400/10560470/e2d7fcb6-7503-11e5-9d9a-3771423e51fa.png)
+![7-html-form](https://user-images.githubusercontent.com/1406149/44312329-9b9c8600-a3b3-11e8-9816-4bdbbc96dc62.png)
 
 ### 8. Abre el Formulario HTML (*página*) en tu Navegador
 
@@ -268,7 +268,7 @@ Si deseas seguir este tutorial, [***por favor déjanos saberlo***!](https://gith
 En respuesta a [ La solicitud de Henry Beary](https://github.com/dwyl/learn-to-send-email-via-google-script-html-no-server/issues/9)
 hemos hecho el handler del formulario *genérico* lo que significa que ahora puedes agregar cualquier campo que desees al formulario.
 
-recuerda incluir los campos *dentro* del formulario que tiene la id `gform`
+recuerda incluir los campos *dentro* del formulario que tiene la class `gform`
 y asegurate de que el `name` del elemento de formulario coincida con el nuevo encabezado de la columna en su hoja de cálculo.
  Ej.:
 ```HTML

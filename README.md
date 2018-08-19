@@ -102,6 +102,10 @@ Select the *latest* project version to deploy.
 
 ![5 auth-required](https://cloud.githubusercontent.com/assets/194400/10560412/89d3fb0c-7502-11e5-81ce-fb239bf545b2.png)
 
+Unless you [verify your script with Google](https://developers.google.com/apps-script/guides/client-verification#requesting_verification), you will need to click on "Advanced" and "Go to ... (unsafe)" to give this app permissions.
+
+![5-auth-failed-verification](https://user-images.githubusercontent.com/1406149/44312495-79583780-a3b6-11e8-9740-8c9b50f195d6.png)
+
 ![5-allow-sending-emails](https://cloud.githubusercontent.com/assets/194400/10560416/a86a26ae-7502-11e5-9add-d5081d409af4.png)
 
 Copy the web app URL to your clip board / note pad.
@@ -117,15 +121,16 @@ create your own html file with the basic form. (*save the file*)
 
 :warning: If you're already trying to use *your own form* by this step rather than the example one in this repo:
 + Each of your form elements must have a `name` attribute equal to that of your column name in the Google sheet
-+ The form `id` must be `gform`, i.e. `<form id = "gform">`
++ The form's `class` must be `gform`, i.e. `<form class="gform">`
   + If you want to alter this later, you will need to create your
-  own version of `form-submission-handler.js` and amend the expected `id`
+  own version of `form-submission-handler.js` and amend the expected `class`
 
 
 > Remember to change the Form `action` URL to the one you copied in
 the previous step:
 
-![7-html-form](https://cloud.githubusercontent.com/assets/194400/10560470/e2d7fcb6-7503-11e5-9d9a-3771423e51fa.png)
+![7-html-form](https://user-images.githubusercontent.com/1406149/44312329-9b9c8600-a3b3-11e8-9816-4bdbbc96dc62.png)
+
 
 ### 8. Open the HTML Form (*page*) in your Browser
 
@@ -311,7 +316,7 @@ sure to update their names and IDs. You can find a working example of this test
 form here:
 https://dwyl.github.io/learn-to-send-email-via-google-script-html-no-server/test.html
 
-Remember to include the fields *inside* the form that has the id `gform`
+Remember to include the fields *inside* the form that has the class `gform`
 and ensure that the `name` of the form element matches the new column heading in your spreadsheet.
 e.g:
 ```HTML
@@ -356,11 +361,16 @@ if (validateHuman(data.honeypot)) {  //if form is filled, form will not be submi
 ```
 
 
+## Uploading Files
+
+[This resource](https://www.labnol.org/internet/receive-files-in-google-drive/19697/) may help you get started on uploading files to Google Drive from the Google Script.
+
+
 ## Frequently Asked Questions (FAQ's)
 
 1. _How can I get help using this tutorial?_
 
-- Feel free to [post an issue](https://github.com/dwyl/learn-to-send-email-via-google-script-html-no-server/issues/new) describing in detail which steps you have gone through and what isn't working. [A working example](https://stackoverflow.com/help/mcve) that reproduces your issue online is most ideal (e.g., host on GitHub Pages or CodePen), and such examples or providing console errors increase your chances of getting a helpful response.
+- Feel free to [post an issue](https://github.com/dwyl/learn-to-send-email-via-google-script-html-no-server/issues/new) describing in detail which steps you have gone through and what isn't working. To get a helpful response, please provide a [working example](https://stackoverflow.com/help/mcve) that reproduces your issue. For example, see [this sample CodePen](https://codepen.io/mckennapsean/pen/gdYzNY).
 
 2. _Can I get edit access to the example spreadsheet?_
 
@@ -372,15 +382,16 @@ if (validateHuman(data.honeypot)) {  //if form is filled, form will not be submi
 
 4. _Why is the webpage not successfully submitting the form?_
 
-- Check your Javascript console logs. There could be an error while reading in the Javascript we have provided. There could be errors while submitting the form. It is required that your form have an ID of `gform`, and also a `data-email` attribute if you have not set the `TO_ADDRESS` variable inside the Google Script file. Furthermore, the provided Javascript code also expects to see an email form element which it uses to check, a warning message for that element when an improper email is submitted, and then a `thank-you` div as well, which is shown after a form is successfully submitted. Please ensure that all of these HTML elements are in your form. See the sample file for code you can copy and paste. When you have all of these elements and a proper form set up, you should not see any error messages in your Javascript console when you hit submit.
+- Check your Javascript console logs. There could be an error while reading in the Javascript we have provided. There could be errors while submitting the form. It is required that your form have a class of `gform`, and also a `data-email` attribute if you have not set the `TO_ADDRESS` variable inside the Google Script file. Furthermore, the provided Javascript code also expects to see an email form element which it uses to check, a warning message for that element when an improper email is submitted, and then a `thank-you` div as well, which is shown after a form is successfully submitted. Please ensure that all of these HTML elements are in your form. See the sample file for code you can copy and paste. When you have all of these elements and a proper form set up, you should not see any error messages in your Javascript console when you hit submit.
 
 5. _The webpage is saying my data was submitted, but why isn't my data being saved or sent to me?_
 
 - When you copied the spreadsheet and published the Google Script, did you set the permissions to "Anyone, even Anonymous"? This is required for the form to work, since anyone on the internet can hit send to give you their data. Be sure that you have deployed the proper version of the script and used "Manage versions..." when making changes.
 
-6. _How can I upload files?_
+6. _How do I change the emails this script sends?_
 
-- Unfortunately, this feature is not currently supported at this time. It may be possible to tap into the Google Drive API via the Google Script, to save files that were uploaded. We would encourage anyone who has a working example to submit a PR or post an issue with how they solved this.
+- You can tweak the Google Script on the server to send emails to anyone and in whatever format you wish. This could be used to send a confirmation email to those contacting you, but we have not added this feature to this tutorial to avoid potential spamming. The sender of the email will always be the Google account you use to create the form/script, however. Further details on how to customize the email can be found in [the `MailApp` API](https://developers.google.com/apps-script/reference/mail/mail-app). You can instead use [the `GmailApp` API](https://developers.google.com/apps-script/reference/gmail/) which may be more flexible for certain use-cases.
+
 
 7. _Is this secure? Can I use it for sensitive data?_
 
