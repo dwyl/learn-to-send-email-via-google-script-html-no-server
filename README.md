@@ -357,6 +357,11 @@ if (validateHuman(data.honeypot)) {  //if form is filled, form will not be submi
 ```
 
 
+## Uploading Files
+
+[This resource](https://www.labnol.org/internet/receive-files-in-google-drive/19697/) may help you get started on uploading files to Google Drive from the Google Script.
+
+
 ## Frequently Asked Questions (FAQ's)
 
 1. _How can I get help using this tutorial?_
