@@ -370,7 +370,7 @@ if (validateHuman(data.honeypot)) {  //if form is filled, form will not be submi
 
 1. _How can I get help using this tutorial?_
 
-- Feel free to [post an issue](https://github.com/dwyl/learn-to-send-email-via-google-script-html-no-server/issues/new) describing in detail which steps you have gone through and what isn't working. [A working example](https://stackoverflow.com/help/mcve) that reproduces your issue online is most ideal (e.g., host on GitHub Pages or CodePen), and such examples or providing console errors increase your chances of getting a helpful response.
+- Feel free to [post an issue](https://github.com/dwyl/learn-to-send-email-via-google-script-html-no-server/issues/new) describing in detail which steps you have gone through and what isn't working. To get a helpful response, please provide a [working example](https://stackoverflow.com/help/mcve) that reproduces your issue. For example, see [this sample CodePen](https://codepen.io/mckennapsean/pen/gdYzNY).
 
 2. _Can I get edit access to the example spreadsheet?_
 
