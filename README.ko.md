@@ -110,13 +110,13 @@ Google 스프레드시트를 사용해 데이터를 추적하세요!
 
 :warning: 만약 이 레포지토리의 예제가 아닌 *직접 작성한 form*을 벌써 사용하려고 한다면:
 + 각각의 form 요소 `name` 속성은 Google 시트의 컬럼네임과 같아야 합니다.
-+ form태그의 `id`는 `gform`이 되어야 합니다. 즉, `<form id = "gform">`
-  + 나중에 이걸 변경하려고 한다면, `form-submission-handler.js`의 고유버전을 만들고 `id`를 고쳐야 됩니다.
++ form태그의 `class`는 `gform`이 되어야 합니다. 즉, `<form class="gform">`
+  + 나중에 이걸 변경하려고 한다면, `form-submission-handler.js`의 고유버전을 만들고 `class`를 고쳐야 됩니다.
 
 
 > Form태그의 `action` 속성을 전 단계에서 복사해놓은 URL로 고쳐야 함을 잊지 마세요.
 
-![7-html-form](https://cloud.githubusercontent.com/assets/194400/10560470/e2d7fcb6-7503-11e5-9d9a-3771423e51fa.png)
+![7-html-form](https://user-images.githubusercontent.com/1406149/44312329-9b9c8600-a3b3-11e8-9816-4bdbbc96dc62.png)
 
 ### 8. 브라우저에서 HTML Form (*페이지*) 열기
 
@@ -300,7 +300,7 @@ form 처리기를 *제네릭*으로 만들어 원하는 필드를 추가할 수 
 이 테스트 양식의 작동예제는 이곳에서 확인할 수 있습니다:
 https://dwyl.github.io/learn-to-send-email-via-google-script-html-no-server/test.html
 
-id가 gform 인 form태그 내에 필드를 포함시키고 양식 요소의 이름이 스프레드 시트의 새로운 열 제목과 일치하는지 확인하세요! 즉 :
+class가 gform 인 form태그 내에 필드를 포함시키고 양식 요소의 이름이 스프레드 시트의 새로운 열 제목과 일치하는지 확인하세요! 즉 :
 
 ```HTML
 <fieldset class="pure-group">
@@ -361,7 +361,7 @@ if (validateHuman(data.honeypot)) {  //이 부분이 채워져 있으면, 제출
 
 4. _웹페이지에서 양식을 성공적으로 제출되지 않는 이유가 뭘까요?_
 
-- Javascript 콘솔 로그를 확인하세요. 우리가 제공한 Javascript를 읽는 동안 오류가 있을 수 있습니다. 또는 양식을 제출하는 동안 오류가 있을 수 있습니다. Google Script 파일 내에 `TO_ADDRESS` 변수를 설정하지 않은 경우 form태그의 ID가 `gform`이어야하며 데이터 이메일 속성이 필요합니다. 또한 제공되는 Javascript 코드는 확인을 위해 사용하는 전자 메일 양식 요소, 부적절한 전자 메일을 제출할 때 해당 요소에 대한 경고 메시지를 보고 다음 양식이 표시된 `thank-you` div도 볼 것으로 예상되므로 이러한 HTML 요소가 모두 양식에 있는지 확인하세요. 복사하여 붙여 넣을 수 있는 코드는 샘플 파일을 참조하시고 이 모든 요소와 적절한 양식이 설정되면 제출할 때 Javascript 콘솔에 오류 메시지가 표시되지 않아야 합니다.
+- Javascript 콘솔 로그를 확인하세요. 우리가 제공한 Javascript를 읽는 동안 오류가 있을 수 있습니다. 또는 양식을 제출하는 동안 오류가 있을 수 있습니다. Google Script 파일 내에 `TO_ADDRESS` 변수를 설정하지 않은 경우 form태그의 class가 `gform`이어야하며 데이터 이메일 속성이 필요합니다. 또한 제공되는 Javascript 코드는 확인을 위해 사용하는 전자 메일 양식 요소, 부적절한 전자 메일을 제출할 때 해당 요소에 대한 경고 메시지를 보고 다음 양식이 표시된 `thank-you` div도 볼 것으로 예상되므로 이러한 HTML 요소가 모두 양식에 있는지 확인하세요. 복사하여 붙여 넣을 수 있는 코드는 샘플 파일을 참조하시고 이 모든 요소와 적절한 양식이 설정되면 제출할 때 Javascript 콘솔에 오류 메시지가 표시되지 않아야 합니다.
 
 5. _제 웹 페이지에선 데이터가 제출되었다고 뜨는데 데이터가 스프레드시트에 저장되거나 메일로 전송되지 않아요._
 
