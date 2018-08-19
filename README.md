@@ -388,9 +388,10 @@ if (validateHuman(data.honeypot)) {  //if form is filled, form will not be submi
 
 - When you copied the spreadsheet and published the Google Script, did you set the permissions to "Anyone, even Anonymous"? This is required for the form to work, since anyone on the internet can hit send to give you their data. Be sure that you have deployed the proper version of the script and used "Manage versions..." when making changes.
 
-6. _How can I upload files?_
+6. _How do I change the emails this script sends?_
 
-- Unfortunately, this feature is not currently supported at this time. It may be possible to tap into the Google Drive API via the Google Script, to save files that were uploaded. We would encourage anyone who has a working example to submit a PR or post an issue with how they solved this.
+- You can tweak the Google Script on the server to send emails to anyone and in whatever format you wish. This could be used to send a confirmation email to those contacting you, but we have not added this feature to this tutorial to avoid potential spamming. The sender of the email will always be the Google account you use to create the form/script, however. Further details on how to customize the email can be found in [the `MailApp` API](https://developers.google.com/apps-script/reference/mail/mail-app). You can instead use [the `GmailApp` API](https://developers.google.com/apps-script/reference/gmail/) which may be more flexible for certain use-cases.
+
 
 7. _Is this secure? Can I use it for sensitive data?_
 
