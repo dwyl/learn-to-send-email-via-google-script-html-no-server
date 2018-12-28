@@ -192,7 +192,7 @@ This will now display a "Thank You" *message* when the form is submitted:
 
 ![thankyou message](https://cloud.githubusercontent.com/assets/194400/10561147/4086a89a-7517-11e5-840d-7f490353e225.png)
 
-Taylor your message by editing the `thankyou_message` div.
+Tailor your message by editing the `thankyou_message` div.
 
 ### 12. Use CSS to Make the Form *Look Good*
 
