@@ -174,18 +174,25 @@ you need to include a `data-email="example@email.net"` attribute inside the
 main form element. See the example form for more details. Otherwise, if you did
 set this variable, then you do not need this form attribute.
 
+This keeps the person on the same page. No refresh. Next step is making a thank you message appear.
+
+### 11. Add a customised Thank You Message Shown when Form Submitted
+
+After following step 10, you can choose to add a thank you message after submitting. Add the following code between the `<form>` and `</form>` tags:
+
+```html
+<div style="display:none" class="thankyou_message">
+ <!-- You can customize the thankyou message by editing the code below -->
+ <h2><em>Thanks</em> for contacting us! We will get back to you soon!
+ </h2>
+</div>
+```
+
 This will now display a "Thank You" *message* when the form is submitted:
 
 ![thankyou message](https://cloud.githubusercontent.com/assets/194400/10561147/4086a89a-7517-11e5-840d-7f490353e225.png)
 
-Keeps the person on the same page. No refresh.
-
-### 11. Customise the  Message Shown when Form Submitted
-
-Taylor your message by editing the `thankyou_message` div:
-
-![10-customise-the-thankyou-message](https://cloud.githubusercontent.com/assets/194400/10561213/9e6d3342-7518-11e5-9860-43a268102de2.png)
-
+Tailor your message by editing the `thankyou_message` div.
 
 ### 12. Use CSS to Make the Form *Look Good*
 
