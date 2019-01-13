@@ -14,6 +14,13 @@ function formatMailBody(obj, order) {
   if (!order) {
     order = Object.keys(obj);
   }
+
+  result += '<img src="cid:formImage">';
+  // if (image) {
+  //   result += '<img src="' + image + '">';
+  // } else {
+  //   result += "<h1> no image found :( </h1>";
+  // }
   
   // loop over all keys in the ordered form data
   for (var idx in order) {
@@ -38,7 +45,8 @@ function doPost(e) {
 
   try {
     Logger.log(e); // the Google Script version of console.log see: Class Logger
-    record_data(e);
+    var image = record_data(e);
+    var imageBlob = getFieldFromData('fileData', e.parameters);
     
     // shorter name for form data
     var mailData = e.parameters;
@@ -61,7 +69,9 @@ function doPost(e) {
         to: String(sendEmailTo),
         subject: "Contact form submitted",
         // replyTo: String(mailData.email), // This is optional and reliant on your form actually collecting a field named `email`
-        htmlBody: formatMailBody(mailData, dataOrder)
+        htmlBody: formatMailBody(mailData, dataOrder),
+        // attachments: [image.getAs(MimeType.PDF)],
+        inlineImages: {formImage: imageBlob}
       });
     }
 
@@ -84,6 +94,7 @@ function doPost(e) {
  * e is the data received from the POST
  */
 function record_data(e) {
+  var driveFile;
   var lock = LockService.getDocumentLock();
   lock.waitLock(30000); // hold off up to 30 sec to avoid concurrent writing
   
@@ -121,9 +132,23 @@ function record_data(e) {
       newHeader.push(field);
     }
     
+    // save image to google drive
+    var file = getFieldFromData('image', e.parameters);
+    var fileData = getFieldFromData('fileData', e.parameters);
+    var fileName = file.split('\\').pop();
+    driveFile = uploadFileToGoogleDrive(fileData, fileName);
+    var imageURL = driveFile.getUrl();
+    
     // more efficient to set values as [][] array than individually
     var nextRow = sheet.getLastRow() + 1; // get next row
     sheet.getRange(nextRow, 1, 1, row.length).setValues([row]);
+    
+    if (imageURL) {
+      sheet.insertImage(imageURL, row.length + 1, nextRow);
+      sheet.getRange(nextRow, row.length).setValue(imageURL);
+    } else {
+      Logger.log('No image found!');
+    }
 
     // update header row with any new data
     if (newHeader.length > oldHeader.length) {
@@ -135,7 +160,7 @@ function record_data(e) {
   }
   finally {
     lock.releaseLock();
-    return;
+    return driveFile;
   }
 
 }
@@ -150,4 +175,27 @@ function getFieldFromData(field, data) {
   var values = data[field] || '';
   var output = values.join ? values.join(', ') : values;
   return output;
+}
+
+function uploadFileToGoogleDrive(data, file) {
+  try {
+    var folders = DriveApp.getFoldersByName('Dropbox');
+    
+    var folder;
+    if (folders.hasNext()) {
+      folder = folders.next();
+    } else {
+      folder = DriveApp.createFolder('Dropbox');
+    }
+        
+    var contentType = data.substring(5, data.indexOf(';'));
+    var bytes = Utilities.base64Decode(data.substr(data.indexOf('base64,') + 7));
+    var blob = Utilities.newBlob(bytes, contentType, file);
+    file = folder.createFile(blob);
+    
+    file.setSharing(DriveApp.Access.ANYONE_WITH_LINK, DriveApp.Permission.VIEW);
+    return file;
+  } catch (error) {
+    Logger.log(error);
+  }
 }
