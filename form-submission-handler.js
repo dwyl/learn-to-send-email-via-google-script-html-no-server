@@ -80,12 +80,13 @@
       disableAllButtons(form);
       var url = form.action;
       var xhr = new XMLHttpRequest();
-      xhr.open('POST', url);
+      xhr.open('POST', url, false); // Make the xhr request sync
       // xhr.withCredentials = true;
       xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
       xhr.onreadystatechange = function() {
-          console.log(xhr.status, xhr.statusText);
-          console.log(xhr.responseText);
+        console.log(xhr.status, xhr.statusText);
+        console.log(xhr.responseText);
+        if (xhr.readyState === 4 && xhr.status === 200) {
           form.reset();
           var formElements = form.querySelector(".form-elements")
           if (formElements) {
@@ -96,6 +97,7 @@
             thankYouMessage.style.display = "block";
           }
           return;
+        }
       };
       // url encode form data for sending as post data
       var encoded = Object.keys(data).map(function(k) {
