@@ -57,7 +57,6 @@
     formData.formGoogleSend
       = form.dataset.email || ""; // no email by default
 
-    console.log(formData);
     return {data: formData, honeypot};
   }
 
@@ -79,8 +78,6 @@
     // xhr.withCredentials = true;
     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     xhr.onreadystatechange = function() {
-        console.log(xhr.status, xhr.statusText);
-        console.log(xhr.responseText);
         if (xhr.readyState === 4 && xhr.status === 200) {
           form.reset();
           var formElements = form.querySelector(".form-elements")
@@ -101,7 +98,6 @@
   }
   
   function loaded() {
-    console.log("Contact form submission handler loaded successfully.");
     // bind to the submit event of our form
     var forms = document.querySelectorAll("form.gform");
     for (var i = 0; i < forms.length; i++) {
