@@ -81,16 +81,17 @@
     xhr.onreadystatechange = function() {
         console.log(xhr.status, xhr.statusText);
         console.log(xhr.responseText);
-        form.reset();
-        var formElements = form.querySelector(".form-elements")
-        if (formElements) {
-          formElements.style.display = "none"; // hide form
+        if (xhr.readyState === 4 && xhr.status === 200) {
+          form.reset();
+          var formElements = form.querySelector(".form-elements")
+          if (formElements) {
+            formElements.style.display = "none"; // hide form
+          }
+          var thankYouMessage = form.querySelector(".thankyou_message");
+          if (thankYouMessage) {
+            thankYouMessage.style.display = "block";
+          }
         }
-        var thankYouMessage = form.querySelector(".thankyou_message");
-        if (thankYouMessage) {
-          thankYouMessage.style.display = "block";
-        }
-        return;
     };
     // url encode form data for sending as post data
     var encoded = Object.keys(data).map(function(k) {
