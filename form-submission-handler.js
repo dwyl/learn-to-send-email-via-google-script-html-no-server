@@ -4,21 +4,17 @@
     return re.test(email);
   }
 
-  function validateHuman(honeypot) {
-    if (honeypot) {  //if hidden form filled up
-      console.log("Robot Detected!");
-      return true;
-    } else {
-      console.log("Welcome Human!");
-    }
-  }
-
   // get all data in form and return object
   function getFormData(form) {
     var elements = form.elements;
+    var honeypot;
 
     var fields = Object.keys(elements).filter(function(k) {
-          return (elements[k].name !== "honeypot");
+      if (elements[k].name === "honeypot") {
+        honeypot = elements[k].value;
+        return false;
+      }
+      return true;
     }).map(function(k) {
       if(elements[k].name !== undefined) {
         return elements[k].name;
@@ -56,19 +52,19 @@
     formData.formGoogleSendEmail = form.dataset.email || ""; // no email by default
 
     console.log(formData);
-    return formData;
+    return {data: formData, honeypot};
   }
 
   function handleFormSubmit(event) {  // handles form submit without any jquery
     event.preventDefault();           // we are submitting via xhr below
     var form = event.target;
-    var data = getFormData(form);         // get the values submitted in the form
+    var formData = getFormData(form);
+    var data = formData.data;
 
-    /* OPTION: Remove this comment to enable SPAM prevention, see README.md
-    if (validateHuman(data.honeypot)) {  //if form is filled, form will not be submitted
+    // If a honeypot field is filled, assume it was done so by a spam bot.
+    if (formData.honeypot) {
       return false;
     }
-    */
 
     if( data.email && !validEmail(data.email) ) {   // if email is not valid show error
       var invalidEmail = form.querySelector(".email-invalid");
