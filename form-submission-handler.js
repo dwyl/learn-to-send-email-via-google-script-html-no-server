@@ -1,9 +1,4 @@
 (function() {
-  function validEmail(email) {
-    var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
-    return re.test(email);
-  }
-
   function validateHuman(honeypot) {
     if (honeypot) {  //if hidden form filled up
       console.log("Robot Detected!");
@@ -70,39 +65,31 @@
     }
     */
 
-    if( data.email && !validEmail(data.email) ) {   // if email is not valid show error
-      var invalidEmail = form.querySelector(".email-invalid");
-      if (invalidEmail) {
-        invalidEmail.style.display = "block";
-        return false;
-      }
-    } else {
-      disableAllButtons(form);
-      var url = form.action;
-      var xhr = new XMLHttpRequest();
-      xhr.open('POST', url);
-      // xhr.withCredentials = true;
-      xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-      xhr.onreadystatechange = function() {
-          console.log(xhr.status, xhr.statusText);
-          console.log(xhr.responseText);
-          form.reset();
-          var formElements = form.querySelector(".form-elements")
-          if (formElements) {
-            formElements.style.display = "none"; // hide form
-          }
-          var thankYouMessage = form.querySelector(".thankyou_message");
-          if (thankYouMessage) {
-            thankYouMessage.style.display = "block";
-          }
-          return;
-      };
-      // url encode form data for sending as post data
-      var encoded = Object.keys(data).map(function(k) {
-          return encodeURIComponent(k) + "=" + encodeURIComponent(data[k]);
-      }).join('&');
-      xhr.send(encoded);
-    }
+    disableAllButtons(form);
+    var url = form.action;
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', url);
+    // xhr.withCredentials = true;
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    xhr.onreadystatechange = function() {
+        console.log(xhr.status, xhr.statusText);
+        console.log(xhr.responseText);
+        form.reset();
+        var formElements = form.querySelector(".form-elements")
+        if (formElements) {
+          formElements.style.display = "none"; // hide form
+        }
+        var thankYouMessage = form.querySelector(".thankyou_message");
+        if (thankYouMessage) {
+          thankYouMessage.style.display = "block";
+        }
+        return;
+    };
+    // url encode form data for sending as post data
+    var encoded = Object.keys(data).map(function(k) {
+        return encodeURIComponent(k) + "=" + encodeURIComponent(data[k]);
+    }).join('&');
+    xhr.send(encoded);
   }
   
   function loaded() {
