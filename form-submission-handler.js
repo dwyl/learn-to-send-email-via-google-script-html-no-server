@@ -1,5 +1,5 @@
 (function() {
-
+  
   // get all data in form and return object
   function getFormData(form) {
     var elements = form.elements;
@@ -49,7 +49,7 @@
       = form.dataset.email || ""; // no email by default
 
     console.log(formData);
-    return {data: formData, honeypot};
+    return {data: formData, honeypot: honeypot};
   }
 
   function handleFormSubmit(event) {  // handles form submit without any jquery
