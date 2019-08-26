@@ -47,7 +47,7 @@
     formData.formGoogleSend
       = form.dataset.email || ""; // no email by default
 
-    return {data: formData, honeypot};
+    return {data: formData, honeypot: honeypot};
   }
 
   function handleFormSubmit(event) {  // handles form submit without any jquery
