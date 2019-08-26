@@ -1,5 +1,4 @@
 (function() {
-  
   // get all data in form and return object
   function getFormData(form) {
     var elements = form.elements;
@@ -48,7 +47,6 @@
     formData.formGoogleSend
       = form.dataset.email || ""; // no email by default
 
-    console.log(formData);
     return {data: formData, honeypot: honeypot};
   }
 
@@ -70,18 +68,17 @@
     // xhr.withCredentials = true;
     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     xhr.onreadystatechange = function() {
-        console.log(xhr.status, xhr.statusText);
-        console.log(xhr.responseText);
-        form.reset();
-        var formElements = form.querySelector(".form-elements")
-        if (formElements) {
-          formElements.style.display = "none"; // hide form
+        if (xhr.readyState === 4 && xhr.status === 200) {
+          form.reset();
+          var formElements = form.querySelector(".form-elements")
+          if (formElements) {
+            formElements.style.display = "none"; // hide form
+          }
+          var thankYouMessage = form.querySelector(".thankyou_message");
+          if (thankYouMessage) {
+            thankYouMessage.style.display = "block";
+          }
         }
-        var thankYouMessage = form.querySelector(".thankyou_message");
-        if (thankYouMessage) {
-          thankYouMessage.style.display = "block";
-        }
-        return;
     };
     // url encode form data for sending as post data
     var encoded = Object.keys(data).map(function(k) {
@@ -91,7 +88,6 @@
   }
   
   function loaded() {
-    console.log("Contact form submission handler loaded successfully.");
     // bind to the submit event of our form
     var forms = document.querySelectorAll("form.gform");
     for (var i = 0; i < forms.length; i++) {
