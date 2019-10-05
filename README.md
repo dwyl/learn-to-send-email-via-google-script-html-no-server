@@ -377,6 +377,9 @@ Let us know if you have any questions!
 
 - No. While data that is sent over POST may be more protected, the information could easily be intercepted by a third party or middleman, and Google has complete access to the data inside a Google Spreadsheet. Email is also not a very secure communication medium by default. We would recommend you invest in a secure platform and server for storing your data if this is a requirement.
 
+8. _What if my data is being collected or sent in the wrong order?_
+
+- If your data is being collected and or sent in the wrong order, it is recommended to test that you are loading the Clientside JS correctly. The most affective way to do this is to place a   ```debugger``` call inside the ```handleFormSubmit()``` function, if it hits the debugger and opens the respective Dev tools for the broswer/environment then the Client side JS is being loaded and the issue is not that. If the debugger isn't executed then the JS is **not** being loaded and as a result not handling the form submission, defaulting the data to a plain object which will have it's own alphabetic ordering.
 
 ## Background Reading
 
