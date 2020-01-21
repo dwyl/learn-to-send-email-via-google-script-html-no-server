@@ -197,11 +197,6 @@ Form이 Submit 된 후에 아래와 같은 감사 메세지가 나타납니다.
 result += "<h4 style='text-transform: capitalize; margin-bottom: 0'>" + key + "</h4><div>" + obj[key] + "</div>";
 ```
 
-has all you need. You can adjust the markup to suit you. We chose an `` because it was the best size for the email, and added the small amount of CSS to it to fix the capitalisation (the keys are all lower case in the JS object) and a bit of default spacing. While inline styles like this are generally bad practice on normal web pages, for email HTML they're about the only reliable way to do CSS!
-We went with a `` for the value part, because it could be anything - single-line, multiline (a `` for example wouldn't cut it).
-
-
-
 이게 우리에게 필요한 전부이며, 마크업을 당신에게 맞게 조정할 수 있습니다. 우리는 `태그를 이메일에 가장 적합한 크기로 선택했고, 대소문자(key들은 JavaScript 객체에서 모두 소문자입니다)와 약간의 기본 간격을 고정하기 위해 약간의 CSS를 추가했습니다. inline style은 일반적인 웹 페이지에서는 죄악이지만 우리가 이 예제에서 CSS를 수행하려면 유일한 방법입니다. 또한 우리는 value 부분에 단일 행이든, 여러 행이든 대응할 수 있도록 <div>` 를 사용했습니다. (예를 들어 `<p>` 태그는 그걸 잘라내지 않습니다.)
 
 추가로, 우리에겐 기본적으로 주석처리 되어 있는 `sendEmail()` 함수에 대한 `replyTo` 옵션이 있습니다.
