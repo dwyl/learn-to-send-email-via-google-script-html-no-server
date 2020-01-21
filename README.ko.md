@@ -127,7 +127,7 @@ Submit 하세요. 보내졌으면 아래와 같이 확인할 수 있습니다 :
 
 ### 9. 설정했던 이메일 계정의 받은 편지함 확인하기
 
-(*위의*) **Step 3** 에서 설정했던 이메일 계정의 받은편지함을 열어보세요.
+(*위의*) **3단계** 에서 설정했던 이메일 계정의 받은편지함을 열어보세요.
 
 [![email received](https://cloud.githubusercontent.com/assets/194400/10560512/f87f1652-7504-11e5-8b0f-c342c395a193.png)](https://cloud.githubusercontent.com/assets/194400/10560512/f87f1652-7504-11e5-8b0f-c342c395a193.png)
 
