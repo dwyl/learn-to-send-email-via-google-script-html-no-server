@@ -19,7 +19,7 @@ when you don't (*want* to) *have* a *server*.
 ### *Key Advantages*
 
 + No "*Backend*" to Deploy/Maintain/Pay for
-+ ***Fully Customisabe*** - every aspect is customisable!
++ ***Fully Customisable*** - every aspect is customisable!
 + Email *sent via* ***Google Mail*** which is ***Whitelisted Everywhere*** (*high deliverability success*)
 + **Collect/Store** any **form data** in a ***Spreadsheet*** for easy viewing  
 (*perfect if you need to share it with non-technical people*)
