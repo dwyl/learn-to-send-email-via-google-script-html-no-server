@@ -1,5 +1,9 @@
 # Google Apps Mail을 사용해 **정적** HTML Form에서 메일을 보내세요!
 
+**Language : [English](https://github.com/dwyl/learn-to-send-email-via-google-script-html-no-server#send-email-from-a-static-html-form-using-google-apps-mail) | `한국어` | [Español](https://github.com/dwyl/learn-to-send-email-via-google-script-html-no-server/blob/master/README.es.md#older-translation)**
+
+<br/>
+
 이것은 ***HTML Form*** 을 사용하여 "Contact Us" 메세지 보내기 기능을 구현할 때, 백엔드 서버없이 Google 스크립트를 활용하여 이메일을 보낼 수 있는 ***Step-by-Step(단계별)*** 예제입니다. PHP, Python, Ruby, Java, Node.js 등 필요하지 않습니다.
 
 작동하는 예제 웹 페이지는 이곳에서 볼 수 있습니다. : https://dwyl.github.io/learn-to-send-email-via-google-script-html-no-server/
