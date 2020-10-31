@@ -1,6 +1,6 @@
 # Google Apps Mail을 사용해 **정적** HTML Form에서 메일을 보내세요!
 
-**Language : [English](https://github.com/dwyl/learn-to-send-email-via-google-script-html-no-server#send-email-from-a-static-html-form-using-google-apps-mail) | `한국어` | [Español](https://github.com/dwyl/learn-to-send-email-via-google-script-html-no-server/blob/master/README.es.md#older-translation)**
+**Language : [English](https://github.com/dwyl/learn-to-send-email-via-google-script-html-no-server#send-email-from-a-static-html-form-using-google-apps-mail) | `한국어` | [Español](https://github.com/dwyl/learn-to-send-email-via-google-script-html-no-server/blob/master/README.es.md#older-translation) | [Português](https://github.com/dwyl/learn-to-send-email-via-google-script-html-no-server/blob/master/README.pt.md)**
 
 <br/>
 
