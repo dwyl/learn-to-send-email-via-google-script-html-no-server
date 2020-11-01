@@ -10,11 +10,14 @@ Veja um exemplo funcional aqui: https://dwyl.github.io/learn-to-send-email-via-g
 
 **_Observação_**: com o RGPD da UE, recomendamos [pesquisar recomendações sobre privacidade do usuário;](https://cloud.google.com/security/gdpr) você pode ser responsabilizado pela proteção dos dados pessoais dos usuários e deve fornecer a eles uma maneira de entrar em contato com você.
 
-**_Aviso_**: a API do Google tem limites para o número de e-mails que podem ser enviados por dia. Isso pode variar na sua conta do Google, consulte [os limites aqui](https://developers.google.com/apps-script/guides/services/quotas). Recomendamos implementar este tutorial até a Parte 3, já que os dados sempre serão adicionados à planilha primeiro e enviados por e-mail em seguida, se possível.
+**_Aviso_**: a API do Google tem limites para o número de e-mails que podem ser enviados por dia.
+Isso pode variar na sua conta do Google, consulte [os limites aqui](https://developers.google.com/apps-script/guides/services/quotas).  
+Recomendamos implementar este tutorial até a Parte 3, já que os dados sempre serão adicionados à planilha/folha de cálculo primeiro 
+e enviados por e-mail em seguida, se possível.
 
 ## Por quê?
 
-Precisávamos de uma maneira de enviar um e-mail de uma página HTML "*estática*" quando você não *tem* (ou não *quer ter*) um *servidor*.
+Precisávamos de uma maneira de enviar um e-mail de uma página HTML "*estática*" quando não *temos* (ou não *queremos ter*) um *servidor*.
 
 ### *Principais vantagens*
 
@@ -209,10 +212,11 @@ No entanto, você pode modificar isso, por meio do **Editor de script**. A linha
 result += "<h4 style='text-transform: capitalize; margin-bottom: 0'>" + key + "</h4><div>" + obj[key] + "</div>";
 ```
 
-tem tudo que você precisa. Você pode ajustar a marcação para se adequar à sua necessidade. Escolhemos um `<h4>` porque era o melhor tamanho para o e-mail e adicionamos uma pequena quantidade de CSS para corrigir a capitalização (as letras são todas minúsculas no objeto JS) e um pouco de espaçamento por padrão. Embora estilos inline como estes sejam geralmente má prática em páginas web normais, para um HTML no e-mail eles são a única maneira confiável de usar CSS!
+tem tudo que você precisa. Você pode ajustar a marcação para se adequar à sua necessidade. 
+Escolhemos um `<h4>` porque era o melhor tamanho para o e-mail e adicionamos uma pequena quantidade de CSS para corrigir a capitalização (as letras são todas minúsculas no objeto JS) e um pouco de espaçamento por padrão. 
+Embora estilos inline como estes sejam geralmente má prática em páginas web normais, para um HTML no e-mail eles são a única maneira fiável de usar CSS!
 Optamos por um `<div>` para a parte do valor, porque ele poderia ser qualquer coisa - uma linha só, múltiplas linhas (um `<p>` por exemplo não seria suficiente).
 
-While we're here, there's also a `replyTo` option for the `sendEmail()` method which is commented out by default:
 Aproveitando que já estamos aqui, também há uma opção `replyTo` para o método `sendEmail()` que está comentada por padrão:
 
 ```javascript
@@ -302,7 +306,7 @@ https://dwyl.github.io/learn-to-send-email-via-google-script-html-no-server/
 ## Adicione seus próprios campos!
 
 Em resposta à [solicitação de Henry Beary](https://github.com/dwyl/learn-to-send-email-via-google-script-html-no-server/issues/9),
-tornamos o tratamento do formulário *genérico*, o que significa que agora você pode adicionar quaisquer campos desejar ao formulário.
+tornamos o tratamento do formulário *genérico*, o que significa que agora você pode adicionar quaisquer campos que desejar ao formulário.
 
 Também criamos um formulário, `test.html`, que usa todos os tipos de elementos de input para que você possa simplesmente copiar e colar os elementos como quiser em seu próprio formulário. Apenas certifique-se de atualizar seus `name`s e `id`s. Você pode encontrar um exemplo funcional deste formulário de teste aqui:
 https://dwyl.github.io/learn-to-send-email-via-google-script-html-no-server/test.html
