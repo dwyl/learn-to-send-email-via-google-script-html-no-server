@@ -25,19 +25,19 @@ when you don't (*want* to) *have* a *server*.
 + No "*Backend*" to Deploy/Maintain/Pay for
 + ***Fully Customisable*** - every aspect is customisable!
 + Email *sent via* ***Google Mail*** which is ***Whitelisted Everywhere*** (*high deliverability success*)
-+ **Collect/Store** any **form data** in a ***Spreadsheet*** for easy viewing  
++ **Collect/Store** any **form data** in a ***Spreadsheet*** for easy viewing
 (*perfect if you need to share it with non-technical people*)
 
 ## What?
 
 Instead of using a server to send your email,
-which is *easy* but requires *maintenance*,  
+which is *easy* but requires *maintenance*,
 use Google to send mail on your behalf
 and use Google Spreadsheets to keep track of the data!
 
 > You *could* use a "*free*" service like http://formspree.io/ to process your form submissions
-if you don't care where you are sending your data and want to manage the data submitted  
-in your email inbox (*messy ... yuck*!)  
+if you don't care where you are sending your data and want to manage the data submitted
+in your email inbox (*messy ... yuck*!)
 *Or*... you can *invest* a few minutes and keep data private/manageable.
 *Take your pick*.
 
@@ -99,7 +99,7 @@ Then *create* your new version:
 
 ![20 a-publish](https://cloud.githubusercontent.com/assets/194400/10558288/50980aa8-74c2-11e5-8576-72084a564779.png)
 
-Select the *latest* project version to deploy.  
+Select the *latest* project version to deploy.
 :warning: Note: You *must* select the `Anyone, even anonymous` option for the 'Who has access to the app' dropdown or form responses will not be added to the spreadsheet! :warning:
 
 ![21 deploy-new-version](https://cloud.githubusercontent.com/assets/194400/10558251/570a5428-74c1-11e5-8ced-5dd26d3de3c4.png)
@@ -230,7 +230,7 @@ You can modify this though, via the script editor. The line:
 result += "<h4 style='text-transform: capitalize; margin-bottom: 0'>" + key + "</h4><div>" + obj[key] + "</div>";
 ```
 
-has all you need. You can adjust the markup to suit you. We chose an `<h4>` because it was the best size for the email, and added the small amount of CSS to it to fix the capitalisation (the keys are all lower case in the JS object) and a bit of default spacing. While inline styles like this are generally bad practice on normal web pages, for email HTML they're about the only reliable way to do CSS!  
+has all you need. You can adjust the markup to suit you. We chose an `<h4>` because it was the best size for the email, and added the small amount of CSS to it to fix the capitalisation (the keys are all lower case in the JS object) and a bit of default spacing. While inline styles like this are generally bad practice on normal web pages, for email HTML they're about the only reliable way to do CSS!
 We went with a `<div>` for the value part, because it could be anything - single-line, multiline (a `<p>` for example wouldn't cut it).
 
 While we're here, there's also a `replyTo` option for the `sendEmail()` method which is commented out by default:
@@ -260,7 +260,7 @@ the data into a spreadsheet is safer and less prone to data loss.
 
 ![record_data example](https://cloud.githubusercontent.com/assets/194400/10581613/8b4f9ad4-767b-11e5-90cc-962a9d6acc91.png)
 
-This will record the data received from the `POST` as a *row* in the spreadsheet.  
+This will record the data received from the `POST` as a *row* in the spreadsheet.
 See: [**google-apps-script.js**](google-apps-script.js) for the full code you can *copy-paste*.
 
 ### 15. Save a New Version and Re-Publish it
@@ -381,6 +381,9 @@ Let us know if you have any questions!
 
 - No. While data that is sent over POST may be more protected, the information could easily be intercepted by a third party or middleman, and Google has complete access to the data inside a Google Spreadsheet. Email is also not a very secure communication medium by default. We would recommend you invest in a secure platform and server for storing your data if this is a requirement.
 
+8. _What if my data is sent or stored in the wrong order?_
+
+- If your data is in the wrong order, it is recommended to verify that you are loading the clientside JS correctly. The most effective way to do this is to place a `debugger` call inside the `handleFormSubmit()` function, and, if it hits the debugger and opens the respective Dev Tools for the broswer/environment, then the clientside JS is being loaded correctly. If the debugger isn't hit, then the JS is **not** either not loaded or not targeting your form, defaulting the data to a plain object which will have its own alphabetic ordering instead.
 
 ## Background Reading
 
