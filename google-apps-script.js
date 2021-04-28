@@ -59,7 +59,8 @@ function doPost(e) {
     if (sendEmailTo) {
       MailApp.sendEmail({
         to: String(sendEmailTo),
-        subject: "Contact form submitted",
+        name: String(e.parameters.formGoogleEmailSender) || "Contact Form",
+        subject: String(e.parameters.formGoogleEmailSubject) || "Contact form submitted",
         // replyTo: String(mailData.email), // This is optional and reliant on your form actually collecting a field named `email`
         htmlBody: formatMailBody(mailData, dataOrder)
       });
