@@ -44,6 +44,8 @@
     // add form-specific values into the data
     formData.formDataNameOrder = JSON.stringify(fields);
     formData.formGoogleSheetName = form.dataset.sheet || "responses"; // default sheet name
+    formData.formGoogleEmailSubject = form.dataset.subject || "Contact form was submitted"; //default email subject
+    formData.formGoogleEmailSender = form.dataset.sender || "Contact Form"; //default email from text
     formData.formGoogleSendEmail
       = form.dataset.email || ""; // no email by default
 
