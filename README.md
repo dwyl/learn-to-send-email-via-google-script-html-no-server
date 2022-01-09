@@ -60,9 +60,9 @@ it will not affect the outcome.
 
 ### 2. Open the Script Editor
 
-Open the **Script editor...** by clicking "**Tools**" > "**Script editor...**"
+Open the **Apps Script editor** by clicking "**Extensions**" > "**Apps Script**"
 
-![2 script-editor](https://cloud.githubusercontent.com/assets/194400/10559732/8db2b9f6-74ef-11e5-8bf2-de286f079929.png)
+![2 script-editor](https://user-images.githubusercontent.com/1406149/148702005-00f3b846-d6a7-4e3a-9d92-c255a7233b46.png)
 
 Here's a *snapshot* of the script you need (*at this point in the exercise*): [google-script-just-email.js](https://raw.githubusercontent.com/dwyl/learn-to-send-email-via-google-script-html-no-server/1d1c6727f69dec64a6b7f6bd6ff0dd72d0374210/google-script-just-email.js)
 
@@ -85,39 +85,34 @@ receive the form's data when submitted.
 
 ![3-script-editor-showing-script](https://cloud.githubusercontent.com/assets/194400/10560379/9efa5b3a-7501-11e5-96ba-a9e3b2d77ee4.png)
 
-### 4. Save a *New Version* of your Script
+### 4. Save changes to your Script
 
-It's not immediately *obvious* but you have to *click* on "*Manage Versions...*"
+After making any code changes, you must first save them in the editor using the save icon.
 
-![19 google-script-no-save-new-version](https://cloud.githubusercontent.com/assets/194400/10558249/527f3c98-74c1-11e5-8290-5af7fa7f5f75.png)
-
-Then *create* your new version:
-
-![20 google-script-save-new-version](https://cloud.githubusercontent.com/assets/194400/10558250/53d21d5e-74c1-11e5-88c5-7bc2d8ce6228.png)
+![4-apps-script-save-code](https://user-images.githubusercontent.com/1406149/148702006-bd16b31b-fca1-494a-ba46-502d52545128.png)
 
 ### 5. Publish the *Updated* Script as a Web App
 
-![20 a-publish](https://cloud.githubusercontent.com/assets/194400/10558288/50980aa8-74c2-11e5-8576-72084a564779.png)
+![5-1-publish-button](https://user-images.githubusercontent.com/1406149/148702007-8ec6047c-804b-492c-bc00-a9b59e515914.png)
 
-Select the *latest* project version to deploy.
-:warning: Note: You *must* select the `Anyone, even anonymous` option for the 'Who has access to the app' dropdown or form responses will not be added to the spreadsheet! :warning:
+:warning: Note: You *must* select the `Anyone` option for the 'Who has access' dropdown or form responses will not go through! :warning:
 
-![21 deploy-new-version](https://cloud.githubusercontent.com/assets/194400/10558251/570a5428-74c1-11e5-8ced-5dd26d3de3c4.png)
+![5-2-deploy-new-version](https://user-images.githubusercontent.com/1406149/148702008-3d5e1b29-2670-4205-95fa-bfcb3ae2522b.png)
 
 ### 6. Authorize the Script to Send Emails
 
-![5 auth-required](https://cloud.githubusercontent.com/assets/194400/10560412/89d3fb0c-7502-11e5-81ce-fb239bf545b2.png)
+![6-1-auth-required](https://user-images.githubusercontent.com/1406149/148702009-ae03cbfe-0e1d-4eed-af6d-e32befe55d17.png)
 
 Unless you [verify your script with Google](https://developers.google.com/apps-script/guides/client-verification#requesting_verification), you will need to click on "Advanced" and "Go to ... (unsafe)" to give this app permissions.
 
-![5-auth-failed-verification](https://user-images.githubusercontent.com/1406149/44312495-79583780-a3b6-11e8-9740-8c9b50f195d6.png)
+![6-2-auth-failed-verification](https://user-images.githubusercontent.com/1406149/44312495-79583780-a3b6-11e8-9740-8c9b50f195d6.png)
 
-![5-allow-sending-emails](https://cloud.githubusercontent.com/assets/194400/10560416/a86a26ae-7502-11e5-9add-d5081d409af4.png)
+![6-3-allow-sending-emails](https://user-images.githubusercontent.com/1406149/148702010-e7b10721-2dd5-43b7-94f2-4e0e59397a57.png)
 
 Copy the web app URL to your clip board / note pad.
 Then Click "OK".
 
-![22 1-deploy-as-web-app](https://cloud.githubusercontent.com/assets/194400/10558255/6eec31e2-74c1-11e5-9c07-cea6209526df.png)
+![6-4-deploy-as-web-app](https://user-images.githubusercontent.com/1406149/148702011-95587469-bec5-4d5a-9ddf-18ed0043bced.png)
 
 
 ### 7. Create your *basic* HTML Form
