@@ -35,7 +35,7 @@ which is *easy* but requires *maintenance*,
 use Google to send mail on your behalf
 and use Google Spreadsheets to keep track of the data!
 
-> You *could* use a "*free*" service like http://formspree.io/ to process your form submissions
+> You *could* use a "*free*" service like https://formspree.io/ to process your form submissions
 if you don't care where you are sending your data and want to manage the data submitted
 in your email inbox (*messy ... yuck*!)
 *Or*... you can *invest* a few minutes and keep data private/manageable.
@@ -153,9 +153,9 @@ Open the inbox for the email address you set in **Step 3** (*above*)
 
 # *Part Two - Make It Look Good* ...
 
-We are going to keep this ***Super Lean*** by using [**PURE CSS**](http://purecss.io/start/)
+We are going to keep this ***Super Lean*** by using [**PURE CSS**](https://purecss.io/start/)
 for our Style (*fix the "ugly" HTML Form in step 8*).
-And `submit` the form using [**JQuery** "***AJAX***"](http://api.jquery.com/jquery.ajax/) to keep the person
+And `submit` the form using [**JQuery** "***AJAX***"](https://api.jquery.com/jquery.ajax/) to keep the person
 on your page/site (*avoid "ugly" response page*)
 
 ### 10. Submit the Form using **JavaScript** "***AJAX***"
@@ -197,7 +197,7 @@ Tailor your message by editing the `thankyou_message` div.
 
 ### 12. Use CSS to Make the Form *Look Good*
 
-For `this` *example* we are using ***Pure CSS***: http://purecss.io/start/
+For `this` *example* we are using ***Pure CSS***: https://purecss.io/start/
 because its ***light weight*** (***4.0KB minified and gzipped***)
 and *solves* our current "*problem*": Making it Look Good.
 
@@ -387,5 +387,5 @@ Let us know if you have any questions!
 https://developers.google.com/apps-script/reference/base/logger
 + Simple Mail Merge using Google Spreadsheets:
 https://developers.google.com/apps-script/articles/mail_merge
-+ Original Tutorial: AJAX post to google spreadsheet: http://stackoverflow.com/questions/10000020/ajax-post-to-google-spreadsheet which points to:
++ Original Tutorial: AJAX post to google spreadsheet: https://stackoverflow.com/questions/10000020/ajax-post-to-google-spreadsheet which points to:
   + https://mashe.hawksey.info/2011/10/google-spreadsheets-as-a-database-insert-with-apps-script-form-postget-submit-method/
