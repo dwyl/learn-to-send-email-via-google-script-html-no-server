@@ -34,7 +34,7 @@ o que é *fácil* mas precisa de *manutenção*,
 use o Google para enviar e-mails por você
 e use o Google Spreadsheets para manter o registro dos dados!
 
-> Você *pode* usar um serviço "*gratuito*" como http://formspree.io/ para processar os envios de seus formulários
+> Você *pode* usar um serviço "*gratuito*" como https://formspree.io/ para processar os envios de seus formulários
 se não se importar para onde está enviando seus dados e quiser gerenciar os dados enviados
 na caixa de entrada do seu e-mail (*bagunçado ... eca*!)
 *Ou*... você pode *investir* alguns minutos e manter os dados privados/gerenciáveis. *A escolha é sua*.
@@ -145,8 +145,8 @@ Abra a caixa de entrada do endereço de e-mail que você definiu no **Passo 3** 
 
 # *Parte Dois - Deixando mais bonito* ...
 
-Vamos manter isso ***Bem Enxuto*** usando o [**PURE CSS**](http://purecss.io/start/) para os nossos estilos (*arrumar o formulário HTML "feio" do passo 8*).
-E enviar (`submit`) o formulário usando [**JQuery** "***AJAX***"](http://api.jquery.com/jquery.ajax/) para manter o usuário
+Vamos manter isso ***Bem Enxuto*** usando o [**PURE CSS**](https://purecss.io/start/) para os nossos estilos (*arrumar o formulário HTML "feio" do passo 8*).
+E enviar (`submit`) o formulário usando [**JQuery** "***AJAX***"](https://api.jquery.com/jquery.ajax/) para manter o usuário
 na sua página/site (*evitar a página de resposta "feia"*)
 
 ### 10. Enviar o formulário usando **JavaScript** "***AJAX***"
@@ -185,7 +185,7 @@ Ajuste sua mensagem editando o conteúdo da div `thankyou_message`.
 
 ### 12. Usando CSS para fazer o formulário *ficar bonito*
 
-Para **este** *exemplo* estamos usando ***Pure CSS***: http://purecss.io/start/ 
+Para **este** *exemplo* estamos usando ***Pure CSS***: https://purecss.io/start/ 
 porque ele é ***leve*** (***4,0 KB minificado e gzipado***)
 e *resolve* nosso "*problema*" atual: fazer ele ficar bonito.
 
@@ -370,5 +370,5 @@ Nos avisem se tiver quaisquer dúvidas!
 https://developers.google.com/apps-script/reference/base/logger
 + Mail Merge simples utilizando Google Spreadsheets:
 https://developers.google.com/apps-script/articles/mail_merge
-+ Tutorial original: AJAX post to google spreadsheet: http://stackoverflow.com/questions/10000020/ajax-post-to-google-spreadsheet que direciona para:
++ Tutorial original: AJAX post to google spreadsheet: https://stackoverflow.com/questions/10000020/ajax-post-to-google-spreadsheet que direciona para:
   + https://mashe.hawksey.info/2011/10/google-spreadsheets-as-a-database-insert-with-apps-script-form-postget-submit-method/

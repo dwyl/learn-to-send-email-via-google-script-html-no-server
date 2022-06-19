@@ -32,7 +32,7 @@
 
 쉽지만 유지보수가 필요한 서버를 사용하여 이메일을 보내는 대신, Google을 사용하여 이메일을 보내고 Google 스프레드시트를 사용하여 데이터를 추적하세요!
 
-> 데이터를 보내는 위치에 상관하지 않고, 받은 편지함(messy ... yuck)에 제출된 데이터를 관리하려면 http://formspree.io/과 같은 무료 서비스를 사용하여 Form 제출을 처리할 수 있습니다.
+> 데이터를 보내는 위치에 상관하지 않고, 받은 편지함(messy ... yuck)에 제출된 데이터를 관리하려면 https://formspree.io/과 같은 무료 서비스를 사용하여 Form 제출을 처리할 수 있습니다.
 >
 > *또는*... 몇 분 동안 *투자하고* 데이터를 비공개로 관리할 수 있습니다. *당신이 선택하세요.*
 
@@ -139,7 +139,7 @@ Submit 하세요. 보내졌으면 아래와 같이 확인할 수 있습니다 :
 
 # *Part Two - 보기 좋게 만들기* ...
 
-우리 스타일에 [**순수 CSS**](http://purecss.io/start/)를 사용해 이 ***Super Lean*** 을 유지할 겁니다. ( *8단계의 "못생긴" HTML Form 태그를  고칠겁니다.* ). 그리고 당신의 페이지/사이트에 사용자를 유지하기 위해 Form 태그 양식을 `submit` 할 때 [**JQuery** "***AJAX***"](http://api.jquery.com/jquery.ajax/) 를 사용하겠습니다. ( *"구린" 응답페이지는 빼구요.* )
+우리 스타일에 [**순수 CSS**](https://purecss.io/start/)를 사용해 이 ***Super Lean*** 을 유지할 겁니다. ( *8단계의 "못생긴" HTML Form 태그를  고칠겁니다.* ). 그리고 당신의 페이지/사이트에 사용자를 유지하기 위해 Form 태그 양식을 `submit` 할 때 [**JQuery** "***AJAX***"](https://api.jquery.com/jquery.ajax/) 를 사용하겠습니다. ( *"구린" 응답페이지는 빼구요.* )
 
 ### 10. **JavaScript** "***AJAX*** 을 이용한 Form Submit"
 
@@ -175,7 +175,7 @@ Form이 Submit 된 후에 아래와 같은 감사 메세지가 나타납니다.
 
 ### 12. CSS를 사용해 Form을 *멋지게* 만들기
 
-*이번 예제* 에서는 ***Pure CSS*** : http://purecss.io/start/ 을 사용하고 있습니다. ***4.0KB로 축소 및 압축된 적은 용량*** 이고 현재 "문제"인 보기에 구린 것을 *해결하기* 때문입니다.
+*이번 예제* 에서는 ***Pure CSS*** : https://purecss.io/start/ 을 사용하고 있습니다. ***4.0KB로 축소 및 압축된 적은 용량*** 이고 현재 "문제"인 보기에 구린 것을 *해결하기* 때문입니다.
 
 [![PureCSS-Logo-Intro](https://camo.githubusercontent.com/27da1dfc8cc2f5541bb85d8be1dd88eb5c1142ff/68747470733a2f2f6769746875622d636c6f75642e73332e616d617a6f6e6177732e636f6d2f6173736574732f3139343430302f31303536353833382f37326436643532612d373564322d313165352d396239322d6361303262313132343932302e706e67)](https://camo.githubusercontent.com/27da1dfc8cc2f5541bb85d8be1dd88eb5c1142ff/68747470733a2f2f6769746875622d636c6f75642e73332e616d617a6f6e6177732e636f6d2f6173736574732f3139343430302f31303536353833382f37326436643532612d373564322d313165352d396239322d6361303262313132343932302e706e67)
 
@@ -326,7 +326,7 @@ class가 gform 인 Form 태그 내에 필드를 포함시키고 Form 요소의 �
 
 - Original Tutorial: AJAX post to google spreadsheet: 
 
-  http://stackoverflow.com/questions/10000020/ajax-post-to-google-spreadsheet 
+  https://stackoverflow.com/questions/10000020/ajax-post-to-google-spreadsheet 
 
   which points to:
 
