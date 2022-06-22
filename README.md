@@ -8,7 +8,7 @@ A ***Step-by-Step Example*** of using an **HTML Form** to send a "Contact Us" Me
 
 See a working example here: https://dwyl.github.io/learn-to-send-email-via-google-script-html-no-server/
 
-**_Note:_** With EU's GDPR, we strongly advise [researching recommendations on user privacy;](https://cloud.google.com/security/gdpr) you may be held _responsible_ for the safekeeping of users' personal data and should provide them a way to contact you.
+**_Note:_** With EU's GDPR, we strongly advise [researching recommendations on user privacy;](https://cloud.google.com/privacy/gdpr) you may be held _responsible_ for the safekeeping of users' personal data and should provide them a way to contact you.
 
 **_Warning:_** Google's API has limits on how many emails it can send in a day.
 This may vary on your Google account, see [the limits here](https://developers.google.com/apps-script/guides/services/quotas).

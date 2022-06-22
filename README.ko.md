@@ -8,7 +8,7 @@
 
 작동하는 예제 웹 페이지는 이곳에서 볼 수 있습니다. : https://dwyl.github.io/learn-to-send-email-via-google-script-html-no-server/
 
-***참고:\*** EU's GDPR(유럽연합 일반 데이터 보호 규칙)에 따라, [사용자 개인 정보에 대한 권장 사항](https://cloud.google.com/security/gdpr)을 적극 권고합니다. 귀하는 사용자의 개인 데이터를 안전하게 보관하는 *책임* 을 받을 수 있으며, 귀하에게 연락할 수 있는 방법을 제공해야 합니다.
+***참고:\*** EU's GDPR(유럽연합 일반 데이터 보호 규칙)에 따라, [사용자 개인 정보에 대한 권장 사항](https://cloud.google.com/privacy/gdpr)을 적극 권고합니다. 귀하는 사용자의 개인 데이터를 안전하게 보관하는 *책임* 을 받을 수 있으며, 귀하에게 연락할 수 있는 방법을 제공해야 합니다.
 
 **\*경고:\*** Google API에는 하루에 보낼 수 있는 이메일 수에 제한이 있습니다. 이는 Google 계정에 따라 다를 수 있습니다. [이곳에서](https://developers.google.com/apps-script/guides/services/quotas) 본인의 한도를 확인하세요. 데이터는 항상 스프레드시트에 먼저 추가되고 이메일을 보낼 수 있다면, 이메일로 전송되므로 3부까지 튜토리얼을 구현하는 것이 좋습니다.
 
