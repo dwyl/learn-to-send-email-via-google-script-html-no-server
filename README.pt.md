@@ -8,7 +8,7 @@ Um **exemplo passo a passo** do uso de um **formulário HTML** para enviar uma m
 
 Veja um exemplo funcional aqui: https://dwyl.github.io/learn-to-send-email-via-google-script-html-no-server/
 
-**_Observação_**: com o RGPD da UE, recomendamos [pesquisar recomendações sobre privacidade do usuário;](https://cloud.google.com/security/gdpr) você pode ser responsabilizado pela proteção dos dados pessoais dos usuários e deve fornecer a eles uma maneira de entrar em contato com você.
+**_Observação_**: com o RGPD da UE, recomendamos [pesquisar recomendações sobre privacidade do usuário;](https://cloud.google.com/privacy/gdpr) você pode ser responsabilizado pela proteção dos dados pessoais dos usuários e deve fornecer a eles uma maneira de entrar em contato com você.
 
 **_Aviso_**: a API do Google tem limites para o número de e-mails que podem ser enviados por dia.
 Isso pode variar na sua conta do Google, consulte [os limites aqui](https://developers.google.com/apps-script/guides/services/quotas).  
