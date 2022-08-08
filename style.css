@@ -38,3 +38,30 @@ button {
 .honeypot-field {
   display: none;
 }
+
+.dbox {
+  width: 100%;
+  margin-bottom: 25px; }
+  @media (max-width: 767.98px) {
+    .dbox {
+      margin-bottom: 25px !important;
+      padding: 0 20px; } }
+  .dbox p {
+    margin-bottom: 0; }
+    .dbox p span {
+      font-weight: 500;
+      color: #000; }
+    .dbox p a {
+      color: #46b5d1; }
+  .dbox .icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #46b5d1;
+    margin: 0 auto;
+    margin-bottom: 20px; }
+    .dbox .icon span {
+      font-size: 20px;
+      color: #fff; }
+  .dbox .text {
+    width: 100%; }
