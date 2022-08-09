@@ -55,7 +55,7 @@
         <input id="honeypot" type="text" name="honeypot" value="" />
       </fieldset>
 
-      <button class="button-success pure-button button-xlarge">
+      <button class="button-success pure-button button-xlarge" onclick="checker()">
         <i class="fa fa-paper-plane"></i>&nbsp;Send</button>
     </div>
 
@@ -69,6 +69,14 @@
 
   <!-- Submit the Form to Google Using "AJAX" -->
   <script data-cfasync="false" src="form-submission-handler.js"></script>
+  <script>
+    function checker(){
+        var result = confirm('Are you sure?');
+        if (result = false){
+            event.preventDefault();
+        }
+    }
+  </script>
 <!-- END -->
 
 </body>
