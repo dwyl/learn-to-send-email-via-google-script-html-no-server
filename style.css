@@ -1,5 +1,6 @@
 body {
   margin: 2em;
+  background-color: powderblue;
 }
 aside {
     background: #1f8dd6; /* same color as selected state on site menu */
@@ -8,6 +9,11 @@ aside {
     color: #fff;
     margin-bottom: 2em;
 }
+form{
+  border: 2px solid purple;
+
+}
+
 textarea {
   width: 100%;
 }
@@ -16,6 +22,7 @@ textarea {
   text-transform: uppercase;
   letter-spacing: 0.1em;
   margin: 2em 0 1em;
+  border: 2px solid purple;
 }
 .is-center {
   text-align: center;
