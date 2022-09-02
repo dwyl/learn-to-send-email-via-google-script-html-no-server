@@ -1,3 +1,4 @@
-language: node_js
-node_js:
-  - 7
+language: python
+python:
+  - "3.4"
+script: python hello.py
