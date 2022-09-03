@@ -16,20 +16,8 @@ jobs:
         uses: zaproxy/action-baseline@v0.7.0
         with:
           target: 'https://www.zaproxy.org'
-      - name: Checkmarx CxFlow Action
-        uses: checkmarx-ts/checkmarx-cxflow-github-action@v1.3
-        with:
-          project: GithubActionTest
-          team: /CxServer/SP/Checkmarx
-          checkmarx_url: ${{ secrets.CHECKMARX_URL }}
-          checkmarx_username: ${{ secrets.CHECKMARX_USERNAME }}
-          checkmarx_password: ${{ secrets.CHECKMARX_PASSWORD }}
-          checkmarx_client_secret: ${{ secrets.CHECKMARX_CLIENT_SECRET }}
-    # Upload SARIF report for CodeQL / Security Alerts PRocessing
-      - name: Upload SARIF file
-        uses: github/codeql-action/upload-sarif@v1
-        with:
-          sarif_file: cx.sarif
+      - name: Run Codacy Analysis CLI
+        uses: codacy/codacy-analysis-cli-action@master
 
 
 
