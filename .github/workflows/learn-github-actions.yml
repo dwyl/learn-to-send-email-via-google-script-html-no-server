@@ -16,8 +16,6 @@ jobs:
         uses: zaproxy/action-baseline@v0.7.0
         with:
           target: 'https://www.zaproxy.org'
-      - name: Run Codacy Analysis CLI
-        uses: codacy/codacy-analysis-cli-action@master
 
 
 
