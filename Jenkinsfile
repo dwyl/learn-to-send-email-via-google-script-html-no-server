@@ -19,7 +19,4 @@ pipeline {
             }
         }
     }
-    post {
-        scanForIssues tool: checkStyle(pattern: '**/target/checkstyle-results.xml')
-    }
 }
