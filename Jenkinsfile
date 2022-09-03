@@ -13,8 +13,8 @@ pipeline {
                 echo 'Testing..'
             }
              step([$class: 'CxScanBuilder']){
-                
-             }
+
+             
         }
         stage('Deploy') {
             steps {
