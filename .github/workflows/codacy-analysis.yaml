@@ -1,4 +1,4 @@
-name: Codacy Security Scan
+name: Codacy Static Analysis
 
 on: ["push"]
 
