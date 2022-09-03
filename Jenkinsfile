@@ -14,7 +14,7 @@ pipeline {
             }
              step([$class: 'CxScanBuilder']){
 
-             
+             }
         }
         stage('Deploy') {
             steps {
