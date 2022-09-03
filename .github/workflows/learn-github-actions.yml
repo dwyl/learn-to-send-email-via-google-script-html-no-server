@@ -10,6 +10,4 @@ jobs:
           node-version: '14'
       - name: HTML5 Validator Experimental
         uses: Cyb3r-Jak3/html5validator-action-experimental@v1.0.1
-      - name: Check Spelling (JS, Vue, HTML, Markdown, Text)
-        uses: UnicornGlobal/spellcheck-github-actions@0.4.0
-
+      
