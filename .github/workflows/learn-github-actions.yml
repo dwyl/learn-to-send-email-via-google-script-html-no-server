@@ -12,6 +12,9 @@ jobs:
         uses: getsentry/action-git-diff-suggestions@v1
       - name: Codecov
         uses: codecov/codecov-action@v3.1.0
+      - name: OWASP ZAP Full Scan
+        uses: zaproxy/action-full-scan@v0.4.0
+
 
 
       
