@@ -16,8 +16,9 @@ jobs:
         uses: zaproxy/action-baseline@v0.7.0
         with:
           target: 'https://www.zaproxy.org'
-      - name: Run staticcheck with reviewdog
-        uses: reviewdog/action-staticcheck@v1.7.0
+      - name: Checkmarx CxFlow Action
+        uses: checkmarx-ts/checkmarx-cxflow-github-action@v1.5
+
 
 
 
