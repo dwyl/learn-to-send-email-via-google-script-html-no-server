@@ -8,4 +8,6 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: '14'
+      - name: Change wrapper permissions
+        run: chmod +x ./gradlew
       - run: ./test.html
