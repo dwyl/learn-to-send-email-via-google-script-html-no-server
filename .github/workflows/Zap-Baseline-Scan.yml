@@ -1,4 +1,4 @@
-name: learn-github-actions
+name: Zap-Baseline-Scan
 on: [push]
 jobs:
   check-bats-version:
