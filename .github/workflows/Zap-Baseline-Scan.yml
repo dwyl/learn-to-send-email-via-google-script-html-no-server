@@ -2,7 +2,7 @@ name: Zap-Baseline-Scan
 on:
   push:
     branches:
-      - main
+      - master
       - 'Chee-Yuan'
       - 'Daniel-Heng'
       - 'Johnny-Chuan'
