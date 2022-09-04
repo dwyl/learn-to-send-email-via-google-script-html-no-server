@@ -1,5 +1,11 @@
 name: Zap-Baseline-Scan
-on: [push]
+on:
+  push:
+    branches:
+      - main
+      - 'Chee-Yuan'
+      - 'Daniel-Heng'
+      - 'Johnny-Chuan'
 jobs:
   check-vulneabilities:
     runs-on: ubuntu-latest
