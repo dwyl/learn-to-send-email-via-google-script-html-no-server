@@ -38,3 +38,9 @@ button {
 .honeypot-field {
   display: none;
 }
+.form-container{
+  background: rgba(255, 255, 255, 0.8);
+  width: 700px;
+  display: inline-block;
+  padding: 0px 35px 20px 35px;
+}
