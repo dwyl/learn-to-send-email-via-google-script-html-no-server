@@ -3,7 +3,7 @@ name: Codacy Static Analysis
 on: ["push"]
 
 jobs:
-  codacy-security-scan:
+  codacy-static-scan:
     name: Codacy Security Scan
     runs-on: ubuntu-latest
     steps:
