@@ -1,6 +1,12 @@
 name: Codacy Static Analysis
 
-on: ["push"]
+on: 
+  push:
+    branches:
+      - master
+      - 'Chee-Yuan'
+      - 'Daniel-Heng'
+      - 'Johnny-Chuan'
 
 jobs:
   codacy-static-scan:
