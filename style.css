@@ -1,40 +1,86 @@
 body {
   margin: 2em;
+  background-color: #44545c;
 }
+
+.header img {
+  float: left;
+  top: 10px;
+  width: 60px;
+  height: 60px;
+  padding-bottom: 40px;
+}
+
 aside {
-    background: #1f8dd6; /* same color as selected state on site menu */
-    padding: 0.3em 1em;
-    border-radius: 3px;
-    color: #fff;
-    margin-bottom: 2em;
+  background: #4dbfa9;
+  padding: 0.3em 1em;
+  border-radius: 3px;
+  color: #fff;
+  margin-bottom: 2em;
 }
+
 textarea {
   width: 100%;
 }
+
 .content-head {
   font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   margin: 2em 0 1em;
 }
+
 .is-center {
   text-align: center;
 }
+
 .button-success {
   color: white;
   border-radius: 4px;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-  background: rgb(28, 184, 65); /* this is a green */
+  background: rgb(28, 184, 65);
+  /* this is a green */
 }
+
+.tooltiptext {
+  visibility: hidden;
+  background-color: #4dbfa9;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  font-size: 15px;
+  right: 135px;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+
+.button-success:hover .tooltiptext {
+  visibility: visible;
+}
+
 .button-xlarge {
   font-size: 125%;
 }
+
 button {
   float: right;
 }
-#name, #email {
+
+#name,
+#email {
   width: 50%;
 }
+
 .honeypot-field {
   display: none;
+}
+
+.form-container {
+  background: rgba(255, 255, 255, 0.8);
+  width: 700px;
+  display: inline-block;
+  padding: 0px 35px 20px 35px;
 }
