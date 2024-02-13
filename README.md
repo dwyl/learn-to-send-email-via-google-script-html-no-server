@@ -1,8 +1,14 @@
 # Send Email from a *Static* HTML Form using Google Apps Mail!
 
+**Language : `English` | [한국어](https://github.com/dwyl/learn-to-send-email-via-google-script-html-no-server/blob/master/README.ko.md#google-apps-mail을-사용해-정적-html-form에서-메일을-보내세요) | [Español](https://github.com/dwyl/learn-to-send-email-via-google-script-html-no-server/blob/master/README.es.md#older-translation) | [Português](https://github.com/dwyl/learn-to-send-email-via-google-script-html-no-server/blob/master/README.pt.md)**
+
+<br/>
+
 A ***Step-by-Step Example*** of using an **HTML Form** to send a "Contact Us" Message via Email without a Backend Server using a Google Script - No PHP, Python, Ruby, Java, Node.js etc.
 
 See a working example here: https://dwyl.github.io/learn-to-send-email-via-google-script-html-no-server/
+
+**_Note:_** With EU's GDPR, we strongly advise [researching recommendations on user privacy;](https://cloud.google.com/privacy/gdpr) you may be held _responsible_ for the safekeeping of users' personal data and should provide them a way to contact you.
 
 **_Warning:_** Google's API has limits on how many emails it can send in a day.
 This may vary on your Google account, see [the limits here](https://developers.google.com/apps-script/guides/services/quotas).
@@ -17,21 +23,21 @@ when you don't (*want* to) *have* a *server*.
 ### *Key Advantages*
 
 + No "*Backend*" to Deploy/Maintain/Pay for
-+ ***Fully Customisabe*** - every aspect is customisable!
++ ***Fully Customisable*** - every aspect is customisable!
 + Email *sent via* ***Google Mail*** which is ***Whitelisted Everywhere*** (*high deliverability success*)
-+ **Collect/Store** any **form data** in a ***Spreadsheet*** for easy viewing  
++ **Collect/Store** any **form data** in a ***Spreadsheet*** for easy viewing
 (*perfect if you need to share it with non-technical people*)
 
 ## What?
 
 Instead of using a server to send your email,
-which is *easy* but requires *maintenance*,  
+which is *easy* but requires *maintenance*,
 use Google to send mail on your behalf
 and use Google Spreadsheets to keep track of the data!
 
-> You *could* use a "*free*" service like http://formspree.io/ to process your form submissions
-if you don't care where you are sending your data and want to manage the data submitted  
-in your email inbox (*messy ... yuck*!)  
+> You *could* use a "*free*" service like https://formspree.io/ to process your form submissions
+if you don't care where you are sending your data and want to manage the data submitted
+in your email inbox (*messy ... yuck*!)
 *Or*... you can *invest* a few minutes and keep data private/manageable.
 *Take your pick*.
 
@@ -54,9 +60,9 @@ it will not affect the outcome.
 
 ### 2. Open the Script Editor
 
-Open the **Script editor...** by clicking "**Tools**" > "**Script editor...**"
+Open the **Apps Script editor** by clicking "**Extensions**" > "**Apps Script**"
 
-![2 script-editor](https://cloud.githubusercontent.com/assets/194400/10559732/8db2b9f6-74ef-11e5-8bf2-de286f079929.png)
+![2 script-editor](https://user-images.githubusercontent.com/1406149/148702005-00f3b846-d6a7-4e3a-9d92-c255a7233b46.png)
 
 Here's a *snapshot* of the script you need (*at this point in the exercise*): [google-script-just-email.js](https://raw.githubusercontent.com/dwyl/learn-to-send-email-via-google-script-html-no-server/1d1c6727f69dec64a6b7f6bd6ff0dd72d0374210/google-script-just-email.js)
 
@@ -79,39 +85,34 @@ receive the form's data when submitted.
 
 ![3-script-editor-showing-script](https://cloud.githubusercontent.com/assets/194400/10560379/9efa5b3a-7501-11e5-96ba-a9e3b2d77ee4.png)
 
-### 4. Save a *New Version* of your Script
+### 4. Save changes to your Script
 
-It's not immediately *obvious* but you have to *click* on "*Manage Versions...*"
+After making any code changes, you must first save them in the editor using the save icon.
 
-![19 google-script-no-save-new-version](https://cloud.githubusercontent.com/assets/194400/10558249/527f3c98-74c1-11e5-8290-5af7fa7f5f75.png)
-
-Then *create* your new version:
-
-![20 google-script-save-new-version](https://cloud.githubusercontent.com/assets/194400/10558250/53d21d5e-74c1-11e5-88c5-7bc2d8ce6228.png)
+![4-apps-script-save-code](https://user-images.githubusercontent.com/1406149/148702006-bd16b31b-fca1-494a-ba46-502d52545128.png)
 
 ### 5. Publish the *Updated* Script as a Web App
 
-![20 a-publish](https://cloud.githubusercontent.com/assets/194400/10558288/50980aa8-74c2-11e5-8576-72084a564779.png)
+![5-1-publish-button](https://user-images.githubusercontent.com/1406149/148702007-8ec6047c-804b-492c-bc00-a9b59e515914.png)
 
-Select the *latest* project version to deploy.  
-:warning: Note: You *must* select the `Anyone, even anonymous` option for the 'Who has access to the app' dropdown or form responses will not be added to the spreadsheet! :warning:
+:warning: Note: You *must* select the `Anyone` option for the 'Who has access' dropdown or form responses will not go through! :warning:
 
-![21 deploy-new-version](https://cloud.githubusercontent.com/assets/194400/10558251/570a5428-74c1-11e5-8ced-5dd26d3de3c4.png)
+![5-2-deploy-new-version](https://user-images.githubusercontent.com/1406149/148702008-3d5e1b29-2670-4205-95fa-bfcb3ae2522b.png)
 
 ### 6. Authorize the Script to Send Emails
 
-![5 auth-required](https://cloud.githubusercontent.com/assets/194400/10560412/89d3fb0c-7502-11e5-81ce-fb239bf545b2.png)
+![6-1-auth-required](https://user-images.githubusercontent.com/1406149/148702009-ae03cbfe-0e1d-4eed-af6d-e32befe55d17.png)
 
 Unless you [verify your script with Google](https://developers.google.com/apps-script/guides/client-verification#requesting_verification), you will need to click on "Advanced" and "Go to ... (unsafe)" to give this app permissions.
 
-![5-auth-failed-verification](https://user-images.githubusercontent.com/1406149/44312495-79583780-a3b6-11e8-9740-8c9b50f195d6.png)
+![6-2-auth-failed-verification](https://user-images.githubusercontent.com/1406149/44312495-79583780-a3b6-11e8-9740-8c9b50f195d6.png)
 
-![5-allow-sending-emails](https://cloud.githubusercontent.com/assets/194400/10560416/a86a26ae-7502-11e5-9add-d5081d409af4.png)
+![6-3-allow-sending-emails](https://user-images.githubusercontent.com/1406149/148702010-e7b10721-2dd5-43b7-94f2-4e0e59397a57.png)
 
 Copy the web app URL to your clip board / note pad.
 Then Click "OK".
 
-![22 1-deploy-as-web-app](https://cloud.githubusercontent.com/assets/194400/10558255/6eec31e2-74c1-11e5-9c07-cea6209526df.png)
+![6-4-deploy-as-web-app](https://user-images.githubusercontent.com/1406149/148702011-95587469-bec5-4d5a-9ddf-18ed0043bced.png)
 
 
 ### 7. Create your *basic* HTML Form
@@ -152,9 +153,9 @@ Open the inbox for the email address you set in **Step 3** (*above*)
 
 # *Part Two - Make It Look Good* ...
 
-We are going to keep this ***Super Lean*** by using [**PURE CSS**](http://purecss.io/start/)
+We are going to keep this ***Super Lean*** by using [**PURE CSS**](https://purecss.io/start/)
 for our Style (*fix the "ugly" HTML Form in step 8*).
-And `submit` the form using [**JQuery** "***AJAX***"](http://api.jquery.com/jquery.ajax/) to keep the person
+And `submit` the form using [**JQuery** "***AJAX***"](https://api.jquery.com/jquery.ajax/) to keep the person
 on your page/site (*avoid "ugly" response page*)
 
 ### 10. Submit the Form using **JavaScript** "***AJAX***"
@@ -196,7 +197,7 @@ Tailor your message by editing the `thankyou_message` div.
 
 ### 12. Use CSS to Make the Form *Look Good*
 
-For `this` *example* we are using ***Pure CSS***: http://purecss.io/start/
+For `this` *example* we are using ***Pure CSS***: https://purecss.io/start/
 because its ***light weight*** (***4.0KB minified and gzipped***)
 and *solves* our current "*problem*": Making it Look Good.
 
@@ -224,7 +225,7 @@ You can modify this though, via the script editor. The line:
 result += "<h4 style='text-transform: capitalize; margin-bottom: 0'>" + key + "</h4><div>" + obj[key] + "</div>";
 ```
 
-has all you need. You can adjust the markup to suit you. We chose an `<h4>` because it was the best size for the email, and added the small amount of CSS to it to fix the capitalisation (the keys are all lower case in the JS object) and a bit of default spacing. While inline styles like this are generally bad practice on normal web pages, for email HTML they're about the only reliable way to do CSS!  
+has all you need. You can adjust the markup to suit you. We chose an `<h4>` because it was the best size for the email, and added the small amount of CSS to it to fix the capitalisation (the keys are all lower case in the JS object) and a bit of default spacing. While inline styles like this are generally bad practice on normal web pages, for email HTML they're about the only reliable way to do CSS!
 We went with a `<div>` for the value part, because it could be anything - single-line, multiline (a `<p>` for example wouldn't cut it).
 
 While we're here, there's also a `replyTo` option for the `sendEmail()` method which is commented out by default:
@@ -254,7 +255,7 @@ the data into a spreadsheet is safer and less prone to data loss.
 
 ![record_data example](https://cloud.githubusercontent.com/assets/194400/10581613/8b4f9ad4-767b-11e5-90cc-962a9d6acc91.png)
 
-This will record the data received from the `POST` as a *row* in the spreadsheet.  
+This will record the data received from the `POST` as a *row* in the spreadsheet.
 See: [**google-apps-script.js**](google-apps-script.js) for the full code you can *copy-paste*.
 
 ### 15. Save a New Version and Re-Publish it
@@ -338,35 +339,6 @@ e.g:
 
 Let us know if you have any questions!
 
-## SPAM prevention
-
-In order to avoid getting spammed and fill up google apps usage quota, we will be implementing a simple SPAM prevention technique that's known as Honeypot where it essentially creates a hidden text field that if filled up is assumed as a spam bot and prevents the form from submit.
-
-```html
-<form action="https://script.google.com/macros/s/..." method="post">
-  <!--input id must be honeypot or else it wont work-->
-  <label class="sr-only">Keep this field blank</label>
-  <input id="honeypot" type="text" name="honeypot" value="" />
-  <!--the rest of your form-->
-</form>
-```
-
-```css
-#honeypot {
-  display: none; /*makes the field not visible to humans*/
-}
-```
-
-```javascript
-/* form-submission-handler.js */
-/* remove the comment from this if statement */
-
-if (validateHuman(data.honeypot)) {  //if form is filled, form will not be submitted
-  return false;
-}
-
-```
-
 
 ## Uploading Files
 
@@ -404,6 +376,9 @@ if (validateHuman(data.honeypot)) {  //if form is filled, form will not be submi
 
 - No. While data that is sent over POST may be more protected, the information could easily be intercepted by a third party or middleman, and Google has complete access to the data inside a Google Spreadsheet. Email is also not a very secure communication medium by default. We would recommend you invest in a secure platform and server for storing your data if this is a requirement.
 
+8. _What if my data is sent or stored in the wrong order?_
+
+- If your data is in the wrong order, it is recommended to verify that you are loading the clientside JS correctly. The most effective way to do this is to place a `debugger` call inside the `handleFormSubmit()` function, and, if it hits the debugger and opens the respective Dev Tools for the broswer/environment, then the clientside JS is being loaded correctly. If the debugger isn't hit, then the JS is **not** either not loaded or not targeting your form, defaulting the data to a plain object which will have its own alphabetic ordering instead.
 
 ## Background Reading
 
@@ -412,5 +387,5 @@ if (validateHuman(data.honeypot)) {  //if form is filled, form will not be submi
 https://developers.google.com/apps-script/reference/base/logger
 + Simple Mail Merge using Google Spreadsheets:
 https://developers.google.com/apps-script/articles/mail_merge
-+ Original Tutorial: AJAX post to google spreadsheet: http://stackoverflow.com/questions/10000020/ajax-post-to-google-spreadsheet which points to:
++ Original Tutorial: AJAX post to google spreadsheet: https://stackoverflow.com/questions/10000020/ajax-post-to-google-spreadsheet which points to:
   + https://mashe.hawksey.info/2011/10/google-spreadsheets-as-a-database-insert-with-apps-script-form-postget-submit-method/
