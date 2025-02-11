@@ -28,6 +28,9 @@
       // singular form elements just have one value
       formData[name] = element.value;
 
+      if (element.type === "checkbox") {
+        formData[name] = element.checked;
+      }
       // when our element has multiple items, get their values
       if (element.length) {
         var data = [];
